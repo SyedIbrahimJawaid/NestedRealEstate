@@ -21,7 +21,7 @@ export default function LeadForm({
     budget: "",
     area: "",
     city: "",
-    babyStatus: "",
+    babyStatus: "yes",
     name: "",
     email: "",
     phone: "",
@@ -77,19 +77,13 @@ export default function LeadForm({
   }
 
   return (
-    <div className={variant === "sidebar" ? "card" : "bg-white rounded-card p-8 md:p-12"}>
+    <div className={`relative overflow-hidden ${variant === "sidebar" ? "card bg-[#F5F3F0] shadow-lg" : "bg-white rounded-card p-8 md:p-12"}`}>
+      <div className="relative">
       <div className="flex items-center gap-3 mb-6">
-        <svg className="w-8 h-8 text-clay" viewBox="0 0 40 40" fill="none">
-          <path
-            d="M20 4L3 18h5v16h10v-10h4v10h10V18h5L20 4z"
-            fill="currentColor"
-            opacity="0.2"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinejoin="round"
-          />
+        <svg className="w-6 h-6 text-body-secondary/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
+          <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
-        <h3 className="text-xl md:text-2xl font-bold font-sans text-body">{heading}</h3>
+        <h3 className="text-xl font-bold font-sans text-body">{heading}</h3>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -139,10 +133,10 @@ export default function LeadForm({
           value={formData.budget}
           onChange={(e) => update("budget", e.target.value)}
           required
-          aria-label="Estimated budget range"
+          aria-label="Estimated Budget"
           name="budget"
         >
-          <option value="">Estimated budget range</option>
+          <option value="">Estimated Budget</option>
           <option value="700-900">700k-900k</option>
           <option value="900-1200">900k-1.2M</option>
           <option value="1200-1500">1.2M-1.5M</option>
@@ -155,10 +149,10 @@ export default function LeadForm({
           value={formData.area}
           onChange={(e) => update("area", e.target.value)}
           required
-          aria-label="Preferred area"
+          aria-label="Select an area"
           name="area"
         >
-          <option value="">Preferred area</option>
+          <option value="">Select an area</option>
           <option value="San Diego County">San Diego County</option>
           <option value="Orange County">Orange County</option>
           <option value="Los Angeles County">Los Angeles County</option>
@@ -269,6 +263,7 @@ export default function LeadForm({
           </p>
         )}
       </form>
+      </div>
     </div>
   );
 }

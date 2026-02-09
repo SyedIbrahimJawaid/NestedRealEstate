@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const footerLinks = {
   Services: [
@@ -26,6 +29,21 @@ const footerLinks = {
 };
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  if (isHome) {
+    return (
+      <footer className="bg-offwhite py-6">
+        <div className="container-max px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-body-secondary text-sm">
+            Buyer Agents for Families in Southern California — Serving San Diego &bull; Orange County &bull; Los Angeles
+          </p>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="bg-primary text-white">
       {/* Top bar */}

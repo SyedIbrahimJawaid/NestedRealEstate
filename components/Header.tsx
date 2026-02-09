@@ -4,30 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navItems = [
-  {
-    label: "How We Help",
-    href: "/how-we-help",
-  },
-  {
-    label: "Buy a Home",
-    href: "/buy",
-    children: [
-      { label: "Buying Process", href: "/buy" },
-      { label: "Areas We Serve", href: "/areas" },
-    ],
-  },
-  {
-    label: "Sell & Upgrade",
-    href: "/sell-upgrade",
-  },
-  {
-    label: "45-Day Express",
-    href: "/express",
-  },
-  {
-    label: "Areas",
-    href: "/areas",
-  },
+  { label: "How We Help", href: "/how-we-help", children: [{ label: "How We Help", href: "/how-we-help" }, { label: "Areas We Serve", href: "/areas" }] },
+  { label: "Buy a Home", href: "/buy", children: [{ label: "Buying Process", href: "/buy" }, { label: "Areas We Serve", href: "/areas" }] },
+  { label: "Sell & Upgrade", href: "/sell-upgrade", children: [{ label: "Sell & Upgrade", href: "/sell-upgrade" }] },
+  { label: "Get Started", href: "/get-started", children: [{ label: "Get Started", href: "/get-started" }] },
 ];
 
 export default function Header() {
@@ -65,12 +45,9 @@ export default function Header() {
               ReadyNest
             </span>
             <span className="text-[10px] uppercase tracking-[0.2em] text-body-secondary">
-              Real Estate
+              REAL ESTATE
             </span>
           </div>
-          <span className="hidden sm:inline-block text-body-secondary text-sm ml-2 pl-2 border-l border-border">
-            Real Estate
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
