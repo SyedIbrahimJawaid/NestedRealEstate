@@ -65,25 +65,28 @@ const boundaries = [
 export default function ExpressPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero – 45-Day Express (ruhig & seriös) */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/moving-planning.png')" }}
+          style={{ backgroundImage: "url('/images/express-hero-consultation.png')" }}
         >
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-primary/75" />
         </div>
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="inline-block text-clay font-semibold text-sm uppercase tracking-wider mb-4">
+            <span className="inline-block text-clay font-semibold text-sm uppercase tracking-wider mb-2">
               45-Day Express
             </span>
+            <p className="text-white/90 text-sm font-medium tracking-wide mb-4">
+              Calm &amp; professional — ruhig &amp; seriös
+            </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
               A calm plan — <span className="italic">even when time is tight.</span>
             </h1>
-            <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-xl text-white/85 leading-relaxed mb-8 max-w-2xl">
               In qualified situations, we coordinate an accelerated path to secure the right home and
-              start preparation immediately after keys.
+              start preparation immediately after keys. Professional guidance, no rush, no pressure.
             </p>
             <Link href="/get-started" className="btn-primary text-lg">
               Check Express Eligibility
