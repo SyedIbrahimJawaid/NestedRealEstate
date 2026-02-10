@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { IconHouse } from "@/components/Icons";
 
 const navItems = [
   { label: "How We Help", href: "/how-we-help", children: [{ label: "How We Help", href: "/how-we-help" }, { label: "Areas We Serve", href: "/areas" }] },
@@ -19,27 +20,7 @@ export default function Header() {
       <div className="container-max flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <svg
-            className="w-9 h-9 text-primary"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 4L3 18h5v16h10v-10h4v10h10V18h5L20 4z"
-              fill="currentColor"
-              opacity="0.15"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M14 28v-6h12v6"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-            />
-          </svg>
+          <IconHouse className="w-9 h-9 text-primary" />
           <div className="flex flex-col leading-tight">
             <span className="text-xl font-bold text-primary tracking-tight">
               ReadyNest

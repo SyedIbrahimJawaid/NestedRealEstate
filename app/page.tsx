@@ -18,8 +18,7 @@ export default function HomePage() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80')",
+              backgroundImage: "url('/images/hero-home.jpg')",
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />

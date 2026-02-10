@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import { IconKey, IconHouse, IconChecklist, IconShield, IconCalendar } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Buy a Family Home in Southern California",
@@ -13,26 +15,32 @@ const benefits = [
   {
     title: "Family-Focused Search",
     description: "We filter for what families actually need: safe streets, nearby schools, enough bedrooms, and a layout that works for kids.",
+    Icon: IconHouse,
   },
   {
     title: "Expert Buyer Representation",
     description: "We negotiate on your behalf — price, repairs, timelines, contingencies. Your interests come first, always.",
+    Icon: IconKey,
   },
   {
     title: "Lender & Inspector Coordination",
     description: "We connect you with family-friendly lenders and trusted inspectors. Everything is coordinated so you don't juggle calls.",
+    Icon: IconChecklist,
   },
   {
     title: "Neighborhood Intelligence",
     description: "School ratings, park proximity, commute times, future developments — we know the details that matter to parents.",
+    Icon: IconHouse,
   },
   {
     title: "Transparent Timeline",
     description: "We give you a realistic timeline from day one. If your baby is due in 3 months, we plan around that.",
+    Icon: IconCalendar,
   },
   {
     title: "Home Preparation After Close",
     description: "Once you have keys, we connect you with trusted partners for nursery setup, safety upgrades, and essential renovations.",
+    Icon: IconShield,
   },
 ];
 
@@ -59,9 +67,12 @@ export default function BuyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 md:py-28 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-80 h-80 bg-sage rounded-full blur-3xl" />
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/outdoor-backyard.jpg')" }}
+        >
+          <div className="absolute inset-0 bg-primary/75" />
         </div>
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -102,6 +113,9 @@ export default function BuyPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
               <div key={b.title} className="card">
+                <div className="text-clay mb-3">
+                  <b.Icon className="w-10 h-10" />
+                </div>
                 <h3 className="text-lg font-serif text-primary mb-3">{b.title}</h3>
                 <p className="text-body-secondary text-sm leading-relaxed">{b.description}</p>
               </div>

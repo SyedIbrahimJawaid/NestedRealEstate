@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
+import { IconShield, IconCalendar, IconChecklist } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Get Started — Create Your Family Home Plan",
@@ -34,28 +35,22 @@ export default function GetStartedPage() {
 
           <div className="mt-12 grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
+              <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3 text-sage">
+                <IconShield className="w-6 h-6" />
               </div>
               <h3 className="font-semibold text-primary text-sm mb-1 font-sans">Private & Secure</h3>
               <p className="text-body-secondary text-xs">Your information is kept confidential</p>
             </div>
             <div>
-              <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+              <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3 text-sage">
+                <IconCalendar className="w-6 h-6" />
               </div>
               <h3 className="font-semibold text-primary text-sm mb-1 font-sans">Quick Response</h3>
               <p className="text-body-secondary text-xs">We respond within 24 hours</p>
             </div>
             <div>
-              <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+              <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3 text-sage">
+                <IconChecklist className="w-6 h-6" />
               </div>
               <h3 className="font-semibold text-primary text-sm mb-1 font-sans">No Obligation</h3>
               <p className="text-body-secondary text-xs">Just clarity about your options</p>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import { IconMovingBox, IconBabyStroller, IconCalendar } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Sell & Upgrade — Move Into the Home Your Family Needs",
@@ -75,9 +77,12 @@ export default function SellAndUpgradePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 md:py-28 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-clay rounded-full blur-3xl" />
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/moving-planning.png')" }}
+        >
+          <div className="absolute inset-0 bg-primary/75" />
         </div>
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -113,17 +118,23 @@ export default function SellAndUpgradePage() {
 
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div className="card">
-              <div className="text-3xl mb-3">😰</div>
+              <div className="text-clay flex justify-center mb-3">
+                <IconCalendar className="w-10 h-10" />
+              </div>
               <h3 className="font-semibold text-primary mb-2 font-sans">Timing Stress</h3>
               <p className="text-body-secondary text-sm">What if your home sells before you find the next one?</p>
             </div>
             <div className="card">
-              <div className="text-3xl mb-3">💰</div>
+              <div className="text-clay flex justify-center mb-3">
+                <IconMovingBox className="w-10 h-10" />
+              </div>
               <h3 className="font-semibold text-primary mb-2 font-sans">Financial Overlap</h3>
               <p className="text-body-secondary text-sm">Two mortgages, bridge loans, and budget uncertainty.</p>
             </div>
             <div className="card">
-              <div className="text-3xl mb-3">👶</div>
+              <div className="text-clay flex justify-center mb-3">
+                <IconBabyStroller className="w-10 h-10" />
+              </div>
               <h3 className="font-semibold text-primary mb-2 font-sans">Family Disruption</h3>
               <p className="text-body-secondary text-sm">Moving with a baby or during pregnancy adds complexity.</p>
             </div>
@@ -188,6 +199,14 @@ export default function SellAndUpgradePage() {
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
+              <div className="relative aspect-[4/3] rounded-card overflow-hidden mb-8">
+                <Image
+                  src="/images/family-ready-preparation.png"
+                  alt="Happy family with child ready to move into their new home"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
                 Ready to Upgrade?
               </h2>

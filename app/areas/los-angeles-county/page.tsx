@@ -55,9 +55,12 @@ const faqs = [
 export default function LosAngelesPage() {
   return (
     <>
-      <section className="relative py-20 md:py-28 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-sage rounded-full blur-3xl" />
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/county-los-angeles.png')" }}
+        >
+          <div className="absolute inset-0 bg-primary/75" />
         </div>
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

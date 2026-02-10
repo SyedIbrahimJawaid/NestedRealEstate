@@ -56,9 +56,12 @@ export default function SanDiegoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 md:py-28 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-80 h-80 bg-sage rounded-full blur-3xl" />
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/county-san-diego.png')" }}
+        >
+          <div className="absolute inset-0 bg-primary/75" />
         </div>
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

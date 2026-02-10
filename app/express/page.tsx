@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import { IconCalendar, IconChecklist, IconSafetyGate } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "45-Day Express — Accelerated Home Buying for Families",
@@ -64,9 +66,12 @@ export default function ExpressPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 md:py-28 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-1/2 w-[600px] h-[600px] bg-clay rounded-full blur-3xl -translate-x-1/2" />
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/moving-planning.png')" }}
+        >
+          <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -110,23 +115,31 @@ export default function ExpressPage() {
               <ul className="space-y-3">
                 {qualifications.map((q) => (
                   <li key={q} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-clay flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+                    <IconChecklist className="w-5 h-5 text-clay flex-shrink-0 mt-0.5" />
                     <span className="text-body-secondary">{q}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="card bg-primary/5 border-primary/10">
-              <div className="text-center">
-                <div className="text-6xl font-bold text-clay mb-2 font-serif">45</div>
-                <div className="text-lg font-semibold text-primary mb-4">Days or Less</div>
-                <p className="text-body-secondary text-sm leading-relaxed">
-                  From strategy session to keys in hand. Not every situation qualifies, but when it does,
-                  we execute with precision.
-                </p>
+            <div className="space-y-6">
+              <div className="relative aspect-[4/3] rounded-card overflow-hidden">
+                <Image
+                  src="/images/nursery-corner.png"
+                  alt="Beautiful nursery room prepared for a baby"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="card bg-primary/5 border-primary/10">
+                <div className="text-center">
+                  <div className="text-6xl font-bold text-clay mb-2 font-serif">45</div>
+                  <div className="text-lg font-semibold text-primary mb-4">Days or Less</div>
+                  <p className="text-body-secondary text-sm leading-relaxed">
+                    From strategy session to keys in hand. Not every situation qualifies, but when it does,
+                    we execute with precision.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -137,6 +150,9 @@ export default function ExpressPage() {
       <section className="section-padding bg-white">
         <div className="container-max">
           <div className="text-center mb-14">
+            <div className="inline-flex items-center justify-center gap-2 text-clay mb-4">
+              <IconCalendar className="w-10 h-10" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
               The Express Timeline
             </h2>
@@ -148,7 +164,8 @@ export default function ExpressPage() {
           <div className="space-y-6 max-w-3xl mx-auto">
             {expressTimeline.map((item) => (
               <div key={item.day} className="flex gap-6 items-start">
-                <div className="w-24 flex-shrink-0 text-right">
+                <div className="w-24 flex-shrink-0 text-right flex flex-col items-end gap-1">
+                  <IconCalendar className="w-5 h-5 text-clay" />
                   <span className="text-sm font-bold text-clay">{item.day}</span>
                 </div>
                 <div className="w-px bg-border self-stretch relative">
@@ -168,6 +185,9 @@ export default function ExpressPage() {
       <section className="section-padding bg-offwhite">
         <div className="container-max max-w-4xl">
           <div className="text-center mb-14">
+            <div className="inline-flex items-center justify-center gap-2 text-clay mb-4">
+              <IconSafetyGate className="w-10 h-10" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
               Honest Boundaries
             </h2>
@@ -179,6 +199,9 @@ export default function ExpressPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {boundaries.map((b) => (
               <div key={b.title} className="card">
+                <div className="text-clay mb-3">
+                  <IconSafetyGate className="w-10 h-10" />
+                </div>
                 <h3 className="text-lg font-serif text-primary mb-3">{b.title}</h3>
                 <p className="text-body-secondary text-sm leading-relaxed">{b.description}</p>
               </div>

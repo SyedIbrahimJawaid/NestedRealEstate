@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import {
+  IconHeart,
+  IconChecklist,
+  IconShield,
+  IconHouse,
+  IconKey,
+  IconCalendar,
+  IconSafetyGate,
+} from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "How We Help — Family-Focused Real Estate",
@@ -8,42 +18,48 @@ export const metadata: Metadata = {
     "Learn how ReadyNest helps growing families in Southern California find, sell, and prepare the right home with a calm, coordinated plan.",
 };
 
-const process = [
+const processSteps = [
   {
     step: "01",
     title: "Discovery Call",
     description:
       "We listen. You tell us about your family, timeline, and what matters most. We assess your situation honestly — no sales pitch.",
+    Icon: IconChecklist,
   },
   {
     step: "02",
     title: "Personalized Plan",
     description:
       "Based on your needs, we create a clear plan: buy, sell & upgrade, or our accelerated Express pathway if time is tight.",
+    Icon: IconChecklist,
   },
   {
     step: "03",
     title: "Coordinated Search",
     description:
       "We find homes that fit — not just the specs, but the life you're building. Safe neighborhoods, good schools, the right space.",
+    Icon: IconHouse,
   },
   {
     step: "04",
     title: "Negotiation & Closing",
     description:
       "We negotiate firmly on your behalf and coordinate every detail through closing. No surprises.",
+    Icon: IconKey,
   },
   {
     step: "05",
     title: "Home Preparation",
     description:
       "After keys, we connect you with trusted partners for baby-safe renovations, nursery setup, and essential upgrades.",
+    Icon: IconSafetyGate,
   },
   {
     step: "06",
     title: "Move-In Ready",
     description:
       "You focus on your family. We make sure your home is ready — safe, beautiful, and welcoming for your growing family.",
+    Icon: IconHeart,
   },
 ];
 
@@ -51,32 +67,32 @@ const differentiators = [
   {
     title: "Family-First Approach",
     description: "Every decision we make considers your family's health, safety, and well-being first.",
-    icon: "❤️",
+    Icon: IconHeart,
   },
   {
     title: "Coordinated Team",
     description: "One point of contact who manages inspectors, contractors, lenders, and more.",
-    icon: "🤝",
+    Icon: IconChecklist,
   },
   {
     title: "Transparent Communication",
     description: "We tell you the truth — even when it's not what you want to hear. No games.",
-    icon: "💬",
+    Icon: IconShield,
   },
   {
     title: "SoCal Expertise",
     description: "Deep knowledge of San Diego, Orange County, and Los Angeles family neighborhoods.",
-    icon: "📍",
+    Icon: IconHouse,
   },
   {
     title: "Speed When Needed",
     description: "Our Express pathway can close in as few as 45 days — when the situation qualifies.",
-    icon: "⚡",
+    Icon: IconCalendar,
   },
   {
     title: "Trusted Partner Network",
     description: "Vetted contractors, inspectors, and specialists who understand family timelines.",
-    icon: "🔧",
+    Icon: IconSafetyGate,
   },
 ];
 
@@ -84,10 +100,12 @@ export default function HowWeHelpPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-20 md:py-28 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-10 w-96 h-96 bg-sage rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-10 w-72 h-72 bg-clay rounded-full blur-3xl" />
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/calm-checklist-plan.png')" }}
+        >
+          <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -124,10 +142,13 @@ export default function HowWeHelpPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {process.map((item) => (
+            {processSteps.map((item) => (
               <div key={item.step} className="card">
-                <div className="text-4xl font-bold text-clay/20 mb-4 font-serif">
-                  {item.step}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-clay">
+                    <item.Icon className="w-10 h-10" />
+                  </div>
+                  <span className="text-4xl font-bold text-clay/20 font-serif">{item.step}</span>
                 </div>
                 <h3 className="text-xl font-serif text-primary mb-3">{item.title}</h3>
                 <p className="text-body-secondary leading-relaxed">{item.description}</p>
@@ -137,8 +158,50 @@ export default function HowWeHelpPage() {
         </div>
       </section>
 
-      {/* What Makes Us Different */}
+      {/* Family-Ready Preparation Image Section */}
       <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative aspect-[4/3] rounded-card overflow-hidden">
+              <Image
+                src="/images/nursery-corner.png"
+                alt="Beautiful nursery room ready for a baby"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <span className="inline-block text-clay font-semibold text-sm uppercase tracking-wider mb-3">
+                Home Preparation
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
+                We Make Your Home Family-Ready
+              </h2>
+              <p className="text-body-secondary text-lg leading-relaxed mb-6">
+                From nursery setup to safety upgrades, we coordinate everything through our trusted
+                partner network so your home is ready before the baby arrives.
+              </p>
+              <ul className="space-y-3 text-body-secondary">
+                <li className="flex items-center gap-3">
+                  <IconSafetyGate className="w-5 h-5 text-sage flex-shrink-0" />
+                  Baby-safe renovations and upgrades
+                </li>
+                <li className="flex items-center gap-3">
+                  <IconHeart className="w-5 h-5 text-sage flex-shrink-0" />
+                  Nursery setup coordination
+                </li>
+                <li className="flex items-center gap-3">
+                  <IconSafetyGate className="w-5 h-5 text-sage flex-shrink-0" />
+                  Trusted partner network
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes Us Different */}
+      <section className="section-padding bg-offwhite">
         <div className="container-max">
           <div className="text-center mb-14">
             <span className="inline-block text-clay font-semibold text-sm uppercase tracking-wider mb-3">
@@ -151,8 +214,10 @@ export default function HowWeHelpPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {differentiators.map((item) => (
-              <div key={item.title} className="flex gap-4 p-6">
-                <div className="text-3xl flex-shrink-0">{item.icon}</div>
+              <div key={item.title} className="flex gap-4 p-6 bg-white rounded-card">
+                <div className="flex-shrink-0 text-clay">
+                  <item.Icon className="w-10 h-10" />
+                </div>
                 <div>
                   <h3 className="text-lg font-semibold text-primary mb-2 font-sans">
                     {item.title}
@@ -168,10 +233,18 @@ export default function HowWeHelpPage() {
       </section>
 
       {/* CTA with Form */}
-      <section className="section-padding bg-offwhite">
+      <section className="section-padding bg-white">
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
+              <div className="relative aspect-[4/3] rounded-card overflow-hidden mb-8">
+                <Image
+                  src="/images/family-ready-preparation.png"
+                  alt="Happy family with child in their new home surrounded by moving boxes"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
                 Let&apos;s Build Your Plan
               </h2>
