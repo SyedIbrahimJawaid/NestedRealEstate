@@ -69,6 +69,7 @@ export async function POST(req: Request) {
     // TODO: Verify anti-spam token (Turnstile/reCAPTCHA)
 
     console.log("New lead received:", {
+      // Form fields
       intent: body.intent,
       timeline: body.timeline,
       budget: body.budget,
@@ -80,6 +81,14 @@ export async function POST(req: Request) {
       phone: body.phone,
       notes: body.notes,
       consent: body.consent,
+      // UTM + tracking data (do NOT send PII to analytics)
+      utm_source: body.utm_source || "",
+      utm_medium: body.utm_medium || "",
+      utm_campaign: body.utm_campaign || "",
+      utm_term: body.utm_term || "",
+      utm_content: body.utm_content || "",
+      referrer: body.referrer || "",
+      landing_page: body.landing_page || "",
       timestamp: new Date().toISOString(),
     });
 

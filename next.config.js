@@ -6,13 +6,13 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/sell-and-upgrade',
-        destination: '/sell-upgrade',
+        source: '/sell-upgrade',
+        destination: '/sell-and-upgrade',
         permanent: true,
       },
       {
-        source: '/45-day-express',
-        destination: '/express',
+        source: '/express',
+        destination: '/45-day-express',
         permanent: true,
       },
     ];
@@ -20,4 +20,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "ReadyNest Real Estate terms of service. Rules and guidelines for using our website and services.",
+  description: "BabyHomePlan.com terms of service. Rules and guidelines for using our website and services.",
+  alternates: { canonical: "https://babyhomeplan.com/terms" },
 };
 
 export default function TermsPage() {
@@ -16,7 +17,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-2xl font-serif text-primary mb-4">1. Acceptance of Terms</h2>
             <p className="text-body-secondary leading-relaxed">
-              By accessing and using the ReadyNest Real Estate website, you accept and agree to be bound
+              By accessing and using the BabyHomePlan.com website, you accept and agree to be bound
               by these Terms of Service. If you do not agree to these terms, please do not use our website.
             </p>
           </div>
@@ -24,7 +25,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-2xl font-serif text-primary mb-4">2. Services Description</h2>
             <p className="text-body-secondary leading-relaxed">
-              ReadyNest Real Estate provides real estate brokerage services including buyer representation,
+              BabyHomePlan.com provides real estate brokerage services including buyer representation,
               seller representation, and home preparation coordination in Southern California. Our website
               provides information about our services and allows you to submit inquiries.
             </p>
@@ -64,14 +65,14 @@ export default function TermsPage() {
             <h2 className="text-2xl font-serif text-primary mb-4">6. Intellectual Property</h2>
             <p className="text-body-secondary leading-relaxed">
               All content on this website — including text, images, logos, and design — is the property of
-              ReadyNest Real Estate and is protected by copyright and trademark laws.
+              BabyHomePlan.com and is protected by copyright and trademark laws.
             </p>
           </div>
 
           <div>
             <h2 className="text-2xl font-serif text-primary mb-4">7. Limitation of Liability</h2>
             <p className="text-body-secondary leading-relaxed">
-              ReadyNest Real Estate shall not be liable for any indirect, incidental, special, or
+              BabyHomePlan.com shall not be liable for any indirect, incidental, special, or
               consequential damages arising from your use of this website or our services.
             </p>
           </div>

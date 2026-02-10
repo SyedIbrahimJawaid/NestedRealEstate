@@ -15,7 +15,8 @@ import {
 export const metadata: Metadata = {
   title: "How We Help — Family-Focused Real Estate",
   description:
-    "Learn how ReadyNest helps growing families in Southern California find, sell, and prepare the right home with a calm, coordinated plan.",
+    "Learn how BabyHomePlan.com helps growing families in Southern California find, sell, and prepare the right home with a calm, coordinated plan.",
+  alternates: { canonical: "https://babyhomeplan.com/how-we-help" },
 };
 
 const processSteps = [
@@ -205,7 +206,7 @@ export default function HowWeHelpPage() {
         <div className="container-max">
           <div className="text-center mb-14">
             <span className="inline-block text-clay font-semibold text-sm uppercase tracking-wider mb-3">
-              Why ReadyNest
+              Why BabyHomePlan
             </span>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
               What Makes Us Different

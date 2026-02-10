@@ -2,13 +2,18 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { IconHouse } from "@/components/Icons";
 
 const navItems = [
   { label: "How We Help", href: "/how-we-help", children: [{ label: "How We Help", href: "/how-we-help" }, { label: "Areas We Serve", href: "/areas" }] },
   { label: "Buy a Home", href: "/buy", children: [{ label: "Buying Process", href: "/buy" }, { label: "Areas We Serve", href: "/areas" }] },
-  { label: "Sell & Upgrade", href: "/sell-upgrade", children: [{ label: "Sell & Upgrade", href: "/sell-upgrade" }] },
-  { label: "Get Started", href: "/get-started", children: [{ label: "Get Started", href: "/get-started" }] },
+  { label: "Sell & Upgrade", href: "/sell-and-upgrade", children: [{ label: "Sell & Upgrade", href: "/sell-and-upgrade" }] },
+  { label: "45-Day Express", href: "/45-day-express", children: [{ label: "45-Day Express", href: "/45-day-express" }] },
+  { label: "Resources", href: "/resources", children: [
+    { label: "All Guides", href: "/resources" },
+    { label: "Moving Before Baby", href: "/resources/moving-before-baby" },
+    { label: "Buying While Pregnant", href: "/resources/buying-while-pregnant" },
+    { label: "Sell First or Buy First?", href: "/resources/sell-first-or-buy-first" },
+  ] },
 ];
 
 export default function Header() {
@@ -19,16 +24,16 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <div className="container-max flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <IconHouse className="w-9 h-9 text-primary" />
-          <div className="flex flex-col leading-tight">
-            <span className="text-xl font-bold text-primary tracking-tight">
-              ReadyNest
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-body-secondary">
-              REAL ESTATE
-            </span>
-          </div>
+        <Link href="/" className="flex items-center group flex-shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.png"
+            alt="BabyHomePlan.com - Creating Homes for Growing Families"
+            width={220}
+            height={80}
+            className="h-12 w-auto md:h-14 object-contain"
+            loading="eager"
+          />
         </Link>
 
         {/* Desktop Navigation */}

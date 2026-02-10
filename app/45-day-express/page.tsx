@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "A calm plan — even when time is tight. In qualified situations, we coordinate an accelerated path to secure the right home in as few as 45 days.",
   keywords: ["fast home buying california", "move before due date", "accelerated closing", "time-sensitive move"],
+  alternates: { canonical: "https://babyhomeplan.com/45-day-express" },
 };
 
 const qualifications = [
@@ -65,7 +66,7 @@ const boundaries = [
 export default function ExpressPage() {
   return (
     <>
-      {/* Hero – 45-Day Express (ruhig & seriös) */}
+      {/* Hero */}
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -79,7 +80,7 @@ export default function ExpressPage() {
               45-Day Express
             </span>
             <p className="text-white/90 text-sm font-medium tracking-wide mb-4">
-              Calm &amp; professional — ruhig &amp; seriös
+              Calm &amp; professional
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
               A calm plan — <span className="italic">even when time is tight.</span>
@@ -146,6 +147,22 @@ export default function ExpressPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Internal Links — Related Resources */}
+      <section className="bg-white border-b border-border">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-6">
+          <p className="text-sm text-body-secondary text-center">
+            Related guides:{" "}
+            <Link href="/resources/45-day-plan" className="text-clay hover:underline">The 45-Day Plan Explained</Link>
+            {" · "}
+            <Link href="/resources/buying-while-pregnant" className="text-clay hover:underline">Buying While Pregnant</Link>
+            {" · "}
+            <Link href="/resources/moving-before-baby" className="text-clay hover:underline">Moving Before Baby</Link>
+            {" · "}
+            <Link href="/areas" className="text-clay hover:underline">Areas We Serve</Link>
+          </p>
         </div>
       </section>
 
@@ -234,7 +251,28 @@ export default function ExpressPage() {
           </div>
         </div>
       </section>
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "45-Day Express Home Buying",
+            description: "Accelerated home buying pathway for qualified families needing to move quickly in Southern California.",
+            provider: {
+              "@type": "RealEstateAgent",
+              name: "BabyHomePlan.com",
+            },
+            areaServed: [
+              { "@type": "County", name: "San Diego County, CA" },
+              { "@type": "County", name: "Orange County, CA" },
+              { "@type": "County", name: "Los Angeles County, CA" },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }
-

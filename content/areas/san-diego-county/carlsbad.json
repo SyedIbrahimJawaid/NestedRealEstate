@@ -1,0 +1,43 @@
+{
+  "metaTitle": "Family-Friendly Neighborhoods in Carlsbad | BabyHomePlan",
+  "metaDescription": "A calm guide for families considering Carlsbad, CA. Explore neighborhoods, schools, parks, and what makes Carlsbad one of San Diego County's top family communities.",
+  "h1": "Family-Friendly Neighborhoods in Carlsbad",
+  "heroSubhead": "A calm plan for finding and preparing the right family home in Carlsbad — from coastal villages to planned communities.",
+  "sections": [
+    {
+      "heading": "Why Families Choose Carlsbad",
+      "body": [
+        "Carlsbad consistently ranks among San Diego County's most desirable family communities. With a combination of top-rated schools, safe neighborhoods, beautiful beaches, and a walkable village atmosphere, it offers a lifestyle that growing families value.",
+        "The city balances coastal charm with suburban convenience. Families enjoy access to LEGOLAND, the Flower Fields, and numerous parks while benefiting from strong community involvement and excellent recreational programs.",
+        "Carlsbad Unified School District is highly regarded, with several schools earning distinguished status. The district offers strong STEM programs, arts education, and parent engagement opportunities."
+      ]
+    },
+    {
+      "heading": "Neighborhoods to Consider",
+      "body": [
+        "Bressi Ranch offers newer construction with community pools, parks, and easy freeway access. Families appreciate the planned community feel and HOA-maintained common areas.",
+        "La Costa is known for its resort-adjacent living, excellent schools (La Costa Canyon, La Costa Heights), and family-friendly trail systems. Home prices tend to be higher but reflect the premium location.",
+        "Carlsbad Village provides a walkable downtown experience with local shops, restaurants, and beach access. While inventory is more limited, it offers a unique coastal family lifestyle.",
+        "Aviara features upscale homes near the Batiquitos Lagoon with scenic trails and top schools. It's ideal for families prioritizing nature access and newer construction."
+      ]
+    },
+    {
+      "heading": "What to Consider When Buying in Carlsbad",
+      "body": [
+        "School zones matter significantly in Carlsbad — different neighborhoods feed into different schools, and performance can vary. We help families map school boundaries to home searches.",
+        "Coastal properties command premium prices, often $1.2M–$2.5M+. Inland neighborhoods like Bressi Ranch and parts of La Costa offer relative value in the $900K–$1.5M range.",
+        "Commute considerations are important. I-5 and the Coaster commuter rail serve Carlsbad, but traffic on El Camino Real and Palomar Airport Road can be heavy during peak hours.",
+        "HOA fees vary significantly by community. Some planned developments carry monthly fees of $200–$500+ that should be factored into your budget."
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "What is the average home price in Carlsbad?", "a": "The median home price in Carlsbad ranges from approximately $1M to $2M+ depending on the neighborhood. Coastal areas command higher prices, while inland communities like Bressi Ranch offer relative value." },
+    { "q": "What are the best schools in Carlsbad?", "a": "Carlsbad Unified School District includes highly-rated schools like Pacific Rim Elementary, Aviara Oaks Elementary, and Carlsbad High School. La Costa Canyon High School in the San Dieguito district also serves parts of Carlsbad." },
+    { "q": "Is Carlsbad safe for families?", "a": "Carlsbad has a low crime rate compared to state averages and is generally considered one of the safest cities in San Diego County. Many neighborhoods have active community watch programs." },
+    { "q": "How is the commute from Carlsbad?", "a": "I-5 provides access to San Diego (about 35 miles south) and North County communities. The Coaster commuter rail stops in Carlsbad for car-free commuting to downtown San Diego." },
+    { "q": "Are there good parks in Carlsbad?", "a": "Carlsbad has over 40 parks including Poinsettia Community Park, Alga Norte Community Park (with an aquatic center), and Leo Carrillo Ranch Historic Park. Beach access is abundant throughout the city." },
+    { "q": "Does BabyHomePlan help with new construction in Carlsbad?", "a": "Yes. We help families evaluate new construction communities, negotiate builder contracts, and coordinate any post-closing preparations needed for your family." }
+  ],
+  "valueModules": ["checklist", "questions-to-ask", "tradeoffs"]
+}

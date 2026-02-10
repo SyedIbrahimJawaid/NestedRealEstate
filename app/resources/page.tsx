@@ -5,54 +5,55 @@ export const metadata: Metadata = {
   title: "Resources — Guides for Growing Families",
   description:
     "Helpful guides, articles, and tips for growing families navigating real estate in Southern California.",
+  alternates: { canonical: "https://babyhomeplan.com/resources" },
 };
 
 const articles = [
   {
-    slug: "buying-home-while-pregnant",
-    title: "Buying a Home While Pregnant: A Complete Guide",
+    slug: "moving-before-baby",
+    title: "Moving Before Baby: A Calm 30-Day Checklist",
+    excerpt: "A practical 30-day checklist for families moving before a baby arrives. Planning, packing, logistics, and settling in — all in a calm, manageable timeline.",
+    category: "Planning",
+    readTime: "8 min",
+  },
+  {
+    slug: "buying-while-pregnant",
+    title: "Buying While Pregnant in California: Realistic Timeline & Steps",
     excerpt: "Everything you need to know about timing your home purchase around your pregnancy — from pre-approval to closing before the due date.",
     category: "Buying",
     readTime: "8 min",
   },
   {
-    slug: "sell-and-upgrade-with-kids",
-    title: "How to Sell & Upgrade When You Have Young Kids",
-    excerpt: "Practical tips for selling your current home and upgrading to a bigger space without disrupting your family's routine.",
+    slug: "sell-first-or-buy-first",
+    title: "Sell First or Buy First? A Decision Framework for Families",
+    excerpt: "A practical decision framework to help families figure out whether to sell their current home before buying or vice versa.",
     category: "Selling",
     readTime: "7 min",
   },
   {
-    slug: "baby-proofing-new-home",
-    title: "Baby-Proofing Your New Home: Essential Checklist",
-    excerpt: "A room-by-room guide to making your new home safe for babies and toddlers, with cost estimates and priority levels.",
+    slug: "45-day-plan",
+    title: "The 45-Day Plan: What Must Be True & What We Coordinate",
+    excerpt: "How our Express pathway works, who qualifies, and what to expect during an accelerated home purchase in Southern California.",
+    category: "Express",
+    readTime: "6 min",
+  },
+  {
+    slug: "baby-ready-upgrades",
+    title: "Baby-Ready Upgrades After Closing: Safe, Quick Wins",
+    excerpt: "A room-by-room guide to making your new home safe for babies and toddlers — nursery setup, safety upgrades, and quick wins.",
     category: "Preparation",
     readTime: "6 min",
   },
   {
-    slug: "best-family-neighborhoods-san-diego",
-    title: "Best Family Neighborhoods in San Diego County (2026)",
-    excerpt: "Our top picks for family-friendly neighborhoods in San Diego — considering schools, safety, parks, and home values.",
-    category: "Areas",
-    readTime: "10 min",
-  },
-  {
-    slug: "first-time-buyer-checklist-families",
-    title: "First-Time Buyer Checklist for Growing Families",
-    excerpt: "What to look for when buying your first family home — beyond bedrooms and bathrooms.",
+    slug: "first-time-buyer-family",
+    title: "First-Time Buyer Family Edition: Avoid Common Mistakes",
+    excerpt: "What to look for when buying your first family home — common mistakes to avoid and how to balance baby prep with home buying.",
     category: "Buying",
-    readTime: "5 min",
-  },
-  {
-    slug: "understanding-45-day-express",
-    title: "Can You Really Buy a Home in 45 Days?",
-    excerpt: "How our Express pathway works, who qualifies, and what to expect during an accelerated home purchase.",
-    category: "Express",
-    readTime: "6 min",
+    readTime: "7 min",
   },
 ];
 
-const categories = ["All", "Buying", "Selling", "Preparation", "Areas", "Express"];
+const categories = ["All", "Buying", "Selling", "Planning", "Preparation", "Express"];
 
 export default function ResourcesPage() {
   return (
@@ -97,39 +98,57 @@ export default function ResourcesPage() {
         <div className="container-max">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article) => (
-              <article key={article.slug} className="card hover:shadow-md transition-shadow group">
-                <div className="h-40 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 bg-gradient-to-br from-primary/5 to-sage/10 flex items-center justify-center">
-                  <svg
-                    className="w-12 h-12 text-primary/20"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-xs font-semibold text-clay uppercase tracking-wider">
-                    {article.category}
+              <Link key={article.slug} href={`/resources/${article.slug}`}>
+                <article className="card hover:shadow-md transition-shadow group h-full">
+                  <div className="h-40 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 bg-gradient-to-br from-primary/5 to-sage/10 flex items-center justify-center">
+                    <svg
+                      className="w-12 h-12 text-primary/20"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs font-semibold text-clay uppercase tracking-wider">
+                      {article.category}
+                    </span>
+                    <span className="text-xs text-body-secondary">{article.readTime} read</span>
+                  </div>
+                  <h2 className="text-lg font-serif text-primary mb-2 group-hover:text-clay transition-colors">
+                    {article.title}
+                  </h2>
+                  <p className="text-body-secondary text-sm leading-relaxed mb-4">
+                    {article.excerpt}
+                  </p>
+                  <span className="text-clay text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Read article
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                    </svg>
                   </span>
-                  <span className="text-xs text-body-secondary">{article.readTime} read</span>
-                </div>
-                <h2 className="text-lg font-serif text-primary mb-2 group-hover:text-clay transition-colors">
-                  {article.title}
-                </h2>
-                <p className="text-body-secondary text-sm leading-relaxed mb-4">
-                  {article.excerpt}
-                </p>
-                <span className="text-clay text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Read article
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Internal Links — Services + Areas */}
+      <section className="bg-white border-b border-border">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-6">
+          <p className="text-sm text-body-secondary text-center">
+            Our services:{" "}
+            <Link href="/buy" className="text-clay hover:underline">Buy a Home</Link>
+            {" · "}
+            <Link href="/sell-and-upgrade" className="text-clay hover:underline">Sell &amp; Upgrade</Link>
+            {" · "}
+            <Link href="/45-day-express" className="text-clay hover:underline">45-Day Express</Link>
+            {" · "}
+            <Link href="/areas" className="text-clay hover:underline">Areas We Serve</Link>
+          </p>
         </div>
       </section>
 
@@ -150,4 +169,3 @@ export default function ResourcesPage() {
     </>
   );
 }
-

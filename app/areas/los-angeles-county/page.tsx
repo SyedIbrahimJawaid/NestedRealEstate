@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+import AreaPageTracker from "@/components/AreaPageTracker";
 
 export const metadata: Metadata = {
   title: "Family-Friendly Homes in Los Angeles County",
   description:
-    "Find family-friendly homes in Los Angeles County. ReadyNest helps growing families discover the best neighborhoods, schools, and communities in LA.",
+    "Find family-friendly homes in Los Angeles County. BabyHomePlan.com helps growing families discover the best neighborhoods, schools, and communities in LA.",
   keywords: ["family-friendly homes los angeles county", "buyer agent los angeles", "best family areas los angeles"],
+  alternates: { canonical: "https://babyhomeplan.com/areas/los-angeles-county" },
 };
 
 const cities = [
@@ -55,6 +57,8 @@ const faqs = [
 export default function LosAngelesPage() {
   return (
     <>
+      <AreaPageTracker areaType="county" areaName="Los Angeles County" />
+
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -88,10 +92,12 @@ export default function LosAngelesPage() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cities.map((city) => (
-              <div key={city.name} className="card hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-serif text-primary mb-2">{city.name}</h3>
-                <p className="text-body-secondary text-sm">{city.description}</p>
-              </div>
+              <Link key={city.name} href={`/areas/los-angeles-county/${city.name.toLowerCase().replace(/\s+/g, "-")}`}>
+                <div className="card hover:shadow-md transition-shadow group">
+                  <h3 className="text-lg font-serif text-primary mb-2 group-hover:text-clay transition-colors">{city.name}</h3>
+                  <p className="text-body-secondary text-sm">{city.description}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -116,7 +122,7 @@ export default function LosAngelesPage() {
       <section className="section-padding bg-primary">
         <div className="container-max text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">
-            How ReadyNest Helps in Los Angeles
+            How BabyHomePlan Helps in Los Angeles
           </h2>
           <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8">
             LA is vast and complex. We narrow it down to the neighborhoods that match your family&apos;s
@@ -142,6 +148,39 @@ export default function LosAngelesPage() {
         </div>
       </section>
 
+      {/* Internal Links — Services + Guides */}
+      <section className="bg-white border-y border-border">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid md:grid-cols-3 gap-6 text-sm">
+            <div>
+              <h3 className="font-semibold text-primary mb-3 font-sans">Our Services</h3>
+              <ul className="space-y-1.5">
+                <li><Link href="/buy" className="text-body-secondary hover:text-clay transition-colors">Buy a Home</Link></li>
+                <li><Link href="/sell-and-upgrade" className="text-body-secondary hover:text-clay transition-colors">Sell &amp; Upgrade</Link></li>
+                <li><Link href="/45-day-express" className="text-body-secondary hover:text-clay transition-colors">45-Day Express</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-primary mb-3 font-sans">Helpful Guides</h3>
+              <ul className="space-y-1.5">
+                <li><Link href="/resources/buying-while-pregnant" className="text-body-secondary hover:text-clay transition-colors">Buying While Pregnant</Link></li>
+                <li><Link href="/resources/moving-before-baby" className="text-body-secondary hover:text-clay transition-colors">Moving Before Baby</Link></li>
+                <li><Link href="/resources/first-time-buyer-family" className="text-body-secondary hover:text-clay transition-colors">First-Time Buyer Guide</Link></li>
+                <li><Link href="/resources" className="text-body-secondary hover:text-clay transition-colors">All Resources</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-primary mb-3 font-sans">Other Areas</h3>
+              <ul className="space-y-1.5">
+                <li><Link href="/areas/san-diego-county" className="text-body-secondary hover:text-clay transition-colors">San Diego County</Link></li>
+                <li><Link href="/areas/orange-county" className="text-body-secondary hover:text-clay transition-colors">Orange County</Link></li>
+                <li><Link href="/areas" className="text-body-secondary hover:text-clay transition-colors">All Areas</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white">
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -158,6 +197,7 @@ export default function LosAngelesPage() {
         </div>
       </section>
 
+      {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -169,6 +209,21 @@ export default function LosAngelesPage() {
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
+          }),
+        }}
+      />
+
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Areas", item: "https://babyhomeplan.com/areas" },
+              { "@type": "ListItem", position: 2, name: "Los Angeles County", item: "https://babyhomeplan.com/areas/los-angeles-county" },
+            ],
           }),
         }}
       />

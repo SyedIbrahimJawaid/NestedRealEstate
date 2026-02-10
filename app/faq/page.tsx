@@ -4,7 +4,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Common questions about buying, selling, and upgrading homes for growing families in Southern California. ReadyNest Real Estate FAQ.",
+    "Common questions about buying, selling, and upgrading homes for growing families in Southern California. BabyHomePlan.com FAQ.",
+  alternates: { canonical: "https://babyhomeplan.com/faq" },
 };
 
 const faqCategories = [
@@ -12,8 +13,8 @@ const faqCategories = [
     category: "Getting Started",
     faqs: [
       {
-        q: "What is ReadyNest?",
-        a: "ReadyNest is a family-focused real estate agency serving Southern California. We specialize in helping growing families — especially expecting parents and new families — buy, sell, and prepare homes with a coordinated, calm approach.",
+        q: "What is BabyHomePlan?",
+        a: "BabyHomePlan is a family-focused real estate agency serving Southern California. We specialize in helping growing families — especially expecting parents and new families — buy, sell, and prepare homes with a coordinated, calm approach.",
       },
       {
         q: "What areas do you serve?",
@@ -115,7 +116,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Everything you need to know about working with ReadyNest.
+            Everything you need to know about working with BabyHomePlan.
           </p>
         </div>
       </section>

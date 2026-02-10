@@ -4,7 +4,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Areas We Serve — Southern California Family Neighborhoods",
   description:
-    "Explore family-friendly neighborhoods in San Diego, Orange County, and Los Angeles. ReadyNest helps growing families find the right community.",
+    "Explore family-friendly neighborhoods in San Diego, Orange County, and Los Angeles. BabyHomePlan.com helps growing families find the right community.",
+  alternates: { canonical: "https://babyhomeplan.com/areas" },
 };
 
 const counties = [

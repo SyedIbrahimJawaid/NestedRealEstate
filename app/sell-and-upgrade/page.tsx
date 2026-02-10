@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Your family grew. Your home didn't. We help families in Southern California sell their current home and move into the right one with a clear plan.",
   keywords: ["sell and buy home same time california", "upgrade to bigger home with kids", "sell home because too small"],
+  alternates: { canonical: "https://babyhomeplan.com/sell-and-upgrade" },
 };
 
 const timeline = [
@@ -142,6 +143,22 @@ export default function SellAndUpgradePage() {
         </div>
       </section>
 
+      {/* Internal Links — Related Resources */}
+      <section className="bg-white border-b border-border">
+        <div className="container-max px-4 sm:px-6 lg:px-8 py-6">
+          <p className="text-sm text-body-secondary text-center">
+            Related guides:{" "}
+            <Link href="/resources/sell-first-or-buy-first" className="text-clay hover:underline">Sell First or Buy First?</Link>
+            {" · "}
+            <Link href="/resources/moving-before-baby" className="text-clay hover:underline">Moving Before Baby</Link>
+            {" · "}
+            <Link href="/resources/baby-ready-upgrades" className="text-clay hover:underline">Baby-Ready Upgrades</Link>
+            {" · "}
+            <Link href="/areas" className="text-clay hover:underline">Areas We Serve</Link>
+          </p>
+        </div>
+      </section>
+
       {/* Timeline */}
       <section className="section-padding bg-white">
         <div className="container-max">
@@ -238,7 +255,28 @@ export default function SellAndUpgradePage() {
           }),
         }}
       />
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Sell & Upgrade",
+            description: "Coordinated home selling and buying service for growing families in Southern California.",
+            provider: {
+              "@type": "RealEstateAgent",
+              name: "BabyHomePlan.com",
+            },
+            areaServed: [
+              { "@type": "County", name: "San Diego County, CA" },
+              { "@type": "County", name: "Orange County, CA" },
+              { "@type": "County", name: "Los Angeles County, CA" },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }
-

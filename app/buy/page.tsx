@@ -7,8 +7,9 @@ import { IconKey, IconHouse, IconChecklist, IconShield, IconCalendar } from "@/c
 export const metadata: Metadata = {
   title: "Buy a Family Home in Southern California",
   description:
-    "Find the perfect family home in San Diego, Orange County, or Los Angeles. ReadyNest helps growing families buy with confidence and a clear plan.",
+    "Find the perfect family home in San Diego, Orange County, or Los Angeles. BabyHomePlan.com helps growing families buy with confidence and a clear plan.",
   keywords: ["family buyer agent southern california", "buy family home san diego", "buyer agent orange county"],
+  alternates: { canonical: "https://babyhomeplan.com/buy" },
 };
 
 const benefits = [
@@ -103,7 +104,7 @@ export default function BuyPage() {
         <div className="container-max">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
-              What You Get With ReadyNest
+              What You Get With BabyHomePlan
             </h2>
             <p className="text-body-secondary text-lg max-w-2xl mx-auto">
               Buying a home while growing a family shouldn&apos;t be stressful. Here&apos;s how we make it calm.
@@ -181,6 +182,28 @@ export default function BuyPage() {
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
+          }),
+        }}
+      />
+
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "Family Home Buying",
+            description: "Family-focused buyer representation in Southern California. We help growing families find the right home with a calm, coordinated plan.",
+            provider: {
+              "@type": "RealEstateAgent",
+              name: "BabyHomePlan.com",
+            },
+            areaServed: [
+              { "@type": "County", name: "San Diego County, CA" },
+              { "@type": "County", name: "Orange County, CA" },
+              { "@type": "County", name: "Los Angeles County, CA" },
+            ],
           }),
         }}
       />

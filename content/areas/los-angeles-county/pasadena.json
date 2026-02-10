@@ -1,0 +1,42 @@
+{
+  "metaTitle": "Family-Friendly Neighborhoods in Pasadena | BabyHomePlan",
+  "metaDescription": "A calm guide for families considering Pasadena, CA. Explore tree-lined neighborhoods, top schools, cultural richness, and why Pasadena is an LA County family gem.",
+  "h1": "Family-Friendly Neighborhoods in Pasadena",
+  "heroSubhead": "A calm plan for finding and preparing the right family home in Pasadena — from Craftsman bungalows to modern family homes in one of LA's most charming cities.",
+  "sections": [
+    {
+      "heading": "Why Families Choose Pasadena",
+      "body": [
+        "Pasadena offers something rare in Los Angeles County: a city that feels like a small town while providing world-class culture, dining, and education. Tree-lined streets, historic architecture, and a walkable downtown make it one of LA's most desirable family communities.",
+        "Pasadena Unified School District has seen significant improvements in recent years, and private school options abound including Polytechnic School, Westridge, and La Salle. Families value the variety of educational paths available.",
+        "Cultural amenities set Pasadena apart — the Norton Simon Museum, Huntington Library and Gardens, Rose Bowl, and Old Pasadena shopping district provide enriching experiences for families without a long drive."
+      ]
+    },
+    {
+      "heading": "Family Neighborhoods in Pasadena",
+      "body": [
+        "South Pasadena (technically its own city) is adjacent and known for its exceptional school district, charming Mission Street, and family-oriented community events. Home prices reflect the premium schools.",
+        "Madison Heights/Bungalow Heaven features Pasadena's signature Craftsman homes on quiet, tree-lined streets. The area has a strong neighborhood association and family-friendly block parties.",
+        "Hastings Ranch offers ranch-style homes with larger lots near the foothills. It's popular with families seeking more space and proximity to hiking trails while remaining close to downtown Pasadena.",
+        "Linda Vista features hillside homes with views and proximity to the Rose Bowl. It offers a quieter residential feel with easy access to Pasadena's amenities."
+      ]
+    },
+    {
+      "heading": "What to Consider When Buying in Pasadena",
+      "body": [
+        "Pasadena's home stock is older than many SoCal cities — many homes date from the 1920s–1950s. Inspections are crucial, especially for foundation, electrical, and plumbing systems. We coordinate thorough inspections for every family.",
+        "School district boundaries vary within Pasadena. Some areas are served by Pasadena USD, while others fall in La Cañada or South Pasadena school districts. We help map school zones to your home search.",
+        "The 210 and 134 freeways connect Pasadena to downtown LA (about 10 miles) and the wider region. Gold Line Metro provides car-free commuting options to DTLA.",
+        "Parking and lot sizes can be limited in older neighborhoods. If two-car garage and yard space are priorities, focus on Hastings Ranch, San Rafael, or areas north of the 210."
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "What is the average home price in Pasadena?", "a": "The median home price in Pasadena ranges from approximately $900K to $2M+ depending on the neighborhood. South Pasadena and areas near top schools tend to command premium prices." },
+    { "q": "What are the best schools near Pasadena?", "a": "South Pasadena USD is among the top districts in LA County. Within Pasadena, options include strong public schools plus excellent private schools like Polytechnic, Westridge, and Mayfield." },
+    { "q": "Is Pasadena a good place to raise a family?", "a": "Pasadena offers excellent family amenities including parks, libraries, cultural institutions, and community programs. Its walkable downtown and strong neighborhood character make it a popular family choice." },
+    { "q": "How is the commute from Pasadena?", "a": "Downtown LA is about 10 miles via the 110 or Gold Line Metro. Commute times vary but typically range from 20–45 minutes depending on traffic and destination." },
+    { "q": "Are Pasadena homes older?", "a": "Many Pasadena homes date from the 1920s–1960s, including Craftsman bungalows and mid-century designs. While charming, older homes may need updates. We connect families with trusted inspectors and contractors." }
+  ],
+  "valueModules": ["checklist", "timeline", "questions-to-ask"]
+}

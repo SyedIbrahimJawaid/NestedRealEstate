@@ -1,0 +1,43 @@
+{
+  "metaTitle": "Family-Friendly Neighborhoods in Irvine | BabyHomePlan",
+  "metaDescription": "A calm guide for families considering Irvine, CA. Explore master-planned communities, top schools, parks, and why Irvine is Orange County's premier family city.",
+  "h1": "Family-Friendly Neighborhoods in Irvine",
+  "heroSubhead": "A calm plan for finding and preparing the right family home in Irvine — from Woodbury to Great Park, master-planned living at its best.",
+  "sections": [
+    {
+      "heading": "Why Families Choose Irvine",
+      "body": [
+        "Irvine is consistently ranked as one of the safest cities in America and boasts Orange County's top-performing school district. For growing families, it offers a rare combination of safety, education excellence, and community planning that's hard to match anywhere in Southern California.",
+        "Irvine Unified School District (IUSD) is one of the highest-performing districts in California, with API scores consistently above state averages. The district's focus on STEM, arts, and college readiness makes it a magnet for education-focused families.",
+        "The city's master-planned design means every neighborhood has parks, trails, community pools, and recreation centers within walking distance. Over 16,000 acres of preserved open space surround the city, offering families abundant outdoor activities."
+      ]
+    },
+    {
+      "heading": "Top Family Neighborhoods in Irvine",
+      "body": [
+        "Woodbury is one of Irvine's most popular family neighborhoods. It features newer homes (built 2004+), excellent schools (Woodbury Elementary, Jeffrey Trail Middle), community pools, and a central village with shops and restaurants.",
+        "Portola Springs offers larger lots and newer construction in the northern foothills. Families enjoy proximity to Portola High School, hiking trails, and a quieter suburban feel while remaining close to everything.",
+        "Great Park / Pavilion Park surrounds the massive Orange County Great Park with its sports facilities, balloon ride, and cultural venues. Newer construction and proximity to world-class recreation make this area increasingly popular.",
+        "Turtle Rock provides established homes with larger lots near the foothills. It's known for University High School (one of the top high schools in California) and a quieter, more mature neighborhood character."
+      ]
+    },
+    {
+      "heading": "What to Consider When Buying in Irvine",
+      "body": [
+        "Irvine is competitive — homes in top school zones often receive multiple offers. Having pre-approval and a clear strategy is essential. We help families position strong offers without overpaying.",
+        "HOA fees in Irvine's master-planned communities range from $150 to $600+ per month. Most include access to pools, parks, and community facilities. Factor these into your monthly budget alongside mortgage payments.",
+        "The 405 and 5 freeways, plus the 133 toll road, serve Irvine commuters. Traffic can be heavy during peak hours, especially on the 405. Consider your workplace location when choosing a neighborhood.",
+        "Irvine Company developments (apartments and some retail) dominate parts of the market. When buying, ensure you understand any deed restrictions, Mello-Roos taxes, or special assessments that may apply."
+      ]
+    }
+  ],
+  "faqs": [
+    { "q": "What is the average home price in Irvine?", "a": "The median home price in Irvine ranges from approximately $1.1M to $2.5M+ depending on the neighborhood and home size. Condos and townhomes start lower, around $700K–$1M." },
+    { "q": "What are the best schools in Irvine?", "a": "Irvine Unified School District is one of the top districts in California. Notable schools include University High, Northwood High, Woodbury Elementary, and Turtle Rock Elementary. School assignments are based on address, so choosing the right neighborhood is crucial." },
+    { "q": "Is Irvine safe for families?", "a": "Irvine has been ranked as one of the safest cities in America for multiple consecutive years. The city's master-planned design contributes to low crime rates and strong community safety." },
+    { "q": "What is Mello-Roos in Irvine?", "a": "Many newer Irvine communities have Mello-Roos special tax assessments that fund infrastructure and public services. These can add $3,000–$10,000+ annually to your tax bill. We help you understand the true cost before you buy." },
+    { "q": "Are there good parks and activities for families in Irvine?", "a": "Irvine has over 60 community parks, the 1,300-acre Irvine Regional Park, and the 688-acre Orange County Great Park with sports fields, an ice rink, a balloon ride, and cultural facilities." },
+    { "q": "How competitive is the Irvine housing market?", "a": "Irvine is one of the most competitive markets in Orange County, especially in top school zones. Working with a knowledgeable buyer agent who understands local dynamics gives families a significant advantage." }
+  ],
+  "valueModules": ["checklist", "tradeoffs", "questions-to-ask"]
+}

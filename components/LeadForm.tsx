@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { IconHouse } from "@/components/Icons";
 
 interface LeadFormProps {
@@ -8,6 +8,41 @@ interface LeadFormProps {
   heading?: string;
   ctaLabel?: string;
   defaultIntent?: "buying" | "selling" | "both";
+}
+
+/** Extract UTM params + referrer + landing page for CRM enrichment */
+function getTrackingData(): Record<string, string> {
+  if (typeof window === "undefined") {
+    return {
+      utm_source: "",
+      utm_medium: "",
+      utm_campaign: "",
+      utm_term: "",
+      utm_content: "",
+      referrer: "",
+      landing_page: "",
+    };
+  }
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || "",
+    referrer: document.referrer || "",
+    landing_page: window.location.pathname,
+  };
+}
+
+/** Fire GA4 custom event (safe no-op if gtag not loaded) */
+function trackEvent(eventName: string, params?: Record<string, string>) {
+  if (typeof window === "undefined") return;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const w = window as any;
+  if (typeof w.gtag === "function") {
+    w.gtag("event", eventName, params);
+  }
 }
 
 export default function LeadForm({
@@ -30,12 +65,25 @@ export default function LeadForm({
     consent: false,
     honeypot: "",
   });
+  const [tracking, setTracking] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formStarted, setFormStarted] = useState(false);
+
+  // Capture UTM + referrer on mount
+  useEffect(() => {
+    setTracking(getTrackingData());
+  }, []);
+
+  const handleFieldInteraction = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackEvent("form_start", { form_location: variant });
+    }
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (formData.honeypot) return; // spam
-
     if (!formData.consent) return; // consent required
 
     setStatus("submitting");
@@ -43,15 +91,28 @@ export default function LeadForm({
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, ...tracking }),
       });
       if (res.ok) {
         setStatus("success");
+        trackEvent("form_submit_success", {
+          form_location: variant,
+          intent: formData.intent,
+          area: formData.area,
+        });
       } else {
         setStatus("error");
+        trackEvent("form_submit_error", {
+          form_location: variant,
+          error: "server_error",
+        });
       }
     } catch {
       setStatus("error");
+      trackEvent("form_submit_error", {
+        form_location: variant,
+        error: "network_error",
+      });
     }
   };
 
@@ -101,7 +162,7 @@ export default function LeadForm({
         <select
           className="form-select"
           value={formData.intent}
-          onChange={(e) => update("intent", e.target.value)}
+          onChange={(e) => { update("intent", e.target.value); handleFieldInteraction(); }}
           required
           aria-label="Buying, Selling, or Both?"
           name="intent"
@@ -115,7 +176,7 @@ export default function LeadForm({
         <select
           className="form-select"
           value={formData.timeline}
-          onChange={(e) => update("timeline", e.target.value)}
+          onChange={(e) => { update("timeline", e.target.value); handleFieldInteraction(); }}
           required
           aria-label="How time-sensitive is your situation?"
           name="timeline"
@@ -130,7 +191,7 @@ export default function LeadForm({
         <select
           className="form-select"
           value={formData.budget}
-          onChange={(e) => update("budget", e.target.value)}
+          onChange={(e) => { update("budget", e.target.value); handleFieldInteraction(); }}
           required
           aria-label="Estimated Budget"
           name="budget"
@@ -146,7 +207,7 @@ export default function LeadForm({
         <select
           className="form-select"
           value={formData.area}
-          onChange={(e) => update("area", e.target.value)}
+          onChange={(e) => { update("area", e.target.value); handleFieldInteraction(); }}
           required
           aria-label="Select an area"
           name="area"
@@ -166,7 +227,7 @@ export default function LeadForm({
                 name="babyStatus"
                 value="yes"
                 checked={formData.babyStatus === "yes"}
-                onChange={(e) => update("babyStatus", e.target.value)}
+                onChange={(e) => { update("babyStatus", e.target.value); handleFieldInteraction(); }}
                 className="accent-clay w-4 h-4"
               />
               <span className="text-sm text-body-secondary">Yes</span>
@@ -177,7 +238,7 @@ export default function LeadForm({
                 name="babyStatus"
                 value="no"
                 checked={formData.babyStatus === "no"}
-                onChange={(e) => update("babyStatus", e.target.value)}
+                onChange={(e) => { update("babyStatus", e.target.value); handleFieldInteraction(); }}
                 className="accent-clay w-4 h-4"
               />
               <span className="text-sm text-body-secondary">No</span>
@@ -194,6 +255,7 @@ export default function LeadForm({
                 className="form-input"
                 value={formData.name}
                 onChange={(e) => update("name", e.target.value)}
+                onFocus={handleFieldInteraction}
                 required
                 name="name"
               />
@@ -203,6 +265,7 @@ export default function LeadForm({
                 className="form-input"
                 value={formData.email}
                 onChange={(e) => update("email", e.target.value)}
+                onFocus={handleFieldInteraction}
                 required
                 name="email"
               />
@@ -214,6 +277,7 @@ export default function LeadForm({
                 className="form-input"
                 value={formData.phone}
                 onChange={(e) => update("phone", e.target.value)}
+                onFocus={handleFieldInteraction}
                 name="phone"
               />
               <input
@@ -222,6 +286,7 @@ export default function LeadForm({
                 className="form-input"
                 value={formData.city}
                 onChange={(e) => update("city", e.target.value)}
+                onFocus={handleFieldInteraction}
                 name="city"
               />
             </div>
@@ -230,6 +295,7 @@ export default function LeadForm({
               className="form-input min-h-[100px] resize-none"
               value={formData.notes}
               onChange={(e) => update("notes", e.target.value)}
+              onFocus={handleFieldInteraction}
               name="notes"
             />
           </>

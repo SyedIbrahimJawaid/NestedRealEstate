@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
+
+export const metadata: Metadata = {
+  title: "BabyHomePlan.com — Creating Homes for Growing Families",
+  description:
+    "We help growing families in Southern California find, sell, and prepare the right home — so you can focus on your health, your baby, and what really matters.",
+  alternates: { canonical: "https://babyhomeplan.com/" },
+};
 
 const checkItems = [
   "Baby on the way - but your home feels too small",

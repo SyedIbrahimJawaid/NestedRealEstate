@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const footerLinks = {
   Services: [
     { label: "How We Help", href: "/how-we-help" },
     { label: "Buy a Home", href: "/buy" },
-    { label: "Sell & Upgrade", href: "/sell-upgrade" },
-    { label: "45-Day Express", href: "/express" },
+    { label: "Sell & Upgrade", href: "/sell-and-upgrade" },
+    { label: "45-Day Express", href: "/45-day-express" },
   ],
   Areas: [
     { label: "San Diego County", href: "/areas/san-diego-county" },
@@ -16,12 +17,15 @@ const footerLinks = {
     { label: "Los Angeles County", href: "/areas/los-angeles-county" },
     { label: "All Areas", href: "/areas" },
   ],
+  Guides: [
+    { label: "Moving Before Baby", href: "/resources/moving-before-baby" },
+    { label: "Buying While Pregnant", href: "/resources/buying-while-pregnant" },
+    { label: "Sell First or Buy First?", href: "/resources/sell-first-or-buy-first" },
+    { label: "All Resources", href: "/resources" },
+  ],
   Company: [
-    { label: "Resources", href: "/resources" },
     { label: "FAQ", href: "/faq" },
     { label: "Get Started", href: "/get-started" },
-  ],
-  Legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "Disclosures", href: "/disclosures" },
@@ -58,26 +62,17 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <svg
-                className="w-8 h-8 text-white"
-                viewBox="0 0 40 40"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20 4L3 18h5v16h10v-10h4v10h10V18h5L20 4z"
-                  fill="currentColor"
-                  opacity="0.2"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-lg font-bold">ReadyNest</span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image 
+                src="/images/logo.png" 
+                alt="BabyHomePlan.com" 
+                width={180} 
+                height={50}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed">
-              Family-focused real estate for growing families in Southern California.
+              Creating homes for growing families in Southern California.
             </p>
           </div>
 
@@ -108,10 +103,10 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/50">
-            &copy; {new Date().getFullYear()} ReadyNest Real Estate. All rights reserved.
+            &copy; {new Date().getFullYear()} BabyHomePlan.com. All rights reserved.
           </p>
           <p className="text-xs text-white/40 text-center max-w-xl">
-            ReadyNest Real Estate is a licensed real estate brokerage in the State of California.
+            BabyHomePlan is a licensed real estate brokerage in the State of California.
             DRE License #XXXXXXXX. All information is deemed reliable but not guaranteed.
           </p>
         </div>
@@ -119,4 +114,3 @@ export default function Footer() {
     </footer>
   );
 }
-
