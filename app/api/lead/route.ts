@@ -37,7 +37,7 @@ export async function POST(req: Request) {
     }
 
     // Validate required fields
-    const required = ["intent", "timeline", "budget", "area"];
+    const required = ["intent", "timeline", "budget", "area", "name", "email", "preferredContact"];
     for (const field of required) {
       if (!body[field]) {
         return NextResponse.json(
@@ -79,6 +79,7 @@ export async function POST(req: Request) {
       name: body.name,
       email: body.email,
       phone: body.phone,
+      preferredContact: body.preferredContact,
       notes: body.notes,
       consent: body.consent,
       // UTM + tracking data (do NOT send PII to analytics)
