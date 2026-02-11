@@ -5,9 +5,9 @@ import LeadForm from "@/components/LeadForm";
 import { IconCalendar, IconChecklist, IconSafetyGate, IconExpressBoundary, IconSpeedBoundary, IconNoPermitBoundary, IconHonestBoundary } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "45-Day Express — Accelerated Home Buying for Families",
+  title: "33-Day Express — Accelerated Home Buying for Families",
   description:
-    "A calm plan — even when time is tight. In qualified situations, we coordinate an accelerated path to secure the right home in as few as 45 days.",
+    "A calm plan — even when time is tight. In qualified situations, we coordinate an accelerated path to secure the right home in as few as 33 days.",
   keywords: ["fast home buying california", "move before due date", "accelerated closing", "time-sensitive move"],
   alternates: { canonical: "https://babyhomeplan.com/45-day-express" },
 };
@@ -27,22 +27,22 @@ const expressTimeline = [
     description: "We assess your readiness, confirm financing, define must-haves vs nice-to-haves, and build your accelerated search plan.",
   },
   {
-    day: "Day 5–15",
+    day: "Day 5–10",
     title: "Intensive Search",
     description: "Focused showing schedule. We pre-screen homes so you only visit strong candidates. Daily communication on new listings.",
   },
   {
-    day: "Day 15–20",
+    day: "Day 10–15",
     title: "Offer & Negotiation",
     description: "Strategic offer positioning. We negotiate terms, timeline, and contingencies optimized for speed without sacrificing protection.",
   },
   {
-    day: "Day 20–40",
+    day: "Day 15–28",
     title: "Escrow & Coordination",
     description: "Inspections, appraisal, and loan processing — all coordinated tightly. We manage every deadline so nothing slips.",
   },
   {
-    day: "Day 40–45",
+    day: "Day 28–33",
     title: "Close & Prepare",
     description: "Final walkthrough, closing, keys. We immediately connect you with partners for any family-ready preparations needed.",
   },
@@ -77,7 +77,7 @@ export default function ExpressPage() {
         <div className="relative container-max px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-block text-clay font-semibold text-sm uppercase tracking-wider mb-2">
-              45-Day Express
+              33-Day Express
             </span>
             <p className="text-white/90 text-sm font-medium tracking-wide mb-4">
               Calm &amp; professional
@@ -108,7 +108,7 @@ export default function ExpressPage() {
                 Is Express Right for You?
               </h2>
               <p className="text-body-secondary text-lg leading-relaxed mb-8">
-                The 45-Day Express pathway is designed for families who need to move quickly —
+                The 33-Day Express pathway is designed for families who need to move quickly —
                 often because of a pregnancy, a lease ending, or a sudden life change. But speed only
                 works when the fundamentals are in place.
               </p>
@@ -137,7 +137,7 @@ export default function ExpressPage() {
               </div>
               <div className="card bg-primary/5 border-primary/10">
                 <div className="text-center">
-                  <div className="text-6xl font-bold text-clay mb-2 font-serif">45</div>
+                  <div className="text-6xl font-bold text-clay mb-2 font-serif">33</div>
                   <div className="text-lg font-semibold text-primary mb-4">Days or Less</div>
                   <p className="text-body-secondary text-sm leading-relaxed">
                     From strategy session to keys in hand. Not every situation qualifies, but when it does,
@@ -155,7 +155,7 @@ export default function ExpressPage() {
         <div className="container-max px-4 sm:px-6 lg:px-8 py-6">
           <p className="text-sm text-body-secondary text-center">
             Related guides:{" "}
-            <Link href="/resources/45-day-plan" className="text-clay hover:underline">The 45-Day Plan Explained</Link>
+            <Link href="/resources/45-day-plan" className="text-clay hover:underline">The 33-Day Plan Explained</Link>
             {" · "}
             <Link href="/resources/buying-while-pregnant" className="text-clay hover:underline">Buying While Pregnant</Link>
             {" · "}
@@ -177,7 +177,7 @@ export default function ExpressPage() {
               The Express Timeline
             </h2>
             <p className="text-body-secondary text-lg max-w-2xl">
-              Every day is planned. Every step is coordinated. Here&apos;s how the 45 days break down.
+              Every day is planned. Every step is coordinated. Here&apos;s how the 33 days break down.
             </p>
           </div>
 
@@ -241,7 +241,10 @@ export default function ExpressPage() {
                 Check Your Express Eligibility
               </h2>
               <p className="text-body-secondary text-lg leading-relaxed mb-6">
-                If time is the constraint, clarity is the advantage. Share a few details and we&apos;ll tell you if the Express timeline (up to 45 days) is realistic for your situation—without cutting corners. If Express isn&apos;t the best fit, we&apos;ll recommend the smartest timeline for your family.
+                If time is the constraint, clarity is the advantage. Share a few details and we&apos;ll tell you if the Express timeline (up to 33 days) is realistic for your situation—without cutting corners.
+              </p>
+              <p className="text-body-secondary text-lg leading-relaxed mb-8">
+                If Express isn&apos;t the best fit, we&apos;ll recommend the smartest timeline for your family.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-body-secondary">
@@ -290,7 +293,7 @@ export default function ExpressPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "45-Day Express Home Buying",
+            name: "33-Day Express Home Buying",
             description: "Accelerated home buying pathway for qualified families needing to move quickly in Southern California.",
             provider: {
               "@type": "RealEstateAgent",

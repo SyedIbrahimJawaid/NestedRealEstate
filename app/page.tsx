@@ -24,7 +24,7 @@ const checkItems = [
 const whatYouGetItems = [
   { bold: "A realistic timeline + area fit", rest: " tailored to your family\u2019s unique needs" },
   { bold: "Lender, inspector, and contractor coordination", rest: " handled seamlessly" },
-  { bold: "An honest answer", rest: " on whether Express (the 45-day pathway) is right for you" },
+  { bold: "An honest answer", rest: " on whether Express (the 33-day pathway) is right for you" },
   { bold: "Clear expectations", rest: " about process, costs, and what\u2019s possible" },
   { bold: "No pressure", rest: " \u2014 we\u2019ll give you next steps at your speed" },
 ];
@@ -108,7 +108,7 @@ const waysWeHelp = [
     ),
   },
   {
-    title: "45-Day Express",
+    title: "33-Day Express",
     description: "A safe, compressed path for qualified, time-sensitive buyers.",
     href: "/45-day-express",
     icon: (
@@ -328,7 +328,7 @@ const faqJsonLd = {
       name: "How long does it take to buy a home?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A typical home purchase takes 60\u201390 days from offer to close. Our Express pathway can compress this to 45 days for qualified buyers in time-sensitive situations.",
+        text: "A typical home purchase takes 60–90 days from offer to close. Our Express pathway can compress this to 33 days for qualified buyers in time-sensitive situations.",
       },
     },
     {
@@ -379,8 +379,8 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
           </div>
 
-          <div className="relative container-max px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-            <div className="max-w-xl">
+            <div className="relative w-full px-4 sm:px-6 lg:px-8 py-20 md:py-28 flex justify-start text-left">
+              <div className="max-w-xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-[1.15] mb-6">
                 Ready for Your Family&apos;s Next Home?
               </h1>
