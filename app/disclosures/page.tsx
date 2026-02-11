@@ -64,7 +64,7 @@ export default function DisclosuresPage() {
             <h2 className="text-2xl font-serif text-primary mb-4">Fair Housing Statement</h2>
             <p className="text-body-secondary leading-relaxed">
               BabyHomePlan.com is committed to complying with all federal, state, and local fair
-              housing laws. We do not discriminate on the basis of race, color, religion, sex, handicap,
+              housing laws. We do not discriminate on the basis of race, color, religion, sex, disability,
               familial status, national origin, sexual orientation, gender identity, or any other
               protected class.
             </p>

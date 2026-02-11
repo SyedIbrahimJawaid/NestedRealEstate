@@ -10,6 +10,7 @@ import {
   IconKey,
   IconCalendar,
   IconSafetyGate,
+  IconPhone,
 } from "@/components/Icons";
 
 export const metadata: Metadata = {
@@ -25,7 +26,7 @@ const processSteps = [
     title: "Discovery Call",
     description:
       "We listen. You tell us about your family, timeline, and what matters most. We assess your situation honestly — no sales pitch.",
-    Icon: IconChecklist,
+    Icon: IconPhone,
   },
   {
     step: "02",
@@ -255,19 +256,19 @@ export default function HowWeHelpPage() {
               </p>
               <ul className="space-y-3 text-body-secondary">
                 <li className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                  <svg className="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                   No obligation — just clarity
                 </li>
                 <li className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                  <svg className="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                   We respond within 24 hours
                 </li>
                 <li className="flex items-center gap-3">
-                  <svg className="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                  <svg className="w-5 h-5 text-sage flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                   Your information is kept private

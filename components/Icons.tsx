@@ -188,3 +188,113 @@ export function IconSafetyGate(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+/** Express boundary icon — face + check (doc design) */
+export function IconExpressBoundary(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-clay" {...props}>
+      <rect x="6" y="6" width="36" height="36" rx="10" />
+      <circle cx="20" cy="21" r="5" />
+      <path d="M12 36c2.2-6 13.8-6 16 0" />
+      <circle cx="32" cy="31" r="6" />
+      <path d="M29.5 31l1.8 1.8 3.7-4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/** Speed boundary icon — calendar + check (doc design) */
+export function IconSpeedBoundary(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-clay" {...props}>
+      <rect x="6" y="6" width="36" height="36" rx="10" />
+      <circle cx="23" cy="27" r="10" />
+      <path d="M20 14h6" />
+      <path d="M26.5 15.5l2.5 2.5" />
+      <path d="M23 27l4-3" />
+      <circle cx="34" cy="32" r="5" />
+      <path d="M32 32l1.4 1.4 3-3.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+/** No permit boundary icon — folder + diagonal (doc design) */
+export function IconNoPermitBoundary(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-clay" {...props}>
+      <rect x="6" y="6" width="36" height="36" rx="10" />
+      <path d="M17 15h10l4 4v14H17V15z" strokeLinejoin="round" />
+      <path d="M27 15v4h4" strokeLinejoin="round" />
+      <path d="M19.5 23h9" />
+      <circle cx="22" cy="30" r="3" />
+      <path d="M16 36L34 18" />
+    </svg>
+  );
+}
+
+/** Honest boundary icon — heart + line (doc design) */
+export function IconHonestBoundary(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-clay" {...props}>
+      <rect x="6" y="6" width="36" height="36" rx="10" />
+      <path d="M14 26c2.8-5 7-8 10-8s7.2 3 10 8c-2.8 5-7 8-10 8s-7.2-3-10-8z" strokeLinejoin="round" />
+      <circle cx="24" cy="26" r="3" />
+      <path d="M24 18v16" opacity="0.9" />
+    </svg>
+  );
+}
+
+export function IconPhone(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={iconClass}
+      {...props}
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+export function IconClock(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={iconClass}
+      {...props}
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+    </svg>
+  );
+}
+
+export function IconMapPin(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={iconClass}
+      {...props}
+    >
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}

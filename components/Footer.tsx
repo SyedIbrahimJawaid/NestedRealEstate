@@ -65,7 +65,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center mb-4">
               <Image 
                 src="/images/logo.png" 
-                alt="BabyHomePlan.com" 
+                alt="BabyHomePlan.com - Creating Homes for Growing Families" 
                 width={180} 
                 height={50}
                 className="h-10 w-auto brightness-0 invert"

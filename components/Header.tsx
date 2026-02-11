@@ -55,6 +55,7 @@ export default function Header() {
                     className="w-3 h-3"
                     fill="none"
                     viewBox="0 0 12 12"
+                    aria-hidden="true"
                   >
                     <path
                       d="M3 5l3 3 3-3"
@@ -96,11 +97,11 @@ export default function Header() {
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}

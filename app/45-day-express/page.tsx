@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
-import { IconCalendar, IconChecklist, IconSafetyGate } from "@/components/Icons";
+import { IconCalendar, IconChecklist, IconSafetyGate, IconExpressBoundary, IconSpeedBoundary, IconNoPermitBoundary, IconHonestBoundary } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "45-Day Express — Accelerated Home Buying for Families",
@@ -87,7 +87,7 @@ export default function ExpressPage() {
             </h1>
             <p className="text-xl text-white/85 leading-relaxed mb-8 max-w-2xl">
               In qualified situations, we coordinate an accelerated path to secure the right home and
-              start preparation immediately after keys. Professional guidance, no rush, no pressure.
+              start preparation immediately after you receive the keys. Professional guidance, no rush, no pressure.
             </p>
             <Link href="/get-started" className="btn-primary text-lg">
               Check Express Eligibility
@@ -169,19 +169,19 @@ export default function ExpressPage() {
       {/* Timeline */}
       <section className="section-padding bg-white">
         <div className="container-max">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center justify-center gap-2 text-clay mb-4">
+          <div className="mb-14 text-left">
+            <div className="inline-flex items-center justify-start gap-2 text-clay mb-4">
               <IconCalendar className="w-10 h-10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
               The Express Timeline
             </h2>
-            <p className="text-body-secondary text-lg max-w-2xl mx-auto">
-              Every day is planned. Every step is coordinated. Here&apos;s how 45 days breaks down.
+            <p className="text-body-secondary text-lg max-w-2xl">
+              Every day is planned. Every step is coordinated. Here&apos;s how the 45 days break down.
             </p>
           </div>
 
-          <div className="space-y-6 max-w-3xl mx-auto">
+          <div className="space-y-6 max-w-3xl">
             {expressTimeline.map((item) => (
               <div key={item.day} className="flex gap-6 items-start">
                 <div className="w-24 flex-shrink-0 text-right flex flex-col items-end gap-1">
@@ -201,26 +201,28 @@ export default function ExpressPage() {
         </div>
       </section>
 
-      {/* Boundaries */}
+      {/* Honest Boundaries — text left-aligned per doc; custom icons */}
       <section className="section-padding bg-offwhite">
         <div className="container-max max-w-4xl">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center justify-center gap-2 text-clay mb-4">
-              <IconSafetyGate className="w-10 h-10" />
+          <div className="mb-14 text-left">
+            <div className="inline-flex items-center justify-start gap-2 text-clay mb-4 w-12 h-12">
+              <IconHonestBoundary className="w-12 h-12" />
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
               Honest Boundaries
             </h2>
-            <p className="text-body-secondary text-lg max-w-2xl mx-auto">
+            <p className="text-body-secondary text-lg max-w-2xl">
               We believe in transparency. Here&apos;s what Express does and doesn&apos;t include.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {boundaries.map((b) => (
+            {boundaries.map((b, i) => (
               <div key={b.title} className="card">
                 <div className="text-clay mb-3">
-                  <IconSafetyGate className="w-10 h-10" />
+                  {i === 0 && <IconExpressBoundary className="w-12 h-12" />}
+                  {i === 1 && <IconSpeedBoundary className="w-12 h-12" />}
+                  {i === 2 && <IconNoPermitBoundary className="w-12 h-12" />}
                 </div>
                 <h3 className="text-lg font-serif text-primary mb-3">{b.title}</h3>
                 <p className="text-body-secondary text-sm leading-relaxed">{b.description}</p>
@@ -230,7 +232,7 @@ export default function ExpressPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — Variant B: trust, clarity, balance with form */}
       <section className="section-padding bg-white">
         <div className="container-max">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -238,14 +240,43 @@ export default function ExpressPage() {
               <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
                 Check Your Express Eligibility
               </h2>
-              <p className="text-body-secondary text-lg leading-relaxed mb-4">
-                Fill out the form and select &quot;Up to 45 days&quot; as your timeline. We&apos;ll assess
-                your situation and let you know if Express is right for you.
+              <p className="text-body-secondary text-lg leading-relaxed mb-6">
+                If time is the constraint, clarity is the advantage. Share a few details and we&apos;ll tell you if the Express timeline (up to 45 days) is realistic for your situation—without cutting corners. If Express isn&apos;t the best fit, we&apos;ll recommend the smartest timeline for your family.
               </p>
-              <p className="text-body-secondary text-sm">
-                If Express isn&apos;t the right fit, we&apos;ll recommend the best pathway for your family.
-                No pressure either way.
-              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3 text-body-secondary">
+                  <span className="w-6 h-6 rounded-full bg-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span>A straight answer on whether Express is viable</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-secondary">
+                  <span className="w-6 h-6 rounded-full bg-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span>A safe speed plan for inspections, negotiations, and closing logistics</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-secondary">
+                  <span className="w-6 h-6 rounded-full bg-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span>A recommendation that protects your time and your outcomes</span>
+                </li>
+                <li className="flex items-start gap-3 text-body-secondary">
+                  <span className="w-6 h-6 rounded-full bg-sage flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span>Clear expectations on what&apos;s possible in your target area and budget</span>
+                </li>
+              </ul>
             </div>
             <LeadForm variant="sidebar" ctaLabel="Check Express Eligibility" />
           </div>

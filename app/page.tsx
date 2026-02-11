@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const checkItems = [
-  "Baby on the way - but your home feels too small",
+  "Baby on the way—but your home feels too small",
   "You need to find and move within a few months",
   "Buying or selling feels overwhelming",
   "Renovations need to be quick and safe",
@@ -38,7 +38,7 @@ export default function HomePage() {
                 A Home That&apos;s Ready for Your Family — When It Matters Most
               </h1>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-lg">
-                We help growing families in San Diego find, sell, and prepare the right home — so you
+                We help growing families in Southern California find, sell, and prepare the right home — so you
                 can focus on your health, your baby, and what really matters.
               </p>
               <Link href="/get-started" className="btn-primary text-lg !py-4 !px-10 inline-block mb-8">
@@ -74,6 +74,7 @@ export default function HomePage() {
                           viewBox="0 0 24 24"
                           stroke="currentColor"
                           strokeWidth="2.5"
+                          aria-hidden="true"
                         >
                           <path
                             strokeLinecap="round"
@@ -92,6 +93,19 @@ export default function HomePage() {
               <div className="lg:sticky lg:top-24 lg:-mt-48">
                 <LeadForm variant="sidebar" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Homepage image from doc */}
+        <section className="section-padding bg-sage/10">
+          <div className="container-max px-4 sm:px-6 lg:px-8">
+            <div className="rounded-2xl overflow-hidden shadow-lg max-w-4xl mx-auto">
+              <img
+                src="/images/homepage-cta.jpeg"
+                alt="Family-focused real estate services: creating homes for growing families in Southern California"
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </section>

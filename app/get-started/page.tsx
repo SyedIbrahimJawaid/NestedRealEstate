@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
-import { IconShield, IconCalendar, IconChecklist } from "@/components/Icons";
+import { IconShield, IconCalendar, IconChecklist, IconClock } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Get Started — Create Your Family Home Plan",
@@ -44,7 +44,7 @@ export default function GetStartedPage() {
             </div>
             <div>
               <div className="w-12 h-12 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-3 text-sage">
-                <IconCalendar className="w-6 h-6" />
+                <IconClock className="w-6 h-6" />
               </div>
               <h3 className="font-semibold text-primary text-sm mb-1 font-sans">Quick Response</h3>
               <p className="text-body-secondary text-xs">We respond within 24 hours</p>

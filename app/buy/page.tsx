@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
-import { IconKey, IconHouse, IconChecklist, IconShield, IconCalendar } from "@/components/Icons";
+import { IconKey, IconHouse, IconChecklist, IconShield, IconCalendar, IconMapPin } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Buy a Family Home in Southern California",
@@ -31,7 +31,7 @@ const benefits = [
   {
     title: "Neighborhood Intelligence",
     description: "School ratings, park proximity, commute times, future developments — we know the details that matter to parents.",
-    Icon: IconHouse,
+    Icon: IconMapPin,
   },
   {
     title: "Transparent Timeline",
