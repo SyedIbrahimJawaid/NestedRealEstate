@@ -171,8 +171,10 @@ export default function CityPageTemplate({
                 ))}
               </div>
               {(() => {
-                if ('sources' in checklist.schools) {
-                  const sources = checklist.schools.sources;
+                const schools = checklist.schools;
+                if ('sources' in schools) {
+                  const schoolsWithSources = schools as { notes: string[]; sources?: { label: string; url: string }[] };
+                  const sources = schoolsWithSources.sources;
                   if (sources && sources.length > 0) {
                     return (
                       <div className="mt-4">
