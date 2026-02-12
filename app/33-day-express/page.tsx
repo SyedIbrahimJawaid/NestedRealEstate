@@ -39,7 +39,7 @@ const expressTimeline = [
   {
     day: "Day 20-33",
     title: "Escrow & Coordination",
-    description: "Inspections, appraisal, and loan processing all coordinated tightly. We manage every deadline so nothing slips.",
+    description: "Inspections, appraisal, and loan processing are all coordinated tightly. We manage every deadline so nothing slips.",
   },
   {
     day: "Day 33",
