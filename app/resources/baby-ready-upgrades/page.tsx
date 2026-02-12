@@ -271,7 +271,7 @@ export default function BabyReadyUpgradesPage() {
               <ul className="space-y-1.5">
                 <li><Link href="/buy" className="text-body-secondary hover:text-clay transition-colors">Buy a Family Home</Link></li>
                 <li><Link href="/sell-and-upgrade" className="text-body-secondary hover:text-clay transition-colors">Sell &amp; Upgrade</Link></li>
-                <li><Link href="/45-day-express" className="text-body-secondary hover:text-clay transition-colors">45-Day Express</Link></li>
+                <li><Link href="/33-day-express" className="text-body-secondary hover:text-clay transition-colors">33-Day Express</Link></li>
               </ul>
             </div>
             <div>

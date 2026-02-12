@@ -272,7 +272,7 @@ export default function LeadForm({
               name="timeline"
             >
               <option value="">How time-sensitive is your situation? *</option>
-              <option value="0-45">0–45 days</option>
+              <option value="0-33">0–33 days</option>
               <option value="2-3">2–3 months</option>
               <option value="3-6">3–6 months</option>
               <option value="6+">6+ months</option>

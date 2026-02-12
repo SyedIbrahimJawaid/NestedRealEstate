@@ -88,7 +88,7 @@ const differentiators = [
   },
   {
     title: "Speed When Needed",
-    description: "Our Express pathway can close in as few as 45 days — when the situation qualifies.",
+    description: "Our Express pathway can close in as few as 33 days — when the situation qualifies.",
     Icon: IconCalendar,
   },
   {

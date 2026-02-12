@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const footerLinks = {
   Services: [
     { label: "How We Help", href: "/how-we-help" },
     { label: "Buy a Home", href: "/buy" },
-    { label: "Sell & Upgrade", href: "/sell-and-upgrade" },
-    { label: "45-Day Express", href: "/45-day-express" },
+    { label: "Sell & Upgrade", href: "/sell-upgrade" },
+    { label: "33-Day Express", href: "/33-day-express" },
   ],
   Areas: [
     { label: "San Diego County", href: "/areas/san-diego-county" },
@@ -17,15 +16,12 @@ const footerLinks = {
     { label: "Los Angeles County", href: "/areas/los-angeles-county" },
     { label: "All Areas", href: "/areas" },
   ],
-  Guides: [
-    { label: "Moving Before Baby", href: "/resources/moving-before-baby" },
-    { label: "Buying While Pregnant", href: "/resources/buying-while-pregnant" },
-    { label: "Sell First or Buy First?", href: "/resources/sell-first-or-buy-first" },
-    { label: "All Resources", href: "/resources" },
-  ],
   Company: [
+    { label: "Resources", href: "/resources" },
     { label: "FAQ", href: "/faq" },
     { label: "Get Started", href: "/get-started" },
+  ],
+  Legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "Disclosures", href: "/disclosures" },
@@ -63,12 +59,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
-              <Image 
-                src="/images/logo.png" 
-                alt="BabyHomePlan.com - Creating Homes for Growing Families" 
-                width={180} 
-                height={50}
-                className="h-10 w-auto brightness-0 invert"
+              <img
+                src="/images/logo.png"
+                alt="BabyHomePlan.com"
+                className="h-10 w-auto object-contain brightness-0 invert"
+                loading="lazy"
+                decoding="async"
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed">
@@ -114,3 +110,4 @@ export default function Footer() {
     </footer>
   );
 }
+

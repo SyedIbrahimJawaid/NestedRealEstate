@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The 45-Day Plan: What Must Be True & What We Coordinate",
+  title: "The 33-Day Plan: What Must Be True & What We Coordinate",
   description:
-    "A detailed breakdown of the 45-day express home buying pathway — who qualifies, the day-by-day process, what BabyHomePlan coordinates, and honest boundaries about this accelerated timeline.",
+    "A detailed breakdown of the 33-day express home buying pathway — who qualifies, the day-by-day process, what BabyHomePlan coordinates, and honest boundaries about this accelerated timeline.",
   keywords: [
-    "45 day home buying plan",
+    "33 day home buying plan",
     "fast home purchase timeline",
     "accelerated home buying california",
     "buy home before baby arrives",
     "express home buying process",
   ],
-  alternates: { canonical: "https://babyhomeplan.com/resources/45-day-plan" },
+  alternates: { canonical: "https://babyhomeplan.com/resources/33-day-plan" },
 };
 
 const dayByDay = [
@@ -20,7 +20,7 @@ const dayByDay = [
     days: "Days 1–3",
     title: "Intake & Qualification Assessment",
     description:
-      "We review your financial readiness, pre-approval status, timeline constraints, and family needs. If the 45-day pathway is a realistic fit, we define your must-haves and deal-breakers. If it isn't, we'll tell you — and recommend a better-suited timeline.",
+      "We review your financial readiness, pre-approval status, timeline constraints, and family needs. If the 33-day pathway is a realistic fit, we define your must-haves and deal-breakers. If it isn't, we'll tell you — and recommend a better-suited timeline.",
   },
   {
     days: "Days 3–5",
@@ -59,7 +59,7 @@ const dayByDay = [
       "Contingencies are removed in stages as each milestone is met. Title, escrow, and insurance are all coordinated in parallel. We confirm utility transfers, HOA requirements, and any post-close preparation plans during this window.",
   },
   {
-    days: "Days 40–45",
+    days: "Days 40–33",
     title: "Final Walkthrough & Closing",
     description:
       "The final walkthrough confirms the home is in agreed-upon condition. Signing typically happens at a title company or via mobile notary. Keys are transferred, and we immediately connect you with trusted partners for any family-ready upgrades you've planned.",
@@ -116,8 +116,8 @@ const notForYouSigns = [
 
 const faqs = [
   {
-    q: "Is the 45-day timeline guaranteed?",
-    a: "No — and we're upfront about that. The 45-day pathway is a coordinated plan, not a guarantee. Many factors affect closing timelines, including lender processing, appraisal scheduling, and seller cooperation. What we guarantee is that every step will be managed proactively to keep things on track.",
+    q: "Is the 33-day timeline guaranteed?",
+    a: "No — and we're upfront about that. The 33-day pathway is a coordinated plan, not a guarantee. Many factors affect closing timelines, including lender processing, appraisal scheduling, and seller cooperation. What we guarantee is that every step will be managed proactively to keep things on track.",
   },
   {
     q: "What happens if something delays the timeline?",
@@ -129,10 +129,10 @@ const faqs = [
   },
   {
     q: "What if the express pathway isn't right for me?",
-    a: "We'll tell you honestly during the intake assessment. Not every situation fits a 45-day timeline, and that's perfectly fine. We'll recommend our standard buying process or Sell & Upgrade service depending on your circumstances.",
+    a: "We'll tell you honestly during the intake assessment. Not every situation fits a 33-day timeline, and that's perfectly fine. We'll recommend our standard buying process or Sell & Upgrade service depending on your circumstances.",
   },
   {
-    q: "How much does the 45-day express service cost?",
+    q: "How much does the 33-day express service cost?",
     a: "Our buyer representation services are typically compensated through the seller's side of the transaction, which is standard in real estate. There is no additional fee for the express pathway — the difference is in the intensity of coordination, not the cost structure.",
   },
   {
@@ -141,7 +141,7 @@ const faqs = [
   },
 ];
 
-export default function FortyFiveDayPlanPage() {
+export default function ThirtyThreeDayPlanPage() {
   return (
     <>
       {/* Hero */}
@@ -152,7 +152,7 @@ export default function FortyFiveDayPlanPage() {
               Resource Guide
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
-              The 45-Day Plan: What Must Be True &amp;{" "}
+              The 33-Day Plan: What Must Be True &amp;{" "}
               <span className="italic">What We Coordinate</span>
             </h1>
             <p className="text-xl text-white/85 leading-relaxed mb-8 max-w-2xl">
@@ -164,10 +164,10 @@ export default function FortyFiveDayPlanPage() {
                 Check Your Eligibility
               </Link>
               <Link
-                href="/45-day-express"
+                href="/33-day-express"
                 className="border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors text-center"
               >
-                45-Day Express Service
+                33-Day Express Service
               </Link>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function FortyFiveDayPlanPage() {
       <section className="section-padding bg-offwhite">
         <div className="container-max max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
-            Why a 45-Day Pathway Exists
+            Why a 33-Day Pathway Exists
           </h2>
           <div className="prose max-w-none space-y-4 text-body-secondary text-lg leading-relaxed">
             <p>
@@ -188,12 +188,12 @@ export default function FortyFiveDayPlanPage() {
               start date, or a family simply needs to move before circumstances change.
             </p>
             <p>
-              The 45-day express pathway exists for these moments. It&apos;s not about cutting corners
+              The 33-day express pathway exists for these moments. It&apos;s not about cutting corners
               or rushing decisions. It&apos;s about compressing the coordination — tightening handoffs
               between lenders, inspectors, appraisers, and escrow — so that every day counts.
             </p>
             <p>
-              This guide explains exactly what needs to be true for the 45-day plan to work, what
+              This guide explains exactly what needs to be true for the 33-day plan to work, what
               each phase looks like, and where the honest limitations are. We believe you deserve
               full transparency before committing to an accelerated timeline.
             </p>
@@ -210,7 +210,7 @@ export default function FortyFiveDayPlanPage() {
               <ul className="space-y-1.5">
                 <li><Link href="/buy" className="text-body-secondary hover:text-clay transition-colors">Buy a Family Home</Link></li>
                 <li><Link href="/sell-and-upgrade" className="text-body-secondary hover:text-clay transition-colors">Sell &amp; Upgrade</Link></li>
-                <li><Link href="/45-day-express" className="text-body-secondary hover:text-clay transition-colors">45-Day Express</Link></li>
+                <li><Link href="/33-day-express" className="text-body-secondary hover:text-clay transition-colors">33-Day Express</Link></li>
               </ul>
             </div>
             <div>
@@ -271,7 +271,7 @@ export default function FortyFiveDayPlanPage() {
               Day-by-Day
             </span>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
-              The 45-Day Breakdown
+              The 33-Day Breakdown
             </h2>
             <p className="text-body-secondary text-lg max-w-2xl mx-auto">
               Every phase is planned. Here&apos;s what happens and when — from intake to keys.
@@ -418,7 +418,7 @@ export default function FortyFiveDayPlanPage() {
       <section className="section-padding bg-offwhite">
         <div className="container-max text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
-            Ready to See If the 45-Day Plan Fits Your Situation?
+            Ready to See If the 33-Day Plan Fits Your Situation?
           </h2>
           <p className="text-body-secondary text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
             Start with a no-pressure consultation. We&apos;ll assess your readiness, discuss your
@@ -438,9 +438,9 @@ export default function FortyFiveDayPlanPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "The 45-Day Plan: What Must Be True & What We Coordinate",
+            headline: "The 33-Day Plan: What Must Be True & What We Coordinate",
             description:
-              "A detailed breakdown of the 45-day express home buying pathway — who qualifies, the day-by-day process, what BabyHomePlan coordinates, and honest boundaries.",
+              "A detailed breakdown of the 33-day express home buying pathway — who qualifies, the day-by-day process, what BabyHomePlan coordinates, and honest boundaries.",
             author: {
               "@type": "Organization",
               name: "BabyHomePlan.com",
@@ -452,7 +452,7 @@ export default function FortyFiveDayPlanPage() {
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://babyhomeplan.com/resources/45-day-plan",
+              "@id": "https://babyhomeplan.com/resources/33-day-plan",
             },
           }),
         }}

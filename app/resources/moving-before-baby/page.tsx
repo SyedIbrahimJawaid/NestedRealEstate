@@ -24,22 +24,22 @@ const weekOneTwo = [
   {
     task: "Create a master moving binder or digital folder",
     detail:
-      "Gather all documents in one place — closing paperwork, lease agreements, utility account numbers, insurance policies, medical records, and your OB/midwife contact info. Accessibility matters when things move fast.",
+      "Gather all documents in one place: closing paperwork, lease agreements, utility account numbers, insurance policies, medical records, and your OB/midwife contact info. Accessibility matters when things move fast.",
   },
   {
     task: "Book movers or reserve a moving truck",
     detail:
-      "In Southern California, reputable movers book up 2–4 weeks in advance — especially on weekends and at month-end. Get at least two quotes, verify licensing (CPUC for in-state moves), and confirm insurance coverage. If using a truck rental, reserve early for the size you need.",
+      "In Southern California, reputable movers book up 2 to 4 weeks in advance, especially on weekends and at month-end. Get at least two quotes, verify licensing (CPUC for in-state moves), and confirm insurance coverage. If using a truck rental, reserve early for the size you need.",
   },
   {
     task: "Notify your healthcare providers",
     detail:
-      "If you're changing areas, ask your OB/midwife for records transfer and referrals in your new location. If staying within the same health system, confirm your new address is within their service area. Don't wait — new patient appointments can take weeks.",
+      "If you're changing areas, ask your OB/midwife for records transfer and referrals in your new location. If staying within the same health system, confirm your new address is within their service area. Don't wait, new patient appointments can take weeks.",
   },
   {
     task: "Start decluttering room by room",
     detail:
-      "Moving fewer things costs less and takes less energy. Donate, sell, or discard anything you won't need in the new home. Be realistic — you're about to accumulate a lot of baby gear. A lighter move is a calmer move.",
+      "Moving fewer things costs less and takes less energy. Donate, sell, or discard anything you won't need in the new home. Be realistic: you're about to accumulate a lot of baby gear. A lighter move is a calmer move.",
   },
   {
     task: "Order packing supplies",
@@ -57,7 +57,7 @@ const weekTwoThree = [
   {
     task: "Set up utilities at your new address",
     detail:
-      "Contact SDG&E, SoCal Edison, SoCal Gas, water district, internet, and trash services. Schedule activation for the day before your move-in — you'll want lights, water, and air conditioning waiting for you. Many utilities allow online scheduling.",
+      "Contact SDG&E, SoCal Edison, SoCal Gas, water district, internet, and trash services. Schedule activation for the day before your move-in so you'll want lights, water, and air conditioning waiting for you. Many utilities allow online scheduling.",
   },
   {
     task: "Update your address with key institutions",
@@ -67,7 +67,7 @@ const weekTwoThree = [
   {
     task: "Prepare a 'hospital bag + essentials' box",
     detail:
-      "If baby could arrive around move time, pack a clearly labeled box with hospital bag items, important documents, chargers, medications, snacks, and a change of clothes. This box goes in your car — not the moving truck.",
+      "If baby could arrive around move time, pack a clearly labeled box with hospital bag items, important documents, chargers, medications, snacks, and a change of clothes. This box goes in your car, not the moving truck.",
   },
   {
     task: "Arrange childcare or pet care for moving day",
@@ -85,7 +85,7 @@ const weekThreeFour = [
   {
     task: "Pack remaining rooms and label everything clearly",
     detail:
-      "Mark boxes with room destination AND contents (not just 'kitchen' — 'kitchen: pots, pans, utensils'). This saves hours on the other end. Mark fragile items on multiple sides. Stack heavy boxes on the bottom.",
+      "Mark boxes with room destination AND contents (not just 'kitchen' but 'kitchen: pots, pans, utensils'). This saves hours on the other end. Mark fragile items on multiple sides. Stack heavy boxes on the bottom.",
   },
   {
     task: "Do a final walkthrough of your new home",
@@ -105,7 +105,7 @@ const weekThreeFour = [
   {
     task: "Introduce yourself to neighbors",
     detail:
-      "A brief hello goes a long way — especially when you'll soon have a newborn. Neighbors who know you're expecting may offer help, watch for packages, or share useful local knowledge (best pediatrician, quiet parks, grocery delivery tips).",
+      "A brief hello goes a long way, especially when you'll soon have a newborn. Neighbors who know you're expecting may offer help, watch for packages, or share useful local knowledge (best pediatrician, quiet parks, grocery delivery tips).",
   },
   {
     task: "Schedule your first postnatal appointment at your new provider",
@@ -115,8 +115,8 @@ const weekThreeFour = [
 ];
 
 const movingDayTips = [
-  "Start early — aim to begin loading by 8 AM to maximize daylight and cool morning temperatures (especially in summer months across Southern California).",
-  "Keep a cooler with water, snacks, and easy meals accessible. Dehydration and low blood sugar make everything harder — especially during pregnancy.",
+  "Start early. Aim to begin loading by 8 AM to maximize daylight and cool morning temperatures (especially in summer months across Southern California).",
+  "Keep a cooler with water, snacks, and easy meals accessible. Dehydration and low blood sugar make everything harder, especially during pregnancy.",
   "Wear supportive shoes and take breaks. If you're pregnant, delegate heavy lifting entirely. No box is worth a back injury or complications.",
   "Do a final sweep of every closet, cabinet, and drawer before leaving your old home. Check the attic, garage rafters, and under sinks.",
   "Take a photo of the empty old home for your records. Confirm all keys, garage remotes, and access devices are handed over.",
@@ -127,11 +127,11 @@ const movingDayTips = [
 const faqs = [
   {
     q: "Is it safe to move during pregnancy?",
-    a: "Generally, yes — with precautions. Avoid heavy lifting, stay hydrated, take frequent breaks, and delegate physically demanding tasks. Consult your healthcare provider about any specific restrictions based on your pregnancy stage and health. The emotional stress of moving is real too — give yourself permission to let some things be imperfect.",
+    a: "Generally, yes, with precautions. Avoid heavy lifting, stay hydrated, take frequent breaks, and delegate physically demanding tasks. Consult your healthcare provider about any specific restrictions based on your pregnancy stage and health. The emotional stress of moving is real too. Give yourself permission to let some things be imperfect.",
   },
   {
     q: "How far in advance should we start planning a move before baby?",
-    a: "Ideally, 4–6 weeks before your target move date — and at least 8–10 weeks before your due date. This provides buffer for delays, which are common in real estate transactions. If you're buying a home, the closing process alone typically takes 30–45 days from accepted offer.",
+    a: "Ideally, 4 to 6 weeks before your target move date and at least 8 to 10 weeks before your due date. This provides buffer for delays, which are common in real estate transactions. If you're buying a home, the closing process alone typically takes 30 to 33 days from accepted offer.",
   },
   {
     q: "Should we hire professional movers or do it ourselves?",
@@ -139,7 +139,7 @@ const faqs = [
   },
   {
     q: "What if our move date is close to the due date?",
-    a: "If your move and due date are within 2–3 weeks of each other, we strongly recommend having a backup plan — a family member's home or hotel near your delivery hospital where you could stay if labor begins during the move. Pack your hospital bag separately and keep it in your personal vehicle at all times.",
+    a: "If your move and due date are within 2 to 3 weeks of each other, we strongly recommend having a backup plan: a family member's home or hotel near your delivery hospital where you could stay if labor begins during the move. Pack your hospital bag separately and keep it in your personal vehicle at all times.",
   },
   {
     q: "Can BabyHomePlan help coordinate our move timeline?",
@@ -147,7 +147,7 @@ const faqs = [
   },
   {
     q: "What's the most important thing to set up on day one?",
-    a: "A safe place to sleep and a functional bathroom. If baby has already arrived, the nursery basics (crib with a firm mattress, no loose bedding) come first. Everything else — unpacking the kitchen, hanging art, organizing the garage — can happen over the following weeks. Rest takes priority over perfection.",
+    a: "A safe place to sleep and a functional bathroom. If baby has already arrived, the nursery basics (crib with a firm mattress, no loose bedding) come first. Everything else like unpacking the kitchen, hanging art, organizing the garage can happen over the following weeks. Rest takes priority over perfection.",
   },
 ];
 
@@ -214,7 +214,7 @@ export default function MovingBeforeBabyPage() {
               <ul className="space-y-1.5">
                 <li><Link href="/buy" className="text-body-secondary hover:text-clay transition-colors">Buy a Family Home</Link></li>
                 <li><Link href="/sell-and-upgrade" className="text-body-secondary hover:text-clay transition-colors">Sell &amp; Upgrade</Link></li>
-                <li><Link href="/45-day-express" className="text-body-secondary hover:text-clay transition-colors">45-Day Express</Link></li>
+                <li><Link href="/33-day-express" className="text-body-secondary hover:text-clay transition-colors">33-Day Express</Link></li>
               </ul>
             </div>
             <div>

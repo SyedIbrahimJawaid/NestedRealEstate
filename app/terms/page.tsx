@@ -64,7 +64,7 @@ export default function TermsPage() {
           <div>
             <h2 className="text-2xl font-serif text-primary mb-4">6. Intellectual Property</h2>
             <p className="text-body-secondary leading-relaxed">
-              All content on this website — including text, images, logos, and design — is the property of
+              All content on this website (including text, images, logos, and design) is the property of
               BabyHomePlan.com and is protected by copyright and trademark laws.
             </p>
           </div>

@@ -17,7 +17,7 @@ const nextConfig = {
       },
       {
         source: '/express',
-        destination: '/45-day-express',
+        destination: '/33-day-express',
         permanent: true,
       },
     ];

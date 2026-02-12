@@ -82,7 +82,7 @@ export default async function SanDiegoCityPage({ params }: PageProps) {
     faqs: [
       { q: `Is ${row.city} good for families?`, a: `${row.city} is known for its family-friendly environment, good schools, and community amenities. It's a popular choice for growing families in San Diego County.` },
       { q: `What is the average home price in ${row.city}?`, a: `Home prices in ${row.city} vary by neighborhood. Contact us for current market data and guidance tailored to your budget.` },
-      { q: `How long does it take to buy a home in ${row.city}?`, a: `Typically 60–90 days. With our Express pathway, qualified buyers may close in as few as 45 days.` },
+      { q: `How long does it take to buy a home in ${row.city}?`, a: `Typically 60–90 days. With our Express pathway, qualified buyers may close in as few as 33 days.` },
       { q: `Do you help with selling too?`, a: `Yes. We help families sell their current home and buy a new one with a coordinated plan. See our Sell & Upgrade service.` },
       { q: `What school districts serve ${row.city}?`, a: `${row.city} is served by local school districts with options for every family. We can provide specific school zone information during your consultation.` },
     ],

@@ -48,7 +48,7 @@ const benefits = [
 const faqs = [
   {
     q: "How long does it take to buy a home?",
-    a: "Typically 60–90 days from offer to close. If your situation is time-sensitive, our Express pathway can potentially compress this to 45 days for qualified buyers.",
+    a: "Typically 60–90 days from offer to close. If your situation is time-sensitive, our Express pathway can potentially compress this to 33 days for qualified buyers.",
   },
   {
     q: "Do I need to get pre-approved first?",

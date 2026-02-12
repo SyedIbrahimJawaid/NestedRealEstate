@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Resources — Guides for Growing Families",
+  title: "Resources: Guides for Growing Families",
   description:
     "Helpful guides, articles, and tips for growing families navigating real estate in Southern California.",
   alternates: { canonical: "https://babyhomeplan.com/resources" },
@@ -12,14 +12,14 @@ const articles = [
   {
     slug: "moving-before-baby",
     title: "Moving Before Baby: A Calm 30-Day Checklist",
-    excerpt: "A practical 30-day checklist for families moving before a baby arrives. Planning, packing, logistics, and settling in — all in a calm, manageable timeline.",
+    excerpt: "A practical 30-day checklist for families moving before a baby arrives. Planning, packing, logistics, and settling in, all in a calm, manageable timeline.",
     category: "Planning",
     readTime: "8 min",
   },
   {
     slug: "buying-while-pregnant",
     title: "Buying While Pregnant in California: Realistic Timeline & Steps",
-    excerpt: "Everything you need to know about timing your home purchase around your pregnancy — from pre-approval to closing before the due date.",
+    excerpt: "Everything you need to know about timing your home purchase around your pregnancy, from pre-approval to closing before the due date.",
     category: "Buying",
     readTime: "8 min",
   },
@@ -31,8 +31,8 @@ const articles = [
     readTime: "7 min",
   },
   {
-    slug: "45-day-plan",
-    title: "The 45-Day Plan: What Must Be True & What We Coordinate",
+    slug: "33-day-plan",
+    title: "The 33-Day Plan: What Must Be True & What We Coordinate",
     excerpt: "How our Express pathway works, who qualifies, and what to expect during an accelerated home purchase in Southern California.",
     category: "Express",
     readTime: "6 min",
@@ -40,14 +40,14 @@ const articles = [
   {
     slug: "baby-ready-upgrades",
     title: "Baby-Ready Upgrades After Closing: Safe, Quick Wins",
-    excerpt: "A room-by-room guide to making your new home safe for babies and toddlers — nursery setup, safety upgrades, and quick wins.",
+    excerpt: "A room-by-room guide to making your new home safe for babies and toddlers: nursery setup, safety upgrades, and quick wins.",
     category: "Preparation",
     readTime: "6 min",
   },
   {
     slug: "first-time-buyer-family",
     title: "First-Time Buyer Family Edition: Avoid Common Mistakes",
-    excerpt: "What to look for when buying your first family home — common mistakes to avoid and how to balance baby prep with home buying.",
+    excerpt: "What to look for when buying your first family home: common mistakes to avoid and how to balance baby prep with home buying.",
     category: "Buying",
     readTime: "7 min",
   },
@@ -146,7 +146,7 @@ export default function ResourcesPage() {
             {" · "}
             <Link href="/sell-and-upgrade" className="text-clay hover:underline">Sell &amp; Upgrade</Link>
             {" · "}
-            <Link href="/45-day-express" className="text-clay hover:underline">45-Day Express</Link>
+            <Link href="/33-day-express" className="text-clay hover:underline">33-Day Express</Link>
             {" · "}
             <Link href="/areas" className="text-clay hover:underline">Areas We Serve</Link>
           </p>

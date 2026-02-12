@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "BabyHomePlan.com — Creating Homes for Growing Families",
+    default: "BabyHomePlan.com: Creating Homes for Growing Families",
     template: "%s | BabyHomePlan",
   },
   description:
-    "We help growing families in Southern California find, sell, and prepare the right home — so you can focus on your health, your baby, and what really matters.",
+    "We help growing families in Southern California find, sell, and prepare the right home so you can focus on your health, your baby, and what really matters.",
   keywords: [
     "family buyer agent southern california",
     "home for growing family",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "BabyHomePlan.com",
-    title: "BabyHomePlan.com — Creating Homes for Growing Families",
+    title: "BabyHomePlan.com: Creating Homes for Growing Families",
     description:
       "We help growing families in Southern California find, sell, and prepare the right home.",
   },

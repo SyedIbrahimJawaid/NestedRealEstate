@@ -51,7 +51,7 @@ const faqs = [
   { q: "What is the average home price in San Diego County?", a: "The median home price in San Diego County ranges from $650k to $1.5M+ depending on the area. Inland communities tend to be more affordable than coastal." },
   { q: "What are the best school districts in San Diego?", a: "Poway Unified, San Dieguito Union HSD, and Carlsbad Unified are consistently top-rated. Each serves different communities with different price points." },
   { q: "Is San Diego good for families?", a: "Absolutely. San Diego offers excellent schools, year-round outdoor activities, diverse communities, and a generally family-friendly lifestyle." },
-  { q: "How long does it take to buy a home in San Diego?", a: "Typically 60–90 days. With our Express pathway, qualified buyers can close in as few as 45 days." },
+  { q: "How long does it take to buy a home in San Diego?", a: "Typically 60–90 days. With our Express pathway, qualified buyers can close in as few as 33 days." },
 ];
 
 export default function SanDiegoPage() {
@@ -164,7 +164,7 @@ export default function SanDiegoPage() {
               <ul className="space-y-1.5">
                 <li><Link href="/buy" className="text-body-secondary hover:text-clay transition-colors">Buy a Home</Link></li>
                 <li><Link href="/sell-and-upgrade" className="text-body-secondary hover:text-clay transition-colors">Sell &amp; Upgrade</Link></li>
-                <li><Link href="/45-day-express" className="text-body-secondary hover:text-clay transition-colors">45-Day Express</Link></li>
+                <li><Link href="/33-day-express" className="text-body-secondary hover:text-clay transition-colors">33-Day Express</Link></li>
               </ul>
             </div>
             <div>

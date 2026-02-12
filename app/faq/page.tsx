@@ -35,7 +35,7 @@ const faqCategories = [
     faqs: [
       {
         q: "How long does it take to buy a home?",
-        a: "A typical home purchase takes 60–90 days from offer to close. Our Express pathway can compress this to 45 days for qualified buyers in time-sensitive situations.",
+        a: "A typical home purchase takes 60–90 days from offer to close. Our Express pathway can compress this to 33 days for qualified buyers in time-sensitive situations.",
       },
       {
         q: "Do I need pre-approval before contacting you?",
@@ -69,11 +69,11 @@ const faqCategories = [
     ],
   },
   {
-    category: "45-Day Express",
+    category: "33-Day Express",
     faqs: [
       {
-        q: "What is the 45-Day Express pathway?",
-        a: "It's our accelerated home-buying process for qualified families in time-sensitive situations — like an approaching due date or an expiring lease. From strategy to keys in 45 days or less.",
+        q: "What is the 33-Day Express pathway?",
+        a: "It's our accelerated home-buying process for qualified families in time-sensitive situations — like an approaching due date or an expiring lease. From strategy to keys in 33 days or less.",
       },
       {
         q: "Does everyone qualify for Express?",

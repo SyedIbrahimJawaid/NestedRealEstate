@@ -6,7 +6,7 @@ const mainPages = [
   { path: "/how-we-help", priority: "0.8", changefreq: "monthly" },
   { path: "/buy", priority: "0.8", changefreq: "monthly" },
   { path: "/sell-and-upgrade", priority: "0.8", changefreq: "monthly" },
-  { path: "/45-day-express", priority: "0.8", changefreq: "monthly" },
+  { path: "/33-day-express", priority: "0.8", changefreq: "monthly" },
   { path: "/areas", priority: "0.8", changefreq: "monthly" },
   { path: "/resources", priority: "0.7", changefreq: "monthly" },
   { path: "/faq", priority: "0.6", changefreq: "monthly" },

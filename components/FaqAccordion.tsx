@@ -28,8 +28,8 @@ const faqItems: FaqItem[] = [
   {
     question: "How long does it take to buy a home?",
     answer:
-      "A typical home purchase takes 60\u201390 days from offer to close. Our Express pathway can compress this to 45 days for qualified buyers in time-sensitive situations.",
-    link: { text: "Express", href: "/45-day-express" },
+      "A typical home purchase takes 60–90 days from offer to close. Our Express pathway can compress this to 33 days for qualified buyers in time-sensitive situations.",
+    link: { text: "Express", href: "/33-day-express" },
   },
   {
     question: "Does everyone qualify for Express?",

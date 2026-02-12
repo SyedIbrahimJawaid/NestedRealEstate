@@ -4,9 +4,9 @@ import LeadForm from "@/components/LeadForm";
 import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "BabyHomePlan.com — Creating Homes for Growing Families",
+  title: "BabyHomePlan.com: Creating Homes for Growing Families",
   description:
-    "We help growing families in Southern California find, sell, and prepare the right home — so you can focus on your health, your baby, and what really matters.",
+    "We help growing families in Southern California find, sell, and prepare the right home so you can focus on your health, your baby, and what really matters.",
   alternates: { canonical: "https://babyhomeplan.com/" },
 };
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ */
 
 const checkItems = [
-  "Baby on the way—but your home feels too small",
+  "Baby on the way but your home feels too small",
   "You need to find and move within a few months",
   "Buying or selling feels overwhelming",
   "Renovations need to be quick and safe",
@@ -110,7 +110,7 @@ const waysWeHelp = [
   {
     title: "33-Day Express",
     description: "A safe, compressed path for qualified, time-sensitive buyers.",
-    href: "/45-day-express",
+    href: "/33-day-express",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-14 h-14" viewBox="0 0 56 56" fill="none">
         <rect x="4" y="4" width="48" height="48" rx="12" fill="#F5F0EB" />
@@ -385,7 +385,7 @@ export default function HomePage() {
                 Ready for Your Family&apos;s Next Home?
               </h1>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-lg">
-                We help growing families buy, sell, and prepare homes with a calm, coordinated plan&mdash;so
+                We help growing families buy, sell, and prepare homes with a calm, coordinated plan so
                 you can move before baby arrives.
               </p>
               <Link href="/get-started" className="btn-primary text-lg !py-4 !px-10 inline-block mb-6">
@@ -421,7 +421,7 @@ export default function HomePage() {
               <span className="hidden md:inline text-border">|</span>
               <span className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-sage" fill="none" viewBox="0 0 20 20" stroke="currentColor" strokeWidth="2"><path d="M5 13l4 4L15 7" /></svg>
-                No pressure — just clear guidance
+                No pressure, just clear guidance
               </span>
             </div>
           </div>
@@ -471,7 +471,7 @@ export default function HomePage() {
                 What You&apos;ll Get
               </h2>
               <p className="text-body-secondary text-lg max-w-2xl mx-auto">
-                A clear plan in calm, experienced hands&mdash;so you can focus on what matters most.
+                A clear plan in calm, experienced hands so you can focus on what matters most.
               </p>
             </div>
 
@@ -551,7 +551,7 @@ export default function HomePage() {
                 Ways We Help
               </h2>
               <p className="text-body-secondary text-lg max-w-2xl mx-auto">
-                Whether you&apos;re buying, selling, or both&mdash;we coordinate the steps so nothing falls through the cracks.
+                Whether you&apos;re buying, selling, or both, we coordinate the steps so nothing falls through the cracks.
               </p>
             </div>
 
@@ -585,7 +585,7 @@ export default function HomePage() {
                 Why Families Choose Us
               </h2>
               <p className="text-body-secondary text-lg max-w-2xl mx-auto">
-                We minimize stress, maximize clarity, and deliver results&mdash;while treating your family like our own.
+                We minimize stress, maximize clarity, and deliver results while treating your family like our own.
               </p>
             </div>
 
@@ -671,8 +671,12 @@ export default function HomePage() {
         {/* ============================================================ */}
         {/* 9) SOCIAL PROOF / TESTIMONIALS                              */}
         {/* ============================================================ */}
-        <section className="section-padding bg-white">
-          <div className="container-max">
+        <section
+          className="relative section-padding overflow-hidden bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/family-moving-boxes.png')" }}
+        >
+          <div className="absolute inset-0 bg-white/85" />
+          <div className="container-max relative z-10">
             <div className="text-center mb-14">
               <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
                 What Families Are Saying

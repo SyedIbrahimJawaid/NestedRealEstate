@@ -19,7 +19,7 @@ All requested changes from the document have been implemented and verified. The 
 
 **Change:** Move centered text/icons to left alignment in specified sections
 
-**Location:** `app/45-day-express/page.tsx`
+**Location:** `app/33-day-express/page.tsx`
 
 **Before:**
 - Line 173: `<div className="inline-flex items-center justify-center gap-2 text-clay mb-4">`
@@ -36,11 +36,11 @@ All requested changes from the document have been implemented and verified. The 
 ### ✅ 2. "Check Your Express Eligibility" Section Content
 **Status:** ✅ Verified - Already Matches Document Exactly
 
-**Location:** `app/45-day-express/page.tsx` (lines 236-284)
+**Location:** `app/33-day-express/page.tsx` (lines 236-284)
 
 **Content Verification:**
 - ✅ H1: "Check Your Express Eligibility" - Matches
-- ✅ Lead paragraph: "If time is the constraint, clarity is the advantage. Share a few details and we'll tell you if the Express timeline (up to 45 days) is realistic for your situation—without cutting corners. If Express isn't the best fit, we'll recommend the smartest timeline for your family." - Matches exactly
+- ✅ Lead paragraph: "If time is the constraint, clarity is the advantage. Share a few details and we'll tell you if the Express timeline (up to 33 days) is realistic for your situation—without cutting corners. If Express isn't the best fit, we'll recommend the smartest timeline for your family." - Matches exactly
 - ✅ Bullet 1: "A straight answer on whether Express is viable" - Matches
 - ✅ Bullet 2: "A safe speed plan for inspections, negotiations, and closing logistics" - Matches
 - ✅ Bullet 3: "A recommendation that protects your time and your outcomes" - Matches
@@ -60,22 +60,22 @@ All requested changes from the document have been implemented and verified. The 
 1. **IconExpressBoundary** (lines 193-203)
    - ✅ Face + checkmark design
    - ✅ SVG paths match document specification
-   - ✅ Used in: `app/45-day-express/page.tsx` line 223
+   - ✅ Used in: `app/33-day-express/page.tsx` line 223
 
 2. **IconSpeedBoundary** (lines 206-218)
    - ✅ Calendar + checkmark design
    - ✅ SVG paths match document specification
-   - ✅ Used in: `app/45-day-express/page.tsx` line 224
+   - ✅ Used in: `app/33-day-express/page.tsx` line 224
 
 3. **IconNoPermitBoundary** (lines 221-232)
    - ✅ Folder + diagonal line design
    - ✅ SVG paths match document specification
-   - ✅ Used in: `app/45-day-express/page.tsx` line 225
+   - ✅ Used in: `app/33-day-express/page.tsx` line 225
 
 4. **IconHonestBoundary** (lines 235-244)
    - ✅ Heart + vertical line design
    - ✅ SVG paths match document specification
-   - ✅ Used in: `app/45-day-express/page.tsx` line 209
+   - ✅ Used in: `app/33-day-express/page.tsx` line 209
 
 **All icons are correctly implemented and match the SVG code provided in the document.**
 
@@ -113,13 +113,13 @@ All requested changes from the document have been implemented and verified. The 
 
 ## Files Modified
 
-1. **app/45-day-express/page.tsx**
+1. **app/33-day-express/page.tsx**
    - Changed icon container alignment from `justify-center` to `justify-start` (2 instances)
    - Lines modified: 173, 208
 
 ## Files Verified (No Changes Needed)
 
-1. **app/45-day-express/page.tsx**
+1. **app/33-day-express/page.tsx**
    - "Check Your Express Eligibility" section content verified
    
 2. **components/Icons.tsx**

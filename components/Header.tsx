@@ -6,14 +6,9 @@ import { useState } from "react";
 const navItems = [
   { label: "How We Help", href: "/how-we-help", children: [{ label: "How We Help", href: "/how-we-help" }, { label: "Areas We Serve", href: "/areas" }] },
   { label: "Buy a Home", href: "/buy", children: [{ label: "Buying Process", href: "/buy" }, { label: "Areas We Serve", href: "/areas" }] },
-  { label: "Sell & Upgrade", href: "/sell-and-upgrade", children: [{ label: "Sell & Upgrade", href: "/sell-and-upgrade" }] },
-  { label: "45-Day Express", href: "/45-day-express", children: [{ label: "45-Day Express", href: "/45-day-express" }] },
-  { label: "Resources", href: "/resources", children: [
-    { label: "All Guides", href: "/resources" },
-    { label: "Moving Before Baby", href: "/resources/moving-before-baby" },
-    { label: "Buying While Pregnant", href: "/resources/buying-while-pregnant" },
-    { label: "Sell First or Buy First?", href: "/resources/sell-first-or-buy-first" },
-  ] },
+  { label: "Sell & Upgrade", href: "/sell-upgrade", children: [{ label: "Sell & Upgrade", href: "/sell-upgrade" }] },
+  { label: "Get Started", href: "/get-started", children: [{ label: "Get Started", href: "/get-started" }] },
+  { label: "33-Day Express", href: "/33-day-express", children: [{ label: "33-Day Express", href: "/33-day-express" }] },
 ];
 
 export default function Header() {
@@ -24,15 +19,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
       <div className="container-max flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center group flex-shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+        <Link href="/" className="flex items-center group">
           <img
             src="/images/logo.png"
             alt="BabyHomePlan.com - Creating Homes for Growing Families"
-            width={220}
-            height={80}
             className="h-12 w-auto md:h-14 object-contain"
             loading="eager"
+            decoding="async"
           />
         </Link>
 
@@ -55,7 +48,6 @@ export default function Header() {
                     className="w-3 h-3"
                     fill="none"
                     viewBox="0 0 12 12"
-                    aria-hidden="true"
                   >
                     <path
                       d="M3 5l3 3 3-3"
@@ -97,11 +89,11 @@ export default function Header() {
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}

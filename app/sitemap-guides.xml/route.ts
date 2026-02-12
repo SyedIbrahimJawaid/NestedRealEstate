@@ -5,7 +5,7 @@ const guidePages = [
   "/resources/moving-before-baby",
   "/resources/buying-while-pregnant",
   "/resources/sell-first-or-buy-first",
-  "/resources/45-day-plan",
+  "/resources/33-day-plan",
   "/resources/baby-ready-upgrades",
   "/resources/first-time-buyer-family",
 ];

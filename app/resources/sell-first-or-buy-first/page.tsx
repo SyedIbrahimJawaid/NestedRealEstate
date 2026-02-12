@@ -19,12 +19,12 @@ const sellFirstPros = [
   {
     point: "You know your exact budget",
     detail:
-      "Once your current home sells, you know precisely how much equity you have for your next down payment. No guessing, no stretching — just clarity. This is especially valuable in Southern California's competitive market where overbidding is common.",
+      "Once your current home sells, you know precisely how much equity you have for your next down payment. No guessing, no stretching, just clarity. This is especially valuable in Southern California's competitive market where overbidding is common.",
   },
   {
     point: "Stronger negotiating position as a buyer",
     detail:
-      "Sellers prefer buyers without a home-sale contingency. When you've already sold, your offer is cleaner and more competitive. In multiple-offer situations — common in San Diego, Orange County, and LA — this can be the difference between winning and losing.",
+      "Sellers prefer buyers without a home-sale contingency. When you've already sold, your offer is cleaner and more competitive. In multiple-offer situations (common in San Diego, Orange County, and LA) this can be the difference between winning and losing.",
   },
   {
     point: "No risk of carrying two mortgages",
@@ -42,12 +42,12 @@ const sellFirstCons = [
   {
     point: "You may need temporary housing",
     detail:
-      "If there's a gap between selling and buying, you'll need somewhere to live. Options include short-term rentals, staying with family, or negotiating a rent-back arrangement with your buyer. In Southern California, short-term rentals can be expensive — budget $3,000–$6,000+ per month depending on the area.",
+      "If there's a gap between selling and buying, you'll need somewhere to live. Options include short-term rentals, staying with family, or negotiating a rent-back arrangement with your buyer. In Southern California, short-term rentals can be expensive: budget $3,000 to $6,000+ per month depending on the area.",
   },
   {
     point: "Potential for two moves",
     detail:
-      "Selling first often means moving your belongings twice — once to temporary housing, once to your new home. With a baby on the way (or already here), double moves are exhausting and costly. Storage units add $150–$400/month.",
+      "Selling first often means moving your belongings twice: once to temporary housing, once to your new home. With a baby on the way (or already here), double moves are exhausting and costly. Storage units add $150 to $400/month.",
   },
   {
     point: "Market timing risk",
@@ -65,7 +65,7 @@ const buyFirstPros = [
   {
     point: "No rushed decision on your next home",
     detail:
-      "Without the pressure of an expiring lease or temporary housing, you can take the time to find the right family home. You're not settling because you need to move quickly — you're choosing because it's the right fit.",
+      "Without the pressure of an expiring lease or temporary housing, you can take the time to find the right family home. You're not settling because you need to move quickly. You're choosing because it's the right fit.",
   },
   {
     point: "You can prepare the new home before moving in",
@@ -75,7 +75,7 @@ const buyFirstPros = [
   {
     point: "Flexibility on closing timelines",
     detail:
-      "Owning both homes temporarily gives you control over when you move. You can align the transition with your family's schedule — avoiding moves during the final weeks of pregnancy or the first weeks with a newborn.",
+      "Owning both homes temporarily gives you control over when you move. You can align the transition with your family's schedule, avoiding moves during the final weeks of pregnancy or the first weeks with a newborn.",
   },
 ];
 
@@ -88,7 +88,7 @@ const buyFirstCons = [
   {
     point: "Your offer may be weaker with a home-sale contingency",
     detail:
-      "If your offer is contingent on selling your current home, sellers may view it as riskier — especially in competitive markets. You may need to offer more or accept less favorable terms to compensate.",
+      "If your offer is contingent on selling your current home, sellers may view it as riskier, especially in competitive markets. You may need to offer more or accept less favorable terms to compensate.",
   },
   {
     point: "Financial qualification can be tighter",
@@ -126,7 +126,7 @@ const bridgeSolutions = [
   {
     title: "Coordinated Closing (Simultaneous Close)",
     description:
-      "Both transactions close on the same day or within a few days. This requires precise coordination between two sets of buyers, sellers, agents, lenders, and escrow officers. It's possible but complex — and one delay can cascade.",
+      "Both transactions close on the same day or within a few days. This requires precise coordination between two sets of buyers, sellers, agents, lenders, and escrow officers. It's possible but complex, and one delay can cascade.",
   },
 ];
 
@@ -169,11 +169,11 @@ const faqs = [
   },
   {
     q: "What's a bridge loan and is it right for us?",
-    a: "A bridge loan is short-term financing that uses your current home's equity to fund your next purchase. It can be a good option if you want to buy first without a home-sale contingency — but it comes with higher interest rates and fees. We can connect you with lenders who offer bridge loans in California and help you evaluate whether the cost makes sense for your situation.",
+    a: "A bridge loan is short-term financing that uses your current home's equity to fund your next purchase. It can be a good option if you want to buy first without a home-sale contingency, but it comes with higher interest rates and fees. We can connect you with lenders who offer bridge loans in California and help you evaluate whether the cost makes sense for your situation.",
   },
   {
     q: "How do we avoid being homeless between homes?",
-    a: "There are several strategies: negotiating a rent-back on your sold home, coordinating simultaneous closings, using temporary furnished rentals, or staying with family. The key is planning ahead — knowing your options before they become urgent. We help families create a transition plan as part of our service.",
+    a: "There are several strategies: negotiating a rent-back on your sold home, coordinating simultaneous closings, using temporary furnished rentals, or staying with family. The key is planning ahead, knowing your options before they become urgent. We help families create a transition plan as part of our service.",
   },
   {
     q: "What if our home doesn't sell as quickly as expected?",
@@ -250,7 +250,7 @@ export default function SellFirstOrBuyFirstPage() {
               <ul className="space-y-1.5">
                 <li><Link href="/buy" className="text-body-secondary hover:text-clay transition-colors">Buy a Family Home</Link></li>
                 <li><Link href="/sell-and-upgrade" className="text-body-secondary hover:text-clay transition-colors">Sell &amp; Upgrade</Link></li>
-                <li><Link href="/45-day-express" className="text-body-secondary hover:text-clay transition-colors">45-Day Express</Link></li>
+                <li><Link href="/33-day-express" className="text-body-secondary hover:text-clay transition-colors">33-Day Express</Link></li>
               </ul>
             </div>
             <div>

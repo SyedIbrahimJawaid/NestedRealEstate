@@ -5,7 +5,7 @@ import LeadForm from "@/components/LeadForm";
 import { IconMovingBox, IconBabyStroller, IconCalendar } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Sell & Upgrade — Move Into the Home Your Family Needs",
+  title: "Sell & Upgrade: Move Into the Home Your Family Needs",
   description:
     "Your family grew. Your home didn't. We help families in Southern California sell their current home and move into the right one with a clear plan.",
   keywords: ["sell and buy home same time california", "upgrade to bigger home with kids", "sell home because too small"],
@@ -50,7 +50,7 @@ const timeline = [
       "Move planning and logistics support",
       "Connect with partners for family-ready upgrades",
       "Baby-safe preparations in new home",
-      "You focus on family — we handle the rest",
+      "You focus on family, we handle the rest",
     ],
   },
 ];
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: "What if my home doesn't sell fast enough?",
-    a: "We prepare for this. Our plan includes contingency strategies — bridge financing, extended occupancy, or timeline adjustments — so you're never caught off guard.",
+    a: "We prepare for this. Our plan includes contingency strategies like bridge financing, extended occupancy, or timeline adjustments so you're never caught off guard.",
   },
   {
     q: "Do I need to renovate before selling?",
@@ -232,7 +232,7 @@ export default function SellAndUpgradePage() {
                 timeline, budget, and comfort.
               </p>
               <p className="text-body-secondary leading-relaxed">
-                Whether you need to sell first, buy first, or do both simultaneously — we&apos;ve got a plan for that.
+                Whether you need to sell first, buy first, or do both simultaneously, we&apos;ve got a plan for that.
               </p>
             </div>
             <LeadForm variant="sidebar" ctaLabel="Create My Sell & Upgrade Plan" />

@@ -5,11 +5,11 @@ import LeadForm from "@/components/LeadForm";
 import { IconCalendar, IconChecklist, IconSafetyGate, IconExpressBoundary, IconSpeedBoundary, IconNoPermitBoundary, IconHonestBoundary } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "33-Day Express — Accelerated Home Buying for Families",
+  title: "33-Day Express: Accelerated Home Buying for Families",
   description:
-    "A calm plan — even when time is tight. In qualified situations, we coordinate an accelerated path to secure the right home in as few as 33 days.",
+    "A calm plan when time is tight. In qualified situations, we coordinate an accelerated path to secure the right home in as few as 33 days.",
   keywords: ["fast home buying california", "move before due date", "accelerated closing", "time-sensitive move"],
-  alternates: { canonical: "https://babyhomeplan.com/45-day-express" },
+  alternates: { canonical: "https://babyhomeplan.com/33-day-express" },
 };
 
 const qualifications = [
@@ -29,7 +29,7 @@ const expressTimeline = [
   {
     day: "Day 5–10",
     title: "Intensive Search",
-    description: "Focused showing schedule. We pre-screen homes so you only visit strong candidates. Daily communication on new listings.",
+    description: "Focused showing schedule. We pre-screen homes so you only visit strong candidates. Routine communication on available listings.",
   },
   {
     day: "Day 10–15",
@@ -39,12 +39,12 @@ const expressTimeline = [
   {
     day: "Day 15–28",
     title: "Escrow & Coordination",
-    description: "Inspections, appraisal, and loan processing — all coordinated tightly. We manage every deadline so nothing slips.",
+    description: "Inspections, appraisal, and loan processing all coordinated tightly. We manage every deadline so nothing slips.",
   },
   {
     day: "Day 28–33",
     title: "Close & Prepare",
-    description: "Final walkthrough, closing, keys. We immediately connect you with partners for any family-ready preparations needed.",
+    description: "Final walkthrough, closing paperwork, key handover. Celebrate!",
   },
 ];
 
@@ -55,7 +55,7 @@ const boundaries = [
   },
   {
     title: "Speed ≠ carelessness",
-    description: "We accelerate the process, not cut corners. Inspections, due diligence, and negotiation still happen — just on a compressed schedule.",
+    description: "We accelerate the process, not cut corners. Inspections, due diligence, and negotiation still happen, just on a compressed schedule.",
   },
   {
     title: "No permit-heavy work included",
@@ -83,7 +83,7 @@ export default function ExpressPage() {
               Calm &amp; professional
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
-              A calm plan — <span className="italic">even when time is tight.</span>
+              A calm plan, even when time is tight.
             </h1>
             <p className="text-xl text-white/85 leading-relaxed mb-8 max-w-2xl">
               In qualified situations, we coordinate an accelerated path to secure the right home and
@@ -108,7 +108,7 @@ export default function ExpressPage() {
                 Is Express Right for You?
               </h2>
               <p className="text-body-secondary text-lg leading-relaxed mb-8">
-                The 33-Day Express pathway is designed for families who need to move quickly —
+                The 33-Day Express pathway is designed for families who need to move quickly,
                 often because of a pregnancy, a lease ending, or a sudden life change. But speed only
                 works when the fundamentals are in place.
               </p>
@@ -155,7 +155,7 @@ export default function ExpressPage() {
         <div className="container-max px-4 sm:px-6 lg:px-8 py-6">
           <p className="text-sm text-body-secondary text-center">
             Related guides:{" "}
-            <Link href="/resources/45-day-plan" className="text-clay hover:underline">The 33-Day Plan Explained</Link>
+            <Link href="/resources/33-day-plan" className="text-clay hover:underline">The 33-Day Plan Explained</Link>
             {" · "}
             <Link href="/resources/buying-while-pregnant" className="text-clay hover:underline">Buying While Pregnant</Link>
             {" · "}
@@ -241,7 +241,7 @@ export default function ExpressPage() {
                 Check Your Express Eligibility
               </h2>
               <p className="text-body-secondary text-lg leading-relaxed mb-6">
-                If time is the constraint, clarity is the advantage. Share a few details and we&apos;ll tell you if the Express timeline (up to 33 days) is realistic for your situation—without cutting corners.
+                If time is the constraint, clarity is the advantage. Share a few details and we&apos;ll tell you if the Express timeline (up to 33 days) is realistic for your situation without cutting corners.
               </p>
               <p className="text-body-secondary text-lg leading-relaxed mb-8">
                 If Express isn&apos;t the best fit, we&apos;ll recommend the smartest timeline for your family.
