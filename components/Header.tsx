@@ -23,7 +23,8 @@ export default function Header() {
           <img
             src="/images/logo.png"
             alt="BabyHomePlan.com - Creating Homes for Growing Families"
-            className="h-12 w-auto md:h-14 object-contain"
+            className="h-15 w-auto md:h-19 object-contain"
+            style={{ maxHeight: '80px', width: 'auto' }}
             loading="eager"
             decoding="async"
           />

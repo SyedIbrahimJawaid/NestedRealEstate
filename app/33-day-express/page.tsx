@@ -22,29 +22,29 @@ const qualifications = [
 
 const expressTimeline = [
   {
-    day: "Day 1–5",
-    title: "Qualification & Strategy",
-    description: "We assess your readiness, confirm financing, define must-haves vs nice-to-haves, and build your accelerated search plan.",
+    day: "Day 1-3",
+    title: "Buyers Strategy",
+    description: "We assess your readiness, confirm financing, define must-haves vs nice-to-haves, and build your tailored search plan.",
   },
   {
-    day: "Day 5–10",
+    day: "Day 3-15",
     title: "Intensive Search",
     description: "Focused showing schedule. We pre-screen homes so you only visit strong candidates. Routine communication on available listings.",
   },
   {
-    day: "Day 10–15",
+    day: "Day 15-20",
     title: "Offer & Negotiation",
     description: "Strategic offer positioning. We negotiate terms, timeline, and contingencies optimized for speed without sacrificing protection.",
   },
   {
-    day: "Day 15–28",
+    day: "Day 20-33",
     title: "Escrow & Coordination",
     description: "Inspections, appraisal, and loan processing all coordinated tightly. We manage every deadline so nothing slips.",
   },
   {
-    day: "Day 28–33",
-    title: "Close & Prepare",
-    description: "Final walkthrough, closing paperwork, key handover. Celebrate!",
+    day: "Day 33",
+    title: "Closing",
+    description: "Final walkthrough, closing paperwork, key handover, celebrate.",
   },
 ];
 
@@ -174,7 +174,7 @@ export default function ExpressPage() {
               <IconCalendar className="w-10 h-10" />
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-primary mb-4">
-              The Express Timeline
+              Buyers Discovery
             </h2>
             <p className="text-body-secondary text-lg max-w-2xl">
               Every day is planned. Every step is coordinated. Here&apos;s how the 33 days break down.
