@@ -66,6 +66,7 @@ function buildChecklistFallback(cityName: string) {
         "School assignments are address-based and can change. We verify boundaries and enrollment options before you decide.",
         "We prioritize clarity and avoid rankings unless a source is provided.",
       ],
+      sources: undefined,
     },
     commute: {
       notes: [
@@ -169,7 +170,7 @@ export default function CityPageTemplate({
                   </p>
                 ))}
               </div>
-              {'sources' in checklist.schools && checklist.schools.sources && checklist.schools.sources.length > 0 && (
+              {checklist.schools.sources && checklist.schools.sources.length > 0 && (
                 <div className="mt-4">
                   <p className="text-sm font-semibold text-primary mb-2 font-sans">Sources</p>
                   <ul className="space-y-1.5">
