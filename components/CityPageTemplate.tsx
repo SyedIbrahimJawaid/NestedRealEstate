@@ -170,25 +170,33 @@ export default function CityPageTemplate({
                   </p>
                 ))}
               </div>
-              {checklist.schools.sources && checklist.schools.sources.length > 0 && (
-                <div className="mt-4">
-                  <p className="text-sm font-semibold text-primary mb-2 font-sans">Sources</p>
-                  <ul className="space-y-1.5">
-                    {checklist.schools.sources.map((source) => (
-                      <li key={source.url}>
-                        <a
-                          href={source.url}
-                          className="text-sm text-body-secondary hover:text-clay transition-colors"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {source.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {(() => {
+                if ('sources' in checklist.schools) {
+                  const sources = checklist.schools.sources;
+                  if (sources && sources.length > 0) {
+                    return (
+                      <div className="mt-4">
+                        <p className="text-sm font-semibold text-primary mb-2 font-sans">Sources</p>
+                        <ul className="space-y-1.5">
+                          {sources.map((source) => (
+                            <li key={source.url}>
+                              <a
+                                href={source.url}
+                                className="text-sm text-body-secondary hover:text-clay transition-colors"
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                {source.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  }
+                }
+                return null;
+              })()}
             </div>
 
             <div>
