@@ -169,7 +169,7 @@ export default function CityPageTemplate({
                   </p>
                 ))}
               </div>
-              {checklist.schools.sources && checklist.schools.sources.length > 0 && (
+              {'sources' in checklist.schools && checklist.schools.sources && checklist.schools.sources.length > 0 && (
                 <div className="mt-4">
                   <p className="text-sm font-semibold text-primary mb-2 font-sans">Sources</p>
                   <ul className="space-y-1.5">
