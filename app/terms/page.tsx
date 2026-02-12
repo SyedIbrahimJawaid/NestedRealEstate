@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "BabyHomePlan.com terms of service. Rules and guidelines for using our website and services.",
-  alternates: { canonical: "https://babyhomeplan.com/terms" },
+  description: "BabyHomePlan terms of service. Rules and guidelines for using our website and services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

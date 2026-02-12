@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     "relocating before baby arrives",
     "family moving checklist southern california",
   ],
-  alternates: { canonical: "https://babyhomeplan.com/resources/moving-before-baby" },
+  alternates: { canonical: "/resources/moving-before-baby" },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const weekOneTwo = [
   {
@@ -493,18 +495,10 @@ export default function MovingBeforeBabyPage() {
             headline: "Moving Before Baby: A Calm 30-Day Checklist",
             description:
               "A practical 30-day checklist for families moving before a baby arrives in Southern California. Week-by-week planning, packing tips, logistics, and settling-in guidance.",
-            author: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-              url: "https://babyhomeplan.com",
-            },
+            dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://babyhomeplan.com/resources/moving-before-baby",
+              "@id": new URL("/resources/moving-before-baby", siteUrl).toString(),
             },
           }),
         }}

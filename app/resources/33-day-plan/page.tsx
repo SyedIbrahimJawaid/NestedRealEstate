@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     "buy home before baby arrives",
     "express home buying process",
   ],
-  alternates: { canonical: "https://babyhomeplan.com/resources/33-day-plan" },
+  alternates: { canonical: "/resources/33-day-plan" },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const dayByDay = [
   {
@@ -441,18 +443,10 @@ export default function ThirtyThreeDayPlanPage() {
             headline: "The 33-Day Plan: What Must Be True & What We Coordinate",
             description:
               "A detailed breakdown of the 33-day express home buying pathway — who qualifies, the day-by-day process, what BabyHomePlan coordinates, and honest boundaries.",
-            author: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-              url: "https://babyhomeplan.com",
-            },
+            dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://babyhomeplan.com/resources/33-day-plan",
+              "@id": new URL("/resources/33-day-plan", siteUrl).toString(),
             },
           }),
         }}

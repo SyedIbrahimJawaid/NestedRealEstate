@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Your family grew. Your home didn't. We help families in Southern California sell their current home and move into the right one with a clear plan.",
   keywords: ["sell and buy home same time california", "upgrade to bigger home with kids", "sell home because too small"],
-  alternates: { canonical: "https://babyhomeplan.com/sell-and-upgrade" },
+  alternates: { canonical: "/sell-and-upgrade" },
 };
 
 const timeline = [
@@ -267,7 +267,7 @@ export default function SellAndUpgradePage() {
             description: "Coordinated home selling and buying service for growing families in Southern California.",
             provider: {
               "@type": "RealEstateAgent",
-              name: "BabyHomePlan.com",
+              name: "BabyHomePlan",
             },
             areaServed: [
               { "@type": "County", name: "San Diego County, CA" },

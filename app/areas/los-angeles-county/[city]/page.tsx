@@ -7,6 +7,7 @@ import { qualityScore, robotsDirective } from "@/lib/qualityGate";
 import CityPageTemplate from "@/components/CityPageTemplate";
 
 const COUNTY_SLUG = "los-angeles-county";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 interface PageProps {
   params: Promise<{ city: string }>;
@@ -22,7 +23,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!row) return {};
 
   const content = await getStoredContent(COUNTY_SLUG, citySlug);
-  const title = content?.metaTitle ?? row.primary_keyword;
+  let title = content?.metaTitle ?? row.primary_keyword;
+  // Avoid double-appending the site name: strip trailing "| BabyHomePlan" if present
+  title = title.replace(/\s*\|\s*BabyHomePlan$/i, "");
   const description =
     content?.metaDescription ??
     `Family-focused real estate guidance in ${row.city}. Find family-friendly neighborhoods, schools, and homes.`;
@@ -36,15 +39,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       })
     : 80;
 
+  // Respect explicit index setting on the city row when present
+  const robots = row.index === "index" ? ("index,follow" as const) : robotsDirective(score);
+
   return {
     title,
     description,
-    robots: robotsDirective(score),
-    alternates: { canonical: `https://babyhomeplan.com${row.url}` },
+    robots,
+    alternates: { canonical: row.url },
     openGraph: {
       title,
       description,
-      url: `https://babyhomeplan.com${row.url}`,
+      url: new URL(row.url, siteUrl).toString(),
     },
   };
 }

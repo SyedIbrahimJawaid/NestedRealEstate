@@ -1,7 +1,7 @@
 // sitemap-areas.xml — county hubs + indexed city pages only
 import { getIndexedCities } from "@/lib/cityData";
 
-const base = "https://babyhomeplan.com";
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const countyHubs = [
   "/areas/san-diego-county",

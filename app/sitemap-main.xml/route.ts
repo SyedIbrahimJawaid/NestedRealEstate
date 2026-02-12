@@ -1,5 +1,5 @@
 // sitemap-main.xml — core / service / legal pages
-const base = "https://babyhomeplan.com";
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const mainPages = [
   { path: "/", priority: "1.0", changefreq: "weekly" },

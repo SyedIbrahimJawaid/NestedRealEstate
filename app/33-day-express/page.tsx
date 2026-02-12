@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "A calm plan when time is tight. In qualified situations, we coordinate an accelerated path to secure the right home in as few as 33 days.",
   keywords: ["fast home buying california", "move before due date", "accelerated closing", "time-sensitive move"],
-  alternates: { canonical: "https://babyhomeplan.com/33-day-express" },
+  alternates: { canonical: "/33-day-express" },
 };
 
 const qualifications = [
@@ -297,7 +297,7 @@ export default function ExpressPage() {
             description: "Accelerated home buying pathway for qualified families needing to move quickly in Southern California.",
             provider: {
               "@type": "RealEstateAgent",
-              name: "BabyHomePlan.com",
+              name: "BabyHomePlan",
             },
             areaServed: [
               { "@type": "County", name: "San Diego County, CA" },

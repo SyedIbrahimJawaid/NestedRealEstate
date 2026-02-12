@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     "prepare home for baby california",
     "new home baby ready checklist",
   ],
-  alternates: { canonical: "https://babyhomeplan.com/resources/baby-ready-upgrades" },
+  alternates: { canonical: "/resources/baby-ready-upgrades" },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const roomChecklist = [
   {
@@ -470,18 +472,10 @@ export default function BabyReadyUpgradesPage() {
             headline: "Baby-Ready Upgrades After Closing: Safe, Quick Wins",
             description:
               "A practical room-by-room guide for new homeowners preparing their home for a baby — nursery setup, safety upgrades, air quality, storage, and contractor coordination.",
-            author: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-              url: "https://babyhomeplan.com",
-            },
+            dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://babyhomeplan.com/resources/baby-ready-upgrades",
+              "@id": new URL("/resources/baby-ready-upgrades", siteUrl).toString(),
             },
           }),
         }}

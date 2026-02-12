@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Get Started — Create Your Family Home Plan",
   description:
     "Tell us about your family and we'll create a personalized home plan. Whether buying, selling, or both — we'll guide you with clarity and care.",
-  alternates: { canonical: "https://babyhomeplan.com/get-started" },
+  alternates: { canonical: "/get-started" },
 };
 
 export default function GetStartedPage() {

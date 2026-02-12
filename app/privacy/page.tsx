@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "BabyHomePlan.com privacy policy. How we collect, use, and protect your personal information.",
-  alternates: { canonical: "https://babyhomeplan.com/privacy" },
+  description: "BabyHomePlan privacy policy. How we collect, use, and protect your personal information.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

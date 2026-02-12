@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     "family home buying guide california",
     "first home for growing family southern california",
   ],
-  alternates: { canonical: "https://babyhomeplan.com/resources/first-time-buyer-family" },
+  alternates: { canonical: "/resources/first-time-buyer-family" },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const topMistakes = [
   {
@@ -417,9 +419,8 @@ export default function FirstTimeBuyerFamilyPage() {
             "@type": "Article",
             headline: "First-Time Buyer Family Edition: Avoid Common Mistakes",
             description: "A guide for first-time home buyers who are also starting or growing a family in Southern California.",
-            author: { "@type": "Organization", name: "BabyHomePlan.com", url: "https://babyhomeplan.com" },
-            publisher: { "@type": "Organization", name: "BabyHomePlan.com", url: "https://babyhomeplan.com" },
-            mainEntityOfPage: { "@type": "WebPage", "@id": "https://babyhomeplan.com/resources/first-time-buyer-family" },
+            dateModified: new Date().toISOString(),
+            mainEntityOfPage: { "@type": "WebPage", "@id": new URL("/resources/first-time-buyer-family", siteUrl).toString() },
           }),
         }}
       />

@@ -1,5 +1,5 @@
 // sitemap-guides.xml — scenario / resource pages
-const base = "https://babyhomeplan.com";
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const guidePages = [
   "/resources/moving-before-baby",

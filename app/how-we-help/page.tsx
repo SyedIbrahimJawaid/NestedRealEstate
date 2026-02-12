@@ -16,8 +16,8 @@ import {
 export const metadata: Metadata = {
   title: "How We Help — Family-Focused Real Estate",
   description:
-    "Learn how BabyHomePlan.com helps growing families in Southern California find, sell, and prepare the right home with a calm, coordinated plan.",
-  alternates: { canonical: "https://babyhomeplan.com/how-we-help" },
+    "Learn how BabyHomePlan helps growing families in Southern California find, sell, and prepare the right home with a calm, coordinated plan.",
+  alternates: { canonical: "/how-we-help" },
 };
 
 const processSteps = [

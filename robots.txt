@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: babyhomeplan.com
+Sitemap: https://babyhomeplan.com/sitemap.xml

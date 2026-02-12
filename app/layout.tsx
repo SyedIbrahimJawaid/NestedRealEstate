@@ -3,9 +3,12 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "BabyHomePlan.com: Creating Homes for Growing Families",
+    default: "BabyHomePlan: Creating Homes for Growing Families",
     template: "%s | BabyHomePlan",
   },
   description:
@@ -22,8 +25,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "BabyHomePlan.com",
-    title: "BabyHomePlan.com: Creating Homes for Growing Families",
+    siteName: "BabyHomePlan",
+    title: "BabyHomePlan: Creating Homes for Growing Families",
     description:
       "We help growing families in Southern California find, sell, and prepare the right home.",
   },
@@ -48,7 +51,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
-              name: "BabyHomePlan.com",
+              name: "BabyHomePlan",
+              url: siteUrl,
               description:
                 "Creating homes for growing families. Family-focused real estate agency serving Southern California. We help growing families find, sell, and prepare the right home.",
               areaServed: [

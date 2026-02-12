@@ -3,12 +3,14 @@ import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import AreaPageTracker from "@/components/AreaPageTracker";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+
 export const metadata: Metadata = {
   title: "Family-Friendly Homes in Los Angeles County",
   description:
-    "Find family-friendly homes in Los Angeles County. BabyHomePlan.com helps growing families discover the best neighborhoods, schools, and communities in LA.",
+    "Find family-friendly homes in Los Angeles County. BabyHomePlan helps growing families discover the best neighborhoods, schools, and communities in LA.",
   keywords: ["family-friendly homes los angeles county", "buyer agent los angeles", "best family areas los angeles"],
-  alternates: { canonical: "https://babyhomeplan.com/areas/los-angeles-county" },
+  alternates: { canonical: "/areas/los-angeles-county" },
 };
 
 const cities = [
@@ -221,8 +223,8 @@ export default function LosAngelesPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Areas", item: "https://babyhomeplan.com/areas" },
-              { "@type": "ListItem", position: 2, name: "Los Angeles County", item: "https://babyhomeplan.com/areas/los-angeles-county" },
+              { "@type": "ListItem", position: 1, name: "Areas", item: new URL("/areas", siteUrl).toString() },
+              { "@type": "ListItem", position: 2, name: "Los Angeles County", item: new URL("/areas/los-angeles-county", siteUrl).toString() },
             ],
           }),
         }}

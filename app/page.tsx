@@ -4,11 +4,13 @@ import LeadForm from "@/components/LeadForm";
 import FaqAccordion from "@/components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "BabyHomePlan.com: Creating Homes for Growing Families",
+  title: "BabyHomePlan: Creating Homes for Growing Families",
   description:
     "We help growing families in Southern California find, sell, and prepare the right home so you can focus on your health, your baby, and what really matters.",
-  alternates: { canonical: "https://babyhomeplan.com/" },
+  alternates: { canonical: "/" },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                               */
@@ -270,8 +272,8 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   name: "BabyHomePlan",
-  url: "https://babyhomeplan.com/",
-  logo: "https://babyhomeplan.com/images/logo.png",
+  url: new URL("/", siteUrl).toString(),
+  logo: new URL("/images/logo.png", siteUrl).toString(),
   description:
     "Family-focused real estate agency serving Southern California. Helping growing families buy, sell, and prepare homes with a calm, coordinated approach.",
   areaServed: [
@@ -279,20 +281,6 @@ const orgJsonLd = {
     { "@type": "AdministrativeArea", name: "Orange County, CA" },
     { "@type": "AdministrativeArea", name: "Los Angeles County, CA" },
   ],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      email: "hello@babyhomeplan.com",
-      availableLanguage: ["en"],
-    },
-  ],
-  identifier: {
-    "@type": "PropertyValue",
-    propertyID: "CA DRE License",
-    value: "XXXXXXXX",
-  },
-  sameAs: [],
 };
 
 const faqJsonLd = {

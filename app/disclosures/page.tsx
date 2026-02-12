@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Disclosures",
-  description: "BabyHomePlan.com brokerage disclosures and licensing information for Southern California.",
-  alternates: { canonical: "https://babyhomeplan.com/disclosures" },
+  description: "BabyHomePlan brokerage disclosures and licensing information for Southern California.",
+  alternates: { canonical: "/disclosures" },
 };
 
 export default function DisclosuresPage() {

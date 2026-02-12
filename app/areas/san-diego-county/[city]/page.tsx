@@ -7,6 +7,7 @@ import { qualityScore, robotsDirective } from "@/lib/qualityGate";
 import CityPageTemplate from "@/components/CityPageTemplate";
 
 const COUNTY_SLUG = "san-diego-county";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 interface PageProps {
   params: Promise<{ city: string }>;
@@ -40,11 +41,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     robots: robotsDirective(score),
-    alternates: { canonical: `https://babyhomeplan.com${row.url}` },
+    alternates: { canonical: row.url },
     openGraph: {
       title,
       description,
-      url: `https://babyhomeplan.com${row.url}`,
+      url: new URL(row.url, siteUrl).toString(),
     },
   };
 }

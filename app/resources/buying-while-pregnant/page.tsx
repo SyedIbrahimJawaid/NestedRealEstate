@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Buying While Pregnant in California: Realistic Timeline & Steps",
   description:
-    "A trimester-by-trimester guide for families buying a home during pregnancy in Southern California. Timeline planning, financial prep, and practical tips from BabyHomePlan.com.",
+    "A trimester-by-trimester guide for families buying a home during pregnancy in Southern California. Timeline planning, financial prep, and practical tips from BabyHomePlan.",
   keywords: [
     "buying a house while pregnant california",
     "home buying during pregnancy timeline",
@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     "buy home before baby arrives",
     "family home buying guide southern california",
   ],
-  alternates: { canonical: "https://babyhomeplan.com/resources/buying-while-pregnant" },
+  alternates: { canonical: "/resources/buying-while-pregnant" },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const trimesterTimeline = [
   {
@@ -361,19 +363,10 @@ export default function BuyingWhilePregnantPage() {
             headline: "Buying While Pregnant in California: Realistic Timeline & Steps",
             description:
               "A trimester-by-trimester guide for families buying a home during pregnancy in Southern California.",
-            author: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-              url: "https://babyhomeplan.com",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-              url: "https://babyhomeplan.com",
-            },
+            dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://babyhomeplan.com/resources/buying-while-pregnant",
+              "@id": new URL("/resources/buying-while-pregnant", siteUrl).toString(),
             },
           }),
         }}

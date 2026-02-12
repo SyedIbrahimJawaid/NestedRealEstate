@@ -3,12 +3,14 @@ import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import AreaPageTracker from "@/components/AreaPageTracker";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+
 export const metadata: Metadata = {
   title: "Family-Friendly Homes in San Diego County",
   description:
-    "Find family-friendly homes in San Diego County. BabyHomePlan.com helps growing families discover the best neighborhoods, schools, and communities in San Diego.",
+    "Find family-friendly homes in San Diego County. BabyHomePlan helps growing families discover the best neighborhoods, schools, and communities in San Diego.",
   keywords: ["family-friendly homes san diego county", "buyer agent san diego", "best family areas san diego"],
-  alternates: { canonical: "https://babyhomeplan.com/areas/san-diego-county" },
+  alternates: { canonical: "/areas/san-diego-county" },
 };
 
 const cities = [
@@ -230,8 +232,8 @@ export default function SanDiegoPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Areas", item: "https://babyhomeplan.com/areas" },
-              { "@type": "ListItem", position: 2, name: "San Diego County", item: "https://babyhomeplan.com/areas/san-diego-county" },
+              { "@type": "ListItem", position: 1, name: "Areas", item: new URL("/areas", siteUrl).toString() },
+              { "@type": "ListItem", position: 2, name: "San Diego County", item: new URL("/areas/san-diego-county", siteUrl).toString() },
             ],
           }),
         }}

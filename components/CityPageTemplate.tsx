@@ -4,6 +4,8 @@ import AreaPageTracker from "@/components/AreaPageTracker";
 import type { CityContent } from "@/lib/contentStore";
 import type { CityRow } from "@/lib/cityData";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+
 interface CityPageProps {
   city: CityRow;
   content: CityContent;
@@ -221,9 +223,9 @@ export default function CityPageTemplate({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Areas", item: "https://babyhomeplan.com/areas" },
-              { "@type": "ListItem", position: 2, name: countyName, item: `https://babyhomeplan.com/areas/${city.county_slug}` },
-              { "@type": "ListItem", position: 3, name: city.city, item: `https://babyhomeplan.com${city.url}` },
+              { "@type": "ListItem", position: 1, name: "Areas", item: new URL("/areas", siteUrl).toString() },
+              { "@type": "ListItem", position: 2, name: countyName, item: new URL(`/areas/${city.county_slug}`, siteUrl).toString() },
+              { "@type": "ListItem", position: 3, name: city.city, item: new URL(city.url, siteUrl).toString() },
             ],
           }),
         }}

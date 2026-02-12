@@ -7,9 +7,9 @@ import { IconKey, IconHouse, IconChecklist, IconShield, IconCalendar, IconMapPin
 export const metadata: Metadata = {
   title: "Buy a Family Home in Southern California",
   description:
-    "Find the perfect family home in San Diego, Orange County, or Los Angeles. BabyHomePlan.com helps growing families buy with confidence and a clear plan.",
+    "Find the perfect family home in San Diego, Orange County, or Los Angeles. BabyHomePlan helps growing families buy with confidence and a clear plan.",
   keywords: ["family buyer agent southern california", "buy family home san diego", "buyer agent orange county"],
-  alternates: { canonical: "https://babyhomeplan.com/buy" },
+  alternates: { canonical: "/buy" },
 };
 
 const benefits = [
@@ -197,7 +197,7 @@ export default function BuyPage() {
             description: "Family-focused buyer representation in Southern California. We help growing families find the right home with a calm, coordinated plan.",
             provider: {
               "@type": "RealEstateAgent",
-              name: "BabyHomePlan.com",
+              name: "BabyHomePlan",
             },
             areaServed: [
               { "@type": "County", name: "San Diego County, CA" },

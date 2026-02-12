@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+
 export const metadata: Metadata = {
   title: "Areas We Serve — Southern California Family Neighborhoods",
   description:
-    "Explore family-friendly neighborhoods in San Diego, Orange County, and Los Angeles. BabyHomePlan.com helps growing families find the right community.",
-  alternates: { canonical: "https://babyhomeplan.com/areas" },
+    "Explore family-friendly neighborhoods in San Diego, Orange County, and Los Angeles. BabyHomePlan helps growing families find the right community.",
+  alternates: { canonical: "/areas" },
 };
 
 const counties = [
@@ -140,6 +142,20 @@ export default function AreasPage() {
           </Link>
         </div>
       </section>
+
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Areas", item: new URL("/areas", siteUrl).toString() },
+            ],
+          }),
+        }}
+      />
     </>
   );
 }

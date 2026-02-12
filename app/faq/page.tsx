@@ -4,8 +4,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Common questions about buying, selling, and upgrading homes for growing families in Southern California. BabyHomePlan.com FAQ.",
-  alternates: { canonical: "https://babyhomeplan.com/faq" },
+    "Common questions about buying, selling, and upgrading homes for growing families in Southern California. BabyHomePlan FAQ.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqCategories = [

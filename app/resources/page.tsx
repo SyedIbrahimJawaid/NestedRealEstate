@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Resources: Guides for Growing Families",
   description:
     "Helpful guides, articles, and tips for growing families navigating real estate in Southern California.",
-  alternates: { canonical: "https://babyhomeplan.com/resources" },
+  alternates: { canonical: "/resources" },
 };
 
 const articles = [

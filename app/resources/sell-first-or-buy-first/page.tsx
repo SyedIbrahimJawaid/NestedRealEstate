@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     "bridge loan california real estate",
     "sell and buy home at same time",
   ],
-  alternates: { canonical: "https://babyhomeplan.com/resources/sell-first-or-buy-first" },
+  alternates: { canonical: "/resources/sell-first-or-buy-first" },
 };
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 const sellFirstPros = [
   {
@@ -534,18 +536,10 @@ export default function SellFirstOrBuyFirstPage() {
             headline: "Sell First or Buy First? A Decision Framework for Families",
             description:
               "Help your growing family decide whether to sell your current home before buying or buy first.",
-            author: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "BabyHomePlan.com",
-              url: "https://babyhomeplan.com",
-            },
+            dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://babyhomeplan.com/resources/sell-first-or-buy-first",
+              "@id": new URL("/resources/sell-first-or-buy-first", siteUrl).toString(),
             },
           }),
         }}
