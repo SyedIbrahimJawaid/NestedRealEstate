@@ -201,7 +201,7 @@ export default function CityPageTemplate({
                 <p className="text-body-secondary text-lg leading-relaxed">
                   Major corridors: {checklist.commute.corridors.join(", ")}
                 </p>
-                {checklist.commute.transit && checklist.commute.transit.length > 0 && (
+                {'transit' in checklist.commute && checklist.commute.transit && checklist.commute.transit.length > 0 && (
                   <p className="text-body-secondary text-lg leading-relaxed">
                     Transit options: {checklist.commute.transit.join(", ")}
                   </p>
@@ -217,17 +217,17 @@ export default function CityPageTemplate({
                     {note}
                   </p>
                 ))}
-                {checklist.amenities.parks && checklist.amenities.parks.length > 0 && (
+                {'parks' in checklist.amenities && checklist.amenities.parks && checklist.amenities.parks.length > 0 && (
                   <p className="text-body-secondary text-lg leading-relaxed">
                     Parks and recreation: {checklist.amenities.parks.join(", ")}
                   </p>
                 )}
-                {checklist.amenities.hospitals && checklist.amenities.hospitals.length > 0 && (
+                {'hospitals' in checklist.amenities && checklist.amenities.hospitals && checklist.amenities.hospitals.length > 0 && (
                   <p className="text-body-secondary text-lg leading-relaxed">
                     Hospitals and care: {checklist.amenities.hospitals.join(", ")}
                   </p>
                 )}
-                {checklist.amenities.childcare && checklist.amenities.childcare.length > 0 && (
+                {'childcare' in checklist.amenities && checklist.amenities.childcare && checklist.amenities.childcare.length > 0 && (
                   <p className="text-body-secondary text-lg leading-relaxed">
                     Childcare density: {checklist.amenities.childcare.join(", ")}
                   </p>
