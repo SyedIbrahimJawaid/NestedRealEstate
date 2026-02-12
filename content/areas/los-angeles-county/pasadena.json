@@ -3,6 +3,51 @@
   "metaDescription": "A calm guide for families considering Pasadena, CA. Explore tree-lined neighborhoods, top schools, cultural richness, and why Pasadena is an LA County family gem.",
   "h1": "Family-Friendly Neighborhoods in Pasadena",
   "heroSubhead": "A calm plan for finding and preparing the right family home in Pasadena — from Craftsman bungalows to modern family homes in one of LA's most charming cities.",
+  "checklist": {
+    "neighborhoods": [
+      { "name": "Madison Heights", "fit": "Historic homes near downtown with a walkable feel." },
+      { "name": "Bungalow Heaven", "fit": "Craftsman homes and strong neighborhood character." },
+      { "name": "Hastings Ranch", "fit": "More space and foothill proximity with ranch-style homes." },
+      { "name": "Linda Vista", "fit": "Hillside homes and quieter residential streets." },
+      { "name": "San Rafael", "fit": "Larger lots and a more private feel." },
+      { "name": "Chapman Woods", "fit": "Upscale homes and wide streets with mature landscaping." },
+      { "name": "South Arroyo", "fit": "Trail access and historic architecture near the Arroyo." },
+      { "name": "East Pasadena", "fit": "Convenient access to freeways and shopping corridors." }
+    ],
+    "schools": {
+      "notes": [
+        "Pasadena Unified School District serves most of the city, and assignments are address-based.",
+        "Some addresses may fall into nearby districts, so verify boundary maps before you commit."
+      ],
+      "sources": [
+        { "label": "Pasadena Unified School District", "url": "https://pusd.us" }
+      ]
+    },
+    "commute": {
+      "notes": [
+        "Typical peak commute times to downtown Los Angeles often range roughly 25-60 minutes depending on traffic and route.",
+        "Local trips can be faster, but peak congestion is common on key freeways."
+      ],
+      "corridors": ["I-210", "SR-134", "SR-110"],
+      "transit": ["Metro A Line (formerly Gold Line)"]
+    },
+    "amenities": {
+      "notes": [
+        "Family amenities include parks, trails, libraries, and year-round cultural programming."
+      ],
+      "parks": ["Brookside Park", "Central Park", "Arroyo Seco trails"],
+      "hospitals": ["Regional hospitals and urgent care options in Pasadena and nearby"],
+      "childcare": ["Preschool and daycare options across the city; availability varies by neighborhood"]
+    },
+    "marketSnapshot": {
+      "asOf": "Feb 2026",
+      "notes": [
+        "Older housing stock means inspections can be more detailed, especially for systems and foundations.",
+        "Lot sizes and ADU potential vary widely by neighborhood.",
+        "Inventory is often tight in historic districts and near top schools."
+      ]
+    }
+  },
   "sections": [
     {
       "heading": "Why Families Choose Pasadena",

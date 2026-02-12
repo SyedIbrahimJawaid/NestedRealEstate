@@ -3,6 +3,51 @@
   "metaDescription": "A calm guide for families considering Carlsbad, CA. Explore neighborhoods, schools, parks, and what makes Carlsbad one of San Diego County's top family communities.",
   "h1": "Family-Friendly Neighborhoods in Carlsbad",
   "heroSubhead": "A calm plan for finding and preparing the right family home in Carlsbad — from coastal villages to planned communities.",
+  "checklist": {
+    "neighborhoods": [
+      { "name": "Bressi Ranch", "fit": "Planned community feel with parks, pools, and newer homes." },
+      { "name": "La Costa", "fit": "Resort-adjacent living with trails and family-friendly amenities." },
+      { "name": "Carlsbad Village", "fit": "Walkable coastal lifestyle with shops and beach access." },
+      { "name": "Aviara", "fit": "Upscale homes near the lagoon with scenic trails." },
+      { "name": "Calavera Hills", "fit": "Hillside neighborhoods with trail access and a quieter feel." },
+      { "name": "Rancho Carrillo", "fit": "Newer construction with community parks and a suburban layout." },
+      { "name": "Olde Carlsbad", "fit": "Established homes closer to downtown and local schools." }
+    ],
+    "schools": {
+      "notes": [
+        "Carlsbad Unified School District serves much of the city; some neighborhoods are in the San Dieguito Union High School District.",
+        "School assignments are address-based and can change, so verify boundaries before you write offers."
+      ],
+      "sources": [
+        { "label": "Carlsbad Unified School District", "url": "https://www.cusd.net" },
+        { "label": "San Dieguito Union High School District", "url": "https://www.sduhsd.net" }
+      ]
+    },
+    "commute": {
+      "notes": [
+        "Typical peak commute times to downtown San Diego often range roughly 40-70 minutes depending on route and time.",
+        "Traffic on key arterials can build during school and work rush periods."
+      ],
+      "corridors": ["I-5", "CA-78", "El Camino Real", "Palomar Airport Road"],
+      "transit": ["NCTD Coaster", "NCTD Breeze buses"]
+    },
+    "amenities": {
+      "notes": [
+        "Family amenities include coastal access, community parks, and youth sports programs across the city."
+      ],
+      "parks": ["Alga Norte Community Park", "Poinsettia Community Park", "Calavera Hills Community Park"],
+      "hospitals": ["Regional hospitals and pediatric urgent care options in North County"],
+      "childcare": ["Licensed daycare and preschool options across North County; availability varies by neighborhood"]
+    },
+    "marketSnapshot": {
+      "asOf": "Feb 2026",
+      "notes": [
+        "Pricing varies significantly by proximity to the coast and school zone.",
+        "HOA fees and any local assessments should be factored into monthly costs.",
+        "Inventory is seasonal; spring and early summer typically bring more listings."
+      ]
+    }
+  },
   "sections": [
     {
       "heading": "Why Families Choose Carlsbad",

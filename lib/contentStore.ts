@@ -12,6 +12,18 @@ export interface CityContent {
   heroSubhead: string;
   sections: { heading: string; body: string[] }[];
   faqs: { q: string; a: string }[];
+  checklist?: {
+    neighborhoods: { name: string; fit: string }[];
+    schools: { notes: string[]; sources?: { label: string; url: string }[] };
+    commute: { notes: string[]; corridors: string[]; transit?: string[] };
+    amenities: {
+      notes: string[];
+      parks?: string[];
+      hospitals?: string[];
+      childcare?: string[];
+    };
+    marketSnapshot: { asOf: string; notes: string[] };
+  };
   valueModules?: string[]; // e.g. ["checklist", "timeline"]
 }
 

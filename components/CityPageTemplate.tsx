@@ -13,12 +13,92 @@ interface CityPageProps {
   countyName: string;
 }
 
+const defaultFaqs = (cityName: string) => [
+  {
+    q: `Is ${cityName} a good place to raise a family?`,
+    a: `${cityName} offers a range of neighborhoods and housing types that can work well for families. We help you compare areas based on schools, commute patterns, and lifestyle priorities.`,
+  },
+  {
+    q: `What price range should we expect in ${cityName}?`,
+    a: `Pricing varies by neighborhood, home type, and condition. We provide a current market snapshot based on live listings and recent sales during your consultation.`,
+  },
+  {
+    q: `How competitive is the market in ${cityName}?`,
+    a: `Competition typically increases in top school zones and for move-in-ready homes. We help families set a strategy that balances speed, price, and inspections.`,
+  },
+  {
+    q: `Which neighborhoods fit our commute and school needs?`,
+    a: `School assignments and commute times vary by address. We map school boundaries and typical drive patterns before you tour homes.`,
+  },
+  {
+    q: `Do you help with buying and selling at the same time?`,
+    a: `Yes. We coordinate timing, financing, and temporary housing options so your move feels calm and predictable.`,
+  },
+  {
+    q: `What should we do first if we are relocating?`,
+    a: `Start with a quick needs assessment and a financing check. We can then narrow neighborhoods and set realistic timelines.`,
+  },
+];
+
+function normalizeFaqs(faqs: { q: string; a: string }[], cityName: string) {
+  const trimmed = faqs.slice(0, 8);
+  if (trimmed.length >= 5) return trimmed;
+
+  const additions = defaultFaqs(cityName).filter(
+    (item) => !trimmed.some((faq) => faq.q.toLowerCase() === item.q.toLowerCase())
+  );
+
+  return [...trimmed, ...additions].slice(0, 8);
+}
+
+function buildChecklistFallback(cityName: string) {
+  return {
+    neighborhoods: [
+      { name: "Family-focused pockets", fit: "Great for buyers prioritizing parks, schools, and community activities." },
+      { name: "Walkable mixed-use areas", fit: "Ideal for those who value cafes, shops, and short errands on foot." },
+      { name: "Quiet residential streets", fit: "Fits families seeking calmer blocks and lower through-traffic." },
+      { name: "Newer construction zones", fit: "Good for buyers who prefer modern layouts and lower maintenance." },
+      { name: "Larger-lot neighborhoods", fit: "Appeals to those who want yard space, storage, or home offices." },
+      { name: "Commute-friendly corridors", fit: "Best for households optimizing for freeway or transit access." },
+    ],
+    schools: {
+      notes: [
+        "School assignments are address-based and can change. We verify boundaries and enrollment options before you decide.",
+        "We prioritize clarity and avoid rankings unless a source is provided.",
+      ],
+    },
+    commute: {
+      notes: [
+        "Commute times vary by destination and time of day. We help you test drive times during peak windows.",
+      ],
+      corridors: ["Primary freeway and arterial corridors vary by neighborhood"],
+      transit: ["Regional rail and bus options vary by station and route"],
+    },
+    amenities: {
+      notes: [
+        "Family amenities typically include parks, recreation programs, libraries, and youth activities.",
+        "Healthcare and childcare availability vary by neighborhood and can be verified during your search.",
+      ],
+    },
+    marketSnapshot: {
+      asOf: "Feb 2026",
+      notes: [
+        "Pricing and inventory shift by season and neighborhood. We provide a live snapshot using current listings.",
+      ],
+    },
+  };
+}
+
 export default function CityPageTemplate({
   city,
   content,
   relatedCitySlugs,
   countyName,
 }: CityPageProps) {
+  const checklist = content.checklist ?? buildChecklistFallback(city.city);
+  const faqs = normalizeFaqs(content.faqs, city.city);
+  const isChecklistFallback = !content.checklist;
+
   return (
     <>
       <AreaPageTracker areaType="city" areaName={city.city} />
@@ -48,6 +128,126 @@ export default function CityPageTemplate({
             <Link href="/get-started" className="btn-primary text-lg">
               Find Homes in {city.city}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Quality Checklist Sections */}
+      <section className="section-padding bg-offwhite">
+        <div className="container-max max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-serif text-primary mb-6">
+            {city.city} Neighborhoods, Schools, and Market Snapshot
+          </h2>
+          {isChecklistFallback && (
+            <p className="text-body-secondary text-lg leading-relaxed mb-6">
+              This section provides a structured framework. For neighborhood-specific details and school boundaries,
+              we confirm the latest data during your consultation.
+            </p>
+          )}
+
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-2xl font-serif text-primary mb-4">
+                Neighborhoods (Who It Fits)
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {checklist.neighborhoods.slice(0, 10).map((n) => (
+                  <div key={n.name} className="bg-white border border-border rounded-xl p-5">
+                    <p className="font-semibold text-primary mb-2 font-sans">{n.name}</p>
+                    <p className="text-body-secondary leading-relaxed">{n.fit}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-serif text-primary mb-4">Schools</h3>
+              <div className="space-y-3">
+                {checklist.schools.notes.map((note) => (
+                  <p key={note} className="text-body-secondary text-lg leading-relaxed">
+                    {note}
+                  </p>
+                ))}
+              </div>
+              {checklist.schools.sources && checklist.schools.sources.length > 0 && (
+                <div className="mt-4">
+                  <p className="text-sm font-semibold text-primary mb-2 font-sans">Sources</p>
+                  <ul className="space-y-1.5">
+                    {checklist.schools.sources.map((source) => (
+                      <li key={source.url}>
+                        <a
+                          href={source.url}
+                          className="text-sm text-body-secondary hover:text-clay transition-colors"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {source.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-serif text-primary mb-4">Commute and Transit</h3>
+              <div className="space-y-3">
+                {checklist.commute.notes.map((note) => (
+                  <p key={note} className="text-body-secondary text-lg leading-relaxed">
+                    {note}
+                  </p>
+                ))}
+                <p className="text-body-secondary text-lg leading-relaxed">
+                  Major corridors: {checklist.commute.corridors.join(", ")}
+                </p>
+                {checklist.commute.transit && checklist.commute.transit.length > 0 && (
+                  <p className="text-body-secondary text-lg leading-relaxed">
+                    Transit options: {checklist.commute.transit.join(", ")}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-serif text-primary mb-4">Family Amenities</h3>
+              <div className="space-y-3">
+                {checklist.amenities.notes.map((note) => (
+                  <p key={note} className="text-body-secondary text-lg leading-relaxed">
+                    {note}
+                  </p>
+                ))}
+                {checklist.amenities.parks && checklist.amenities.parks.length > 0 && (
+                  <p className="text-body-secondary text-lg leading-relaxed">
+                    Parks and recreation: {checklist.amenities.parks.join(", ")}
+                  </p>
+                )}
+                {checklist.amenities.hospitals && checklist.amenities.hospitals.length > 0 && (
+                  <p className="text-body-secondary text-lg leading-relaxed">
+                    Hospitals and care: {checklist.amenities.hospitals.join(", ")}
+                  </p>
+                )}
+                {checklist.amenities.childcare && checklist.amenities.childcare.length > 0 && (
+                  <p className="text-body-secondary text-lg leading-relaxed">
+                    Childcare density: {checklist.amenities.childcare.join(", ")}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-serif text-primary mb-4">Market Snapshot</h3>
+              <p className="text-body-secondary text-lg leading-relaxed mb-3">
+                As of {checklist.marketSnapshot.asOf}
+              </p>
+              <div className="space-y-3">
+                {checklist.marketSnapshot.notes.map((note) => (
+                  <p key={note} className="text-body-secondary text-lg leading-relaxed">
+                    {note}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -135,14 +335,14 @@ export default function CityPageTemplate({
       </section>
 
       {/* FAQ */}
-      {content.faqs.length > 0 && (
+      {faqs.length > 0 && (
         <section className="section-padding bg-offwhite">
           <div className="container-max max-w-3xl">
             <h2 className="text-3xl font-serif text-primary mb-10 text-center">
               {city.city} FAQ
             </h2>
             <div className="space-y-6">
-              {content.faqs.map((faq) => (
+              {faqs.map((faq) => (
                 <div key={faq.q} className="border-b border-border pb-6">
                   <h3 className="text-lg font-semibold text-primary mb-2 font-sans">{faq.q}</h3>
                   <p className="text-body-secondary leading-relaxed">{faq.a}</p>
@@ -198,14 +398,14 @@ export default function CityPageTemplate({
       </section>
 
       {/* FAQ Schema */}
-      {content.faqs.length > 0 && (
+      {faqs.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: content.faqs.map((f) => ({
+              mainEntity: faqs.map((f) => ({
                 "@type": "Question",
                 name: f.q,
                 acceptedAnswer: { "@type": "Answer", text: f.a },

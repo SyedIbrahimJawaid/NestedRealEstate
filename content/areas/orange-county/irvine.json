@@ -3,6 +3,51 @@
   "metaDescription": "A calm guide for families considering Irvine, CA. Explore master-planned communities, top schools, parks, and why Irvine is Orange County's premier family city.",
   "h1": "Family-Friendly Neighborhoods in Irvine",
   "heroSubhead": "A calm plan for finding and preparing the right family home in Irvine — from Woodbury to Great Park, master-planned living at its best.",
+  "checklist": {
+    "neighborhoods": [
+      { "name": "Woodbury", "fit": "Popular for newer homes, parks, and schools close by." },
+      { "name": "Portola Springs", "fit": "Foothill setting with newer construction and trails." },
+      { "name": "Great Park", "fit": "Master-planned living near major recreation amenities." },
+      { "name": "Turtle Rock", "fit": "Established homes near foothills and mature landscaping." },
+      { "name": "Northwood", "fit": "Family-friendly streets with convenient freeway access." },
+      { "name": "Westpark", "fit": "Central location with a mix of condos and single-family homes." },
+      { "name": "Quail Hill", "fit": "Quieter enclave with open-space access." },
+      { "name": "Stonegate", "fit": "Newer neighborhood with community pools and trails." }
+    ],
+    "schools": {
+      "notes": [
+        "Irvine Unified School District serves most of the city, and assignments are address-based.",
+        "Verify boundaries and enrollment options before you finalize a home choice."
+      ],
+      "sources": [
+        { "label": "Irvine Unified School District", "url": "https://iusd.org" }
+      ]
+    },
+    "commute": {
+      "notes": [
+        "Typical peak commute times within central Orange County often range about 20-50 minutes; trips to Los Angeles can exceed 60 minutes depending on traffic.",
+        "Toll roads can reduce travel time for certain routes."
+      ],
+      "corridors": ["I-5", "I-405", "CA-133", "CA-241", "CA-261"],
+      "transit": ["Irvine Transportation Center (Metrolink and Amtrak)", "OCTA buses"]
+    },
+    "amenities": {
+      "notes": [
+        "Master-planned communities include parks, trails, pools, and community centers throughout the city."
+      ],
+      "parks": ["Orange County Great Park", "Jeffrey Open Space Trail"],
+      "hospitals": ["Regional hospitals and urgent care options in and around Irvine"],
+      "childcare": ["High density of licensed preschool and daycare options near village centers"]
+    },
+    "marketSnapshot": {
+      "asOf": "Feb 2026",
+      "notes": [
+        "Demand tends to be strongest in top school zones and newer communities.",
+        "HOA fees and Mello-Roos can materially change monthly costs.",
+        "Condos and townhomes often provide the entry point for many buyers."
+      ]
+    }
+  },
   "sections": [
     {
       "heading": "Why Families Choose Irvine",
