@@ -5,9 +5,9 @@ import LeadForm from "@/components/LeadForm";
 import { IconKey, IconHouse, IconChecklist, IconShield, IconCalendar, IconMapPin } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Buy a Family Home in Southern California",
+  title: "Family Buyer Agent in San Diego, Orange County & LA | BabyHomePlan",
   description:
-    "Find the perfect family home in San Diego, Orange County, or Los Angeles. BabyHomePlan helps growing families buy with confidence and a clear plan.",
+    "Family-focused buyer representation across San Diego, Orange County & LA. Strategy, negotiation, and a clear timeline built for growing families.",
   keywords: ["family buyer agent southern california", "buy family home san diego", "buyer agent orange county"],
   alternates: { canonical: "/buy" },
 };
@@ -193,16 +193,26 @@ export default function BuyPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
-            name: "Family Home Buying",
-            description: "Family-focused buyer representation in Southern California. We help growing families find the right home with a calm, coordinated plan.",
+            name: "Home Buying Representation",
             provider: {
               "@type": "RealEstateAgent",
               name: "BabyHomePlan",
             },
-            areaServed: [
-              { "@type": "County", name: "San Diego County, CA" },
-              { "@type": "County", name: "Orange County, CA" },
-              { "@type": "County", name: "Los Angeles County, CA" },
+            areaServed: ["San Diego County", "Orange County", "Los Angeles County"],
+          }),
+        }}
+      />
+
+      {/* BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://babyhomeplan.com/" },
+              { "@type": "ListItem", position: 2, name: "Buy", item: "https://babyhomeplan.com/buy" },
             ],
           }),
         }}

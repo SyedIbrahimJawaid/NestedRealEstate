@@ -83,8 +83,11 @@ export default function PrivacyPage() {
           <div>
             <h2 className="text-2xl font-serif text-primary mb-4">7. Contact Us</h2>
             <p className="text-body-secondary leading-relaxed">
-              For privacy-related questions or to exercise your rights, contact us at
-              privacy@readynest.com or through our intake form.
+              For privacy-related questions or to exercise your rights, contact us at{" "}
+              <a href={`mailto:${process.env.NEXT_PUBLIC_PRIVACY_EMAIL ?? "privacy@babyhomeplan.com"}`} className="text-clay hover:underline">
+                {process.env.NEXT_PUBLIC_PRIVACY_EMAIL ?? "privacy@babyhomeplan.com"}
+              </a>{" "}
+              or through our intake form.
             </p>
           </div>
         </div>

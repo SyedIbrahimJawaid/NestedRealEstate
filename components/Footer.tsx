@@ -103,7 +103,10 @@ export default function Footer() {
           </p>
           <p className="text-xs text-white/40 text-center max-w-xl">
             BabyHomePlan is a licensed real estate brokerage in the State of California.
-            DRE License #XXXXXXXX. All information is deemed reliable but not guaranteed.
+            {process.env.NEXT_PUBLIC_DRE_LICENSE && (
+              <> DRE License #{process.env.NEXT_PUBLIC_DRE_LICENSE}.</>
+            )}{" "}
+            All information is deemed reliable but not guaranteed.
           </p>
         </div>
       </div>

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/disclosures" },
 };
 
+const DRE_LICENSE = process.env.NEXT_PUBLIC_DRE_LICENSE ?? "XXXXXXXX";
+const BROKER_OF_RECORD = process.env.NEXT_PUBLIC_BROKER_OF_RECORD ?? "Broker Name";
+
 export default function DisclosuresPage() {
   return (
     <section className="section-padding bg-offwhite">
@@ -27,11 +30,11 @@ export default function DisclosuresPage() {
                 </div>
                 <div>
                   <span className="text-body-secondary">DRE License #:</span>
-                  <p className="font-semibold text-primary">XXXXXXXX</p>
+                  <p className="font-semibold text-primary">{DRE_LICENSE}</p>
                 </div>
                 <div>
                   <span className="text-body-secondary">Broker of Record:</span>
-                  <p className="font-semibold text-primary">[Broker Name]</p>
+                  <p className="font-semibold text-primary">{BROKER_OF_RECORD}</p>
                 </div>
                 <div>
                   <span className="text-body-secondary">Service Areas:</span>

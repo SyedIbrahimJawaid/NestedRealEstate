@@ -536,6 +536,17 @@ export default function SellFirstOrBuyFirstPage() {
             headline: "Sell First or Buy First? A Decision Framework for Families",
             description:
               "Help your growing family decide whether to sell your current home before buying or buy first.",
+            author: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            datePublished: "2026-02-01T00:00:00Z",
             dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",

@@ -495,6 +495,17 @@ export default function MovingBeforeBabyPage() {
             headline: "Moving Before Baby: A Calm 30-Day Checklist",
             description:
               "A practical 30-day checklist for families moving before a baby arrives in Southern California. Week-by-week planning, packing tips, logistics, and settling-in guidance.",
+            author: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            datePublished: "2026-02-01T00:00:00Z",
             dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",

@@ -88,7 +88,10 @@ export default function TermsPage() {
           <div>
             <h2 className="text-2xl font-serif text-primary mb-4">9. Contact</h2>
             <p className="text-body-secondary leading-relaxed">
-              For questions about these terms, contact us at legal@readynest.com.
+              For questions about these terms, contact us at{" "}
+              <a href={`mailto:${process.env.NEXT_PUBLIC_LEGAL_EMAIL ?? "legal@babyhomeplan.com"}`} className="text-clay hover:underline">
+                {process.env.NEXT_PUBLIC_LEGAL_EMAIL ?? "legal@babyhomeplan.com"}
+              </a>.
             </p>
           </div>
         </div>

@@ -419,6 +419,17 @@ export default function FirstTimeBuyerFamilyPage() {
             "@type": "Article",
             headline: "First-Time Buyer Family Edition: Avoid Common Mistakes",
             description: "A guide for first-time home buyers who are also starting or growing a family in Southern California.",
+            author: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            datePublished: "2026-02-01T00:00:00Z",
             dateModified: new Date().toISOString(),
             mainEntityOfPage: { "@type": "WebPage", "@id": new URL("/resources/first-time-buyer-family", siteUrl).toString() },
           }),

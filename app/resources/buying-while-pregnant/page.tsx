@@ -363,6 +363,17 @@ export default function BuyingWhilePregnantPage() {
             headline: "Buying While Pregnant in California: Realistic Timeline & Steps",
             description:
               "A trimester-by-trimester guide for families buying a home during pregnancy in Southern California.",
+            author: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            datePublished: "2026-02-01T00:00:00Z",
             dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",

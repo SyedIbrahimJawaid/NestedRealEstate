@@ -443,6 +443,17 @@ export default function ThirtyThreeDayPlanPage() {
             headline: "The 33-Day Plan: What Must Be True & What We Coordinate",
             description:
               "A detailed breakdown of the 33-day express home buying pathway — who qualifies, the day-by-day process, what BabyHomePlan coordinates, and honest boundaries.",
+            author: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "BabyHomePlan",
+              url: siteUrl,
+            },
+            datePublished: "2026-02-01T00:00:00Z",
             dateModified: new Date().toISOString(),
             mainEntityOfPage: {
               "@type": "WebPage",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { businessInfo } from "@/lib/businessInfo";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
@@ -44,27 +45,36 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
 
-        {/* Organization Schema */}
+        {/* RealEstateAgent Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "RealEstateAgent",
-              name: "BabyHomePlan",
+              name: businessInfo.name,
+              legalName: businessInfo.legalName,
               url: siteUrl,
-              description:
-                "Creating homes for growing families. Family-focused real estate agency serving Southern California. We help growing families find, sell, and prepare the right home.",
-              areaServed: [
-                { "@type": "County", name: "San Diego County, CA" },
-                { "@type": "County", name: "Orange County, CA" },
-                { "@type": "County", name: "Los Angeles County, CA" },
-              ],
-              serviceType: [
-                "Buyer Representation",
-                "Seller Representation",
-                "Home Preparation Coordination",
-              ],
+              telephone: businessInfo.telephone,
+              email: businessInfo.email.general,
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: businessInfo.address.locality,
+                addressRegion: businessInfo.address.region,
+                addressCountry: businessInfo.address.country,
+              },
+              areaServed: businessInfo.serviceAreas.map((area) => ({
+                "@type": "AdministrativeArea",
+                name: `${area}, CA`,
+              })),
+              ...(businessInfo.sameAs.length > 0 && { sameAs: businessInfo.sameAs }),
+              ...(process.env.NEXT_PUBLIC_DRE_LICENSE && {
+                identifier: {
+                  "@type": "PropertyValue",
+                  name: "DRE License",
+                  value: process.env.NEXT_PUBLIC_DRE_LICENSE,
+                },
+              }),
             }),
           }}
         />

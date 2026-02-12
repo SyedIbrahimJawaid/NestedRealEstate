@@ -88,13 +88,19 @@ export default function LeadForm({
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = "Please enter a valid email address";
     }
     if (!formData.intent) newErrors.intent = "Please select an option";
     if (!formData.timeline) newErrors.timeline = "Please select a timeline";
     if (!formData.budget) newErrors.budget = "Please select a budget";
     if (!formData.area) newErrors.area = "Please select an area";
     if (!formData.preferredContact) newErrors.preferredContact = "Please select a contact method";
+    if (
+      (formData.preferredContact === "text" || formData.preferredContact === "call") &&
+      !formData.phone.trim()
+    ) {
+      newErrors.phone = "Phone number is required when selecting Text or Call";
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -113,12 +119,13 @@ export default function LeadForm({
         body: JSON.stringify({ ...formData, ...tracking }),
       });
       if (res.ok) {
-        setStatus("success");
-        trackEvent("form_submit_success", {
+        const eventName = formData.intent === "buying" ? "lead_submit_buy" : "form_submit_success";
+        trackEvent(eventName, {
           form_location: variant,
           intent: formData.intent,
           area: formData.area,
         });
+        window.location.href = "/thank-you";
       } else {
         setStatus("error");
         trackEvent("form_submit_error", { form_location: variant, error: "server_error" });
@@ -189,7 +196,11 @@ export default function LeadForm({
           {/* Name + Email */}
           <div className="grid grid-cols-1 gap-4">
             <div>
+              <label htmlFor="name" className="block text-sm font-medium text-body mb-1">
+                First Name *
+              </label>
               <input
+                id="name"
                 type="text"
                 placeholder="First Name *"
                 className={`form-input ${errors.name ? "!border-red-400 focus:!ring-red-400" : ""}`}
@@ -198,11 +209,16 @@ export default function LeadForm({
                 onFocus={handleFieldInteraction}
                 required
                 name="name"
+                autoComplete="given-name"
               />
               {fieldError("name")}
             </div>
             <div>
+              <label htmlFor="email" className="block text-sm font-medium text-body mb-1">
+                Email Address *
+              </label>
               <input
+                id="email"
                 type="email"
                 placeholder="Email Address *"
                 className={`form-input ${errors.email ? "!border-red-400 focus:!ring-red-400" : ""}`}
@@ -211,50 +227,75 @@ export default function LeadForm({
                 onFocus={handleFieldInteraction}
                 required
                 name="email"
+                autoComplete="email"
               />
               {fieldError("email")}
             </div>
           </div>
 
           {/* Phone (optional) */}
-          <input
-            type="tel"
-            placeholder="Phone (optional)"
-            className="form-input"
-            value={formData.phone}
-            onChange={(e) => update("phone", e.target.value)}
-            onFocus={handleFieldInteraction}
-            name="phone"
-          />
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-body mb-1">
+              Phone{" "}
+              {formData.preferredContact === "text" || formData.preferredContact === "call"
+                ? "*"
+                : "(optional)"}
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              placeholder="Phone"
+              className={`form-input ${errors.phone ? "!border-red-400 focus:!ring-red-400" : ""}`}
+              value={formData.phone}
+              onChange={(e) => update("phone", e.target.value)}
+              onFocus={handleFieldInteraction}
+              name="phone"
+              autoComplete="tel"
+              required={formData.preferredContact === "text" || formData.preferredContact === "call"}
+            />
+            {fieldError("phone")}
+          </div>
 
           {/* Preferred Contact Method */}
           <div>
+            <label htmlFor="preferredContact" className="block text-sm font-medium text-body mb-1">
+              Preferred Contact Method *
+            </label>
             <select
+              id="preferredContact"
               className={`form-select ${errors.preferredContact ? "!border-red-400 focus:!ring-red-400" : ""}`}
               value={formData.preferredContact}
               onChange={(e) => { update("preferredContact", e.target.value); handleFieldInteraction(); }}
               required
-              aria-label="Preferred contact method"
               name="preferredContact"
             >
-              <option value="">Preferred Contact Method *</option>
+              <option value="">Select a contact method</option>
               <option value="email">Email</option>
               <option value="text">Text</option>
               <option value="call">Call</option>
             </select>
             {fieldError("preferredContact")}
+            {(formData.preferredContact === "text" || formData.preferredContact === "call") && (
+              <p className="text-xs text-body-secondary mt-2">
+                By selecting Text or Call, you consent to receive messages from BabyHomePlan. Message and
+                data rates may apply. You can opt out at any time by replying STOP.
+              </p>
+            )}
           </div>
 
           <div>
+            <label htmlFor="intent" className="block text-sm font-medium text-body mb-1">
+              Buying, Selling, or Both? *
+            </label>
             <select
+              id="intent"
               className={`form-select ${errors.intent ? "!border-red-400 focus:!ring-red-400" : ""}`}
               value={formData.intent}
               onChange={(e) => { update("intent", e.target.value); handleFieldInteraction(); }}
               required
-              aria-label="Buying, Selling, or Both?"
               name="intent"
             >
-              <option value="">Buying, Selling, or Both? *</option>
+              <option value="">Select an option</option>
               <option value="buying">Buying</option>
               <option value="selling">Selling</option>
               <option value="both">Both</option>
@@ -263,15 +304,18 @@ export default function LeadForm({
           </div>
 
           <div>
+            <label htmlFor="timeline" className="block text-sm font-medium text-body mb-1">
+              How time-sensitive is your situation? *
+            </label>
             <select
+              id="timeline"
               className={`form-select ${errors.timeline ? "!border-red-400 focus:!ring-red-400" : ""}`}
               value={formData.timeline}
               onChange={(e) => { update("timeline", e.target.value); handleFieldInteraction(); }}
               required
-              aria-label="How time-sensitive is your situation?"
               name="timeline"
             >
-              <option value="">How time-sensitive is your situation? *</option>
+              <option value="">Select a timeline</option>
               <option value="0-33">0–33 days</option>
               <option value="2-3">2–3 months</option>
               <option value="3-6">3–6 months</option>
@@ -281,15 +325,18 @@ export default function LeadForm({
           </div>
 
           <div>
+            <label htmlFor="budget" className="block text-sm font-medium text-body mb-1">
+              Estimated Budget *
+            </label>
             <select
+              id="budget"
               className={`form-select ${errors.budget ? "!border-red-400 focus:!ring-red-400" : ""}`}
               value={formData.budget}
               onChange={(e) => { update("budget", e.target.value); handleFieldInteraction(); }}
               required
-              aria-label="Estimated Budget"
               name="budget"
             >
-              <option value="">Estimated Budget *</option>
+              <option value="">Select a budget range</option>
               <option value="700-900">700k–900k</option>
               <option value="900-1200">900k–1.2M</option>
               <option value="1200-1500">1.2M–1.5M</option>
@@ -300,15 +347,18 @@ export default function LeadForm({
           </div>
 
           <div>
+            <label htmlFor="area" className="block text-sm font-medium text-body mb-1">
+              Select an area *
+            </label>
             <select
+              id="area"
               className={`form-select ${errors.area ? "!border-red-400 focus:!ring-red-400" : ""}`}
               value={formData.area}
               onChange={(e) => { update("area", e.target.value); handleFieldInteraction(); }}
               required
-              aria-label="Select an area"
               name="area"
             >
-              <option value="">Select an area *</option>
+              <option value="">Select an area</option>
               <option value="San Diego County">San Diego County</option>
               <option value="Orange County">Orange County</option>
               <option value="Los Angeles County">Los Angeles County</option>
@@ -316,8 +366,10 @@ export default function LeadForm({
             {fieldError("area")}
           </div>
 
-          <div className="flex items-center justify-between pt-1">
-            <span className="text-sm text-body-secondary">Baby on the way or recent birth?</span>
+          <fieldset className="pt-1">
+            <legend className="block text-sm font-medium text-body mb-2">
+              Baby on the way or recent birth?
+            </legend>
             <div className="flex items-center gap-4">
               <label className="flex items-center gap-1.5 cursor-pointer">
                 <input
@@ -325,7 +377,10 @@ export default function LeadForm({
                   name="babyStatus"
                   value="yes"
                   checked={formData.babyStatus === "yes"}
-                  onChange={(e) => { update("babyStatus", e.target.value); handleFieldInteraction(); }}
+                  onChange={(e) => {
+                    update("babyStatus", e.target.value);
+                    handleFieldInteraction();
+                  }}
                   className="accent-clay w-4 h-4"
                 />
                 <span className="text-sm text-body-secondary">Yes</span>
@@ -336,13 +391,16 @@ export default function LeadForm({
                   name="babyStatus"
                   value="no"
                   checked={formData.babyStatus === "no"}
-                  onChange={(e) => { update("babyStatus", e.target.value); handleFieldInteraction(); }}
+                  onChange={(e) => {
+                    update("babyStatus", e.target.value);
+                    handleFieldInteraction();
+                  }}
                   className="accent-clay w-4 h-4"
                 />
                 <span className="text-sm text-body-secondary">No</span>
               </label>
             </div>
-          </div>
+          </fieldset>
 
           {variant === "full" && (
             <>

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { supabaseAdmin } from "@/lib/supabase";
 
 // Rate limiting store (in-memory, replace with Redis in production)
 const rateLimit = new Map<string, { count: number; lastReset: number }>();
@@ -38,13 +39,12 @@ export async function POST(req: Request) {
 
     // Validate required fields
     const required = ["intent", "timeline", "budget", "area", "name", "email", "preferredContact"];
-    for (const field of required) {
-      if (!body[field]) {
-        return NextResponse.json(
-          { ok: false, error: `Missing required field: ${field}` },
-          { status: 400 }
-        );
-      }
+    const missingFields = required.filter((field) => !body[field]);
+    if (missingFields.length > 0) {
+      return NextResponse.json(
+        { ok: false, error: "Required fields missing" },
+        { status: 400 }
+      );
     }
 
     // Validate consent
@@ -55,47 +55,100 @@ export async function POST(req: Request) {
       );
     }
 
-    // Validate email format if provided
+    // Validate email format
     if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
       return NextResponse.json(
-        { ok: false, error: "Invalid email format" },
+        { ok: false, error: "Please enter a valid email address" },
         { status: 400 }
       );
     }
+
+    // Validate phone is required if Text/Call is selected
+    if ((body.preferredContact === "text" || body.preferredContact === "call") && !body.phone?.trim()) {
+      return NextResponse.json(
+        { ok: false, error: "Phone number is required when selecting Text or Call" },
+        { status: 400 }
+      );
+    }
+
+    // Validate phone format if provided (basic validation: at least 10 digits)
+    if (body.phone && body.phone.trim()) {
+      const phoneDigits = body.phone.replace(/\D/g, "");
+      if (phoneDigits.length < 10) {
+        return NextResponse.json(
+          { ok: false, error: "Please enter a valid phone number" },
+          { status: 400 }
+        );
+      }
+    }
+
+    // Save to Supabase
+    const { data, error } = await supabaseAdmin
+      .from('leads')
+      .insert({
+        intent: body.intent,
+        timeline: body.timeline,
+        budget: body.budget,
+        area: body.area,
+        city: body.city || null,
+        baby_status: body.babyStatus,
+        name: body.name,
+        email: body.email,
+        phone: body.phone || null,
+        preferred_contact: body.preferredContact,
+        notes: body.notes || null,
+        consent: body.consent,
+        utm_source: body.utm_source || null,
+        utm_medium: body.utm_medium || null,
+        utm_campaign: body.utm_campaign || null,
+        utm_term: body.utm_term || null,
+        utm_content: body.utm_content || null,
+        referrer: body.referrer || null,
+        landing_page: body.landing_page || null,
+        form_location: body.form_location || 'sidebar',
+        ip_address: req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || null,
+        user_agent: req.headers.get("user-agent") || null,
+        status: 'new',
+      })
+      .select()
+      .single();
+
+    if (error) {
+      console.error("Supabase insert error:", error);
+      return NextResponse.json(
+        { ok: false, error: "Failed to save lead. Please try again." },
+        { status: 500 }
+      );
+    }
+
+    // Log form event (optional)
+    if (data) {
+      await supabaseAdmin
+        .from('form_events')
+        .insert({
+          lead_id: data.id,
+          event_type: body.intent === 'buying' ? 'lead_submit_buy' : 'form_submit_success',
+          event_data: {
+            form_location: body.form_location || 'sidebar',
+            intent: body.intent,
+            area: body.area,
+          },
+          ip_address: req.headers.get("x-forwarded-for") || req.headers.get("x-real-ip") || null,
+          user_agent: req.headers.get("user-agent") || null,
+        });
+    }
+
+    console.log("New lead saved to Supabase:", data.id);
 
     // TODO: Forward to CRM (e.g., HubSpot, Salesforce)
     // TODO: Send notification email
     // TODO: Send Slack/Teams webhook
     // TODO: Verify anti-spam token (Turnstile/reCAPTCHA)
 
-    console.log("New lead received:", {
-      // Form fields
-      intent: body.intent,
-      timeline: body.timeline,
-      budget: body.budget,
-      area: body.area,
-      city: body.city,
-      babyStatus: body.babyStatus,
-      name: body.name,
-      email: body.email,
-      phone: body.phone,
-      preferredContact: body.preferredContact,
-      notes: body.notes,
-      consent: body.consent,
-      // UTM + tracking data (do NOT send PII to analytics)
-      utm_source: body.utm_source || "",
-      utm_medium: body.utm_medium || "",
-      utm_campaign: body.utm_campaign || "",
-      utm_term: body.utm_term || "",
-      utm_content: body.utm_content || "",
-      referrer: body.referrer || "",
-      landing_page: body.landing_page || "",
-      timestamp: new Date().toISOString(),
-    });
-
     return NextResponse.json({
       ok: true,
       message: "Thank you! We'll review your details and be in touch shortly.",
+      lead_id: data.id, // Optional: return lead ID for tracking
     });
   } catch (error) {
     console.error("Lead form error:", error);
