@@ -8,8 +8,9 @@
  */
 export function trackEvent(eventName: string, params?: Record<string, string>) {
   if (typeof window === "undefined") return;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const w = window as any;
+  const w = window as Window & {
+    gtag?: (command: string, name: string, payload?: Record<string, string>) => void;
+  };
   if (typeof w.gtag === "function") {
     w.gtag("event", eventName, params);
   }

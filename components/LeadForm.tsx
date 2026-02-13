@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { IconHouse } from "@/components/Icons";
 
 interface LeadFormProps {
@@ -38,8 +38,9 @@ function getTrackingData(): Record<string, string> {
 /** Fire GA4 custom event (safe no-op if gtag not loaded) */
 function trackEvent(eventName: string, params?: Record<string, string>) {
   if (typeof window === "undefined") return;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const w = window as any;
+  const w = window as Window & {
+    gtag?: (command: string, name: string, payload?: Record<string, string>) => void;
+  };
   if (typeof w.gtag === "function") {
     w.gtag("event", eventName, params);
   }
@@ -66,14 +67,10 @@ export default function LeadForm({
     consent: false,
     honeypot: "",
   });
-  const [tracking, setTracking] = useState<Record<string, string>>({});
+  const [tracking] = useState<Record<string, string>>(() => getTrackingData());
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [formStarted, setFormStarted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
-
-  useEffect(() => {
-    setTracking(getTrackingData());
-  }, []);
 
   const handleFieldInteraction = () => {
     if (!formStarted) {
