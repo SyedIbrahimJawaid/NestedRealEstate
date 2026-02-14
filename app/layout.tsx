@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -6,30 +7,22 @@ import { businessInfo } from "@/lib/businessInfo";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL("https://babyhomeplan.com"),
   title: {
-    default: "BabyHomePlan: Creating Homes for Growing Families",
+    default: "BabyHomePlan — Homes for Growing Families",
     template: "%s | BabyHomePlan",
   },
-  description:
-    "We help growing families in Southern California find, sell, and prepare the right home so you can focus on your health, your baby, and what really matters.",
-  keywords: [
-    "family buyer agent southern california",
-    "home for growing family",
-    "move before baby",
-    "calm home plan",
-    "family-friendly homes san diego",
-    "buyer agent orange county",
-    "buyer agent los angeles",
-  ],
+  description: "Family-focused real estate plans across Southern California.",
   openGraph: {
-    type: "website",
-    locale: "en_US",
     siteName: "BabyHomePlan",
-    title: "BabyHomePlan: Creating Homes for Growing Families",
-    description:
-      "We help growing families in Southern California find, sell, and prepare the right home.",
+    type: "website",
   },
 };
 
@@ -39,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
+    <html lang="de" className={dmSans.variable} suppressHydrationWarning>
+      <body className="font-sans" suppressHydrationWarning>
         <Header />
         <main>{children}</main>
         <Footer />

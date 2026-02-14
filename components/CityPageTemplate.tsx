@@ -66,7 +66,7 @@ function buildChecklistFallback(cityName: string) {
         "School assignments are address-based and can change. We verify boundaries and enrollment options before you decide.",
         "We prioritize clarity and avoid rankings unless a source is provided.",
       ],
-      sources: undefined,
+      sources: [],
     },
     commute: {
       notes: [
@@ -80,6 +80,9 @@ function buildChecklistFallback(cityName: string) {
         "Family amenities typically include parks, recreation programs, libraries, and youth activities.",
         "Healthcare and childcare availability vary by neighborhood and can be verified during your search.",
       ],
+      parks: [],
+      hospitals: [],
+      childcare: [],
     },
     marketSnapshot: {
       asOf: "Feb 2026",
@@ -171,8 +174,10 @@ export default function CityPageTemplate({
                 ))}
               </div>
               {(() => {
-                if ('sources' in checklist.schools) {
-                  const sources = checklist.schools.sources;
+                const schools = checklist.schools;
+                if ('sources' in schools) {
+                  const schoolsWithSources = schools as { notes: string[]; sources?: { label: string; url: string }[] };
+                  const sources = schoolsWithSources.sources;
                   if (sources && sources.length > 0) {
                     return (
                       <div className="mt-4">

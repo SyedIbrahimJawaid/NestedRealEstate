@@ -64,7 +64,7 @@ export default function OrangeCountyPage() {
       <section className="relative py-20 md:py-28 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/county-orange.png')" }}
+          style={{ backgroundImage: "url('/images/county-orange.jpeg')" }}
         >
           <div className="absolute inset-0 bg-primary/75" />
         </div>

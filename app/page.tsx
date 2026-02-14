@@ -136,7 +136,7 @@ const areas = [
     name: "Orange County",
     href: "/areas/orange-county",
     description: "Pristine neighborhoods near top-rated schools, work, and family recreation.",
-    image: "/images/county-orange.png",
+    image: "/images/county-orange.jpeg",
   },
   {
     name: "Los Angeles County",
