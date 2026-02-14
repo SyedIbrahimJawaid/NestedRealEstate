@@ -44,6 +44,16 @@
   }
 }
 
+.hero-home-bg {
+  background-image: url("/images/hero-home.jpeg");
+}
+
+@media (max-width: 639px) {
+  .hero-home-bg {
+    background-image: url("/images/mobile-hero-home.png");
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

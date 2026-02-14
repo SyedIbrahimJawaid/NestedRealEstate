@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: new URL("/images/hero-home.jpg", siteUrl).toString(),
+        url: new URL("/images/hero-home.jpeg", siteUrl).toString(),
         width: 1200,
         height: 630,
         alt: "BabyHomePlan — Homes for Growing Families",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: [new URL("/images/hero-home.jpg", siteUrl).toString()],
+    images: [new URL("/images/hero-home.jpeg", siteUrl).toString()],
   },
 };
 

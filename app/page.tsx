@@ -370,10 +370,7 @@ export default function HomePage() {
       {/* ============================================================ */}
       <div className="relative">
         <section className="relative min-h-[560px] md:min-h-[600px] flex items-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/hero-home.jpg')" }}
-          >
+          <div className="absolute inset-0 bg-cover bg-center hero-home-bg">
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
           </div>
 
