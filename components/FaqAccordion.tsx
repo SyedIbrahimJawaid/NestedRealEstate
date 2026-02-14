@@ -61,9 +61,23 @@ export default function FaqAccordion() {
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${idx}`}
             >
-              {/* Question mark icon */}
-              <span className="w-8 h-8 rounded-lg bg-clay/10 flex items-center justify-center flex-shrink-0">
-                <span className="text-clay font-serif text-lg font-semibold">?</span>
+              <span
+                className="w-8 h-8 rounded-lg bg-clay/10 flex items-center justify-center flex-shrink-0"
+                aria-hidden="true"
+              >
+                <svg
+                  className="w-4 h-4 text-clay"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 11.5a8.5 8.5 0 1 1-4.5-7.5" />
+                  <path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4" />
+                  <circle cx="12" cy="17" r="1" />
+                </svg>
               </span>
               <span className="flex-1 text-base md:text-lg font-semibold text-primary">
                 {item.question}

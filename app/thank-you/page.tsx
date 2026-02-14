@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Thank You | BabyHomePlan",
+  title: "Thank You",
   description: "Thank you for your interest in BabyHomePlan.",
   robots: { index: false, follow: false },
 };

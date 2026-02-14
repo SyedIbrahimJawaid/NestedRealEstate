@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { businessInfo } from "@/lib/businessInfo";
 
 export const metadata: Metadata = {
   title: "Disclosures",
@@ -6,8 +7,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/disclosures" },
 };
 
-const DRE_LICENSE = process.env.NEXT_PUBLIC_DRE_LICENSE ?? "XXXXXXXX";
-const BROKER_OF_RECORD = process.env.NEXT_PUBLIC_BROKER_OF_RECORD ?? "Broker Name";
+const DRE_LICENSE = businessInfo.dreLicense;
+const BROKER_OF_RECORD = businessInfo.brokerOfRecord;
 
 export default function DisclosuresPage() {
   return (
@@ -26,20 +27,45 @@ export default function DisclosuresPage() {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <span className="text-body-secondary">Brokerage Name:</span>
-                  <p className="font-semibold text-primary">BabyHomePlan.com</p>
+                  <p className="font-semibold text-primary">{businessInfo.legalName}</p>
                 </div>
-                <div>
-                  <span className="text-body-secondary">DRE License #:</span>
-                  <p className="font-semibold text-primary">{DRE_LICENSE}</p>
-                </div>
-                <div>
-                  <span className="text-body-secondary">Broker of Record:</span>
-                  <p className="font-semibold text-primary">{BROKER_OF_RECORD}</p>
-                </div>
+                {DRE_LICENSE && (
+                  <div>
+                    <span className="text-body-secondary">DRE License #:</span>
+                    <p className="font-semibold text-primary">{DRE_LICENSE}</p>
+                  </div>
+                )}
+                {BROKER_OF_RECORD && (
+                  <div>
+                    <span className="text-body-secondary">Broker of Record:</span>
+                    <p className="font-semibold text-primary">{BROKER_OF_RECORD}</p>
+                  </div>
+                )}
                 <div>
                   <span className="text-body-secondary">Service Areas:</span>
                   <p className="font-semibold text-primary">San Diego, Orange, Los Angeles Counties</p>
                 </div>
+                {businessInfo.telephone && (
+                  <div>
+                    <span className="text-body-secondary">Phone:</span>
+                    <p className="font-semibold text-primary">{businessInfo.telephone}</p>
+                  </div>
+                )}
+                {businessInfo.email.general && (
+                  <div>
+                    <span className="text-body-secondary">Email:</span>
+                    <p className="font-semibold text-primary">{businessInfo.email.general}</p>
+                  </div>
+                )}
+                {businessInfo.address.street && (
+                  <div className="col-span-2">
+                    <span className="text-body-secondary">Business Address:</span>
+                    <p className="font-semibold text-primary">
+                      {businessInfo.address.street}, {businessInfo.address.locality}, {businessInfo.address.region}
+                      {businessInfo.address.postalCode ? ` ${businessInfo.address.postalCode}` : ""}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>

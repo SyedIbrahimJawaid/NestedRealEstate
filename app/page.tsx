@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm";
 import FaqAccordion from "@/components/FaqAccordion";
+import { businessInfo } from "@/lib/businessInfo";
 
 export const metadata: Metadata = {
-  title: "BabyHomePlan: Creating Homes for Growing Families",
+  title: "Creating Homes for Growing Families",
   description:
     "We help growing families in Southern California find, sell, and prepare the right home so you can focus on your health, your baby, and what really matters.",
   alternates: { canonical: "/" },
@@ -223,7 +224,7 @@ const whyFamilies = [
   {
     title: "Licensed Brokerage",
     description: "California licensed, DRE compliant, focused on your family\u2019s needs.",
-    detail: "CA DRE License #XXXXXXXX",
+    detail: businessInfo.dreLicense ? `CA DRE License #${businessInfo.dreLicense}` : undefined,
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="w-14 h-14" viewBox="0 0 56 56" fill="none">
         <rect x="4" y="4" width="48" height="48" rx="12" fill="#F5F0EB" />
@@ -271,7 +272,7 @@ const whyFamilies = [
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  name: "BabyHomePlan",
+  name: businessInfo.name,
   url: new URL("/", siteUrl).toString(),
   logo: new URL("/images/logo.png", siteUrl).toString(),
   description:
@@ -281,6 +282,15 @@ const orgJsonLd = {
     { "@type": "AdministrativeArea", name: "Orange County, CA" },
     { "@type": "AdministrativeArea", name: "Los Angeles County, CA" },
   ],
+  ...(businessInfo.telephone && { telephone: businessInfo.telephone }),
+  ...(businessInfo.email.general && { email: businessInfo.email.general }),
+  ...(businessInfo.dreLicense && {
+    identifier: {
+      "@type": "PropertyValue",
+      name: "DRE License",
+      value: businessInfo.dreLicense,
+    },
+  }),
 };
 
 const faqJsonLd = {

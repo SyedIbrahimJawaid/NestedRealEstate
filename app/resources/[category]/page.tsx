@@ -1,18 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { resourceArticles, resourceCategories } from "@/lib/resources";
+import { notFound } from "next/navigation";
+import {
+  getCategoryLabel,
+  resourceArticles,
+  resourceCategories,
+  resourceCategorySlugs,
+} from "@/lib/resources";
 
-export const metadata: Metadata = {
-  title: "Resources: Guides for Growing Families",
-  description:
-    "Helpful guides, articles, and tips for growing families navigating real estate in Southern California.",
-  alternates: { canonical: "/resources" },
-};
+interface PageProps {
+  params: { category: string };
+}
 
-const articles = resourceArticles;
-const categories = resourceCategories;
+export async function generateStaticParams() {
+  return resourceCategorySlugs.map((slug) => ({ category: slug }));
+}
 
-export default function ResourcesPage() {
+export function generateMetadata({ params }: PageProps): Metadata {
+  const label = getCategoryLabel(params.category);
+  if (!label) return {};
+
+  return {
+    title: `${label} Resources for Growing Families`,
+    description: `Guides and tips focused on ${label.toLowerCase()} for growing families navigating real estate in Southern California.`,
+    alternates: { canonical: `/resources/${params.category}` },
+  };
+}
+
+export default function ResourcesCategoryPage({ params }: PageProps) {
+  const label = getCategoryLabel(params.category);
+  if (!label) notFound();
+
+  const articles = resourceArticles.filter(
+    (article) => article.categorySlug === params.category
+  );
+
   return (
     <>
       {/* Hero */}
@@ -22,10 +44,10 @@ export default function ResourcesPage() {
             Resources
           </span>
           <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">
-            Guides for Growing Families
+            {label} Guides for Growing Families
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Helpful articles and guides to navigate real estate when your family is growing.
+            Practical, family-first guidance focused on {label.toLowerCase()} in Southern California.
           </p>
         </div>
       </section>
@@ -34,15 +56,16 @@ export default function ResourcesPage() {
       <section className="bg-offwhite border-b border-border">
         <div className="container-max px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((cat) => {
+            {resourceCategories.map((cat) => {
+              const isActive = cat.slug === params.category;
               const isAll = cat.slug === "";
               return (
                 <Link
                   key={cat.label}
                   href={isAll ? "/resources" : `/resources/${cat.slug}`}
-                  aria-current={isAll ? "page" : undefined}
+                  aria-current={isActive ? "page" : undefined}
                   className={`px-4 py-2 text-sm rounded-full transition-colors ${
-                    isAll
+                    isActive
                       ? "bg-primary text-white"
                       : "bg-white text-body-secondary hover:bg-primary/10 border border-border"
                   }`}
@@ -99,30 +122,14 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Internal Links — Services + Areas */}
-      <section className="bg-white border-b border-border">
-        <div className="container-max px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-sm text-body-secondary text-center">
-            Our services:{" "}
-            <Link href="/buy" className="text-clay hover:underline">Buy a Home</Link>
-            {" · "}
-            <Link href="/sell-and-upgrade" className="text-clay hover:underline">Sell &amp; Upgrade</Link>
-            {" · "}
-            <Link href="/33-day-express" className="text-clay hover:underline">33-Day Express</Link>
-            {" · "}
-            <Link href="/areas" className="text-clay hover:underline">Areas We Serve</Link>
-          </p>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="section-padding bg-white text-center">
         <div className="container-max">
           <h2 className="text-3xl font-serif text-primary mb-4">
-            Ready to Take the Next Step?
+            Want a Personalized Plan?
           </h2>
           <p className="text-body-secondary text-lg max-w-xl mx-auto mb-8">
-            Reading is great, but nothing beats a personalized plan. Tell us about your family and get started.
+            Reading helps, but a plan tailored to your timeline and family makes it easier.
           </p>
           <Link href="/get-started" className="btn-primary text-lg">
             Create My Family Home Plan

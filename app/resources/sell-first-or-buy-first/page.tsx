@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+const lastUpdated = "February 14, 2026";
 
 const sellFirstPros = [
   {
@@ -206,6 +207,7 @@ export default function SellFirstOrBuyFirstPage() {
               There&apos;s no single right answer &mdash; but there is a right answer for your
               situation. Here&apos;s how to figure it out.
             </p>
+            <p className="text-white/70 text-sm mb-6">Last updated: {lastUpdated}</p>
             <Link href="/get-started" className="btn-primary text-lg">
               Get Personalized Guidance
             </Link>

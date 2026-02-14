@@ -14,7 +14,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://babyhomeplan.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "BabyHomePlan — Homes for Growing Families",
     template: "%s | BabyHomePlan",
@@ -23,6 +23,18 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "BabyHomePlan",
     type: "website",
+    images: [
+      {
+        url: new URL("/images/hero-home.jpg", siteUrl).toString(),
+        width: 1200,
+        height: 630,
+        alt: "BabyHomePlan — Homes for Growing Families",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [new URL("/images/hero-home.jpg", siteUrl).toString()],
   },
 };
 
@@ -32,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={dmSans.variable} suppressHydrationWarning>
+    <html lang="en" className={dmSans.variable} suppressHydrationWarning>
       <body className="font-sans" suppressHydrationWarning>
         <Header />
         <main>{children}</main>
@@ -48,12 +60,14 @@ export default function RootLayout({
               name: businessInfo.name,
               legalName: businessInfo.legalName,
               url: siteUrl,
-              telephone: businessInfo.telephone,
-              email: businessInfo.email.general,
+              ...(businessInfo.telephone && { telephone: businessInfo.telephone }),
+              ...(businessInfo.email.general && { email: businessInfo.email.general }),
               address: {
                 "@type": "PostalAddress",
+                ...(businessInfo.address.street && { streetAddress: businessInfo.address.street }),
                 addressLocality: businessInfo.address.locality,
                 addressRegion: businessInfo.address.region,
+                ...(businessInfo.address.postalCode && { postalCode: businessInfo.address.postalCode }),
                 addressCountry: businessInfo.address.country,
               },
               areaServed: businessInfo.serviceAreas.map((area) => ({
@@ -61,11 +75,11 @@ export default function RootLayout({
                 name: `${area}, CA`,
               })),
               ...(businessInfo.sameAs.length > 0 && { sameAs: businessInfo.sameAs }),
-              ...(process.env.NEXT_PUBLIC_DRE_LICENSE && {
+              ...(businessInfo.dreLicense && {
                 identifier: {
                   "@type": "PropertyValue",
                   name: "DRE License",
-                  value: process.env.NEXT_PUBLIC_DRE_LICENSE,
+                  value: businessInfo.dreLicense,
                 },
               }),
             }),

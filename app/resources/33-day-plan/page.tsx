@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+const lastUpdated = "February 14, 2026";
 
 const dayByDay = [
   {
@@ -161,6 +162,7 @@ export default function ThirtyThreeDayPlanPage() {
               An honest, detailed look at our accelerated home buying pathway — the qualifications,
               the day-by-day process, what we handle, and who this is (and isn&apos;t) designed for.
             </p>
+            <p className="text-white/70 text-sm mb-6">Last updated: {lastUpdated}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/get-started" className="btn-primary text-lg">
                 Check Your Eligibility

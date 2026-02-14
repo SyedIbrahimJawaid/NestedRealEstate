@@ -1,41 +1,43 @@
 // lib/businessInfo.ts
 // Centralized business information for consistent use across the site
-// Update these values with actual business details
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
 
 export const businessInfo = {
-  name: "BabyHomePlan",
-  legalName: "BabyHomePlan.com",
-  domain: process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com",
-  
+  name: process.env.NEXT_PUBLIC_BUSINESS_NAME ?? "BabyHomePlan",
+  legalName: process.env.NEXT_PUBLIC_BUSINESS_LEGAL_NAME ?? "BabyHomePlan.com",
+  domain: siteUrl,
+
   // Contact Information
   email: {
-    general: "info@babyhomeplan.com",
-    legal: "legal@babyhomeplan.com",
-    privacy: "privacy@babyhomeplan.com",
+    general: process.env.NEXT_PUBLIC_GENERAL_EMAIL ?? "info@babyhomeplan.com",
+    legal: process.env.NEXT_PUBLIC_LEGAL_EMAIL ?? "legal@babyhomeplan.com",
+    privacy: process.env.NEXT_PUBLIC_PRIVACY_EMAIL ?? "privacy@babyhomeplan.com",
   },
-  
-  // Phone (update with actual number)
-  telephone: "+1-858-XXX-XXXX", // TODO: Replace with actual phone number
-  
+
+  // Phone
+  telephone: process.env.NEXT_PUBLIC_BUSINESS_PHONE ?? "",
+
   // Licensing
-  dreLicense: "XXXXXXXX", // TODO: Replace with actual DRE license number
-  brokerOfRecord: "Broker Name", // TODO: Replace with actual broker name
-  
+  dreLicense: process.env.NEXT_PUBLIC_DRE_LICENSE ?? "",
+  brokerOfRecord: process.env.NEXT_PUBLIC_BROKER_OF_RECORD ?? "",
+
   // Address
   address: {
-    locality: "San Diego",
-    region: "CA",
-    country: "US",
-    // Full address can be added here if needed
+    street: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS_STREET ?? "",
+    locality: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS_LOCALITY ?? "San Diego",
+    region: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS_REGION ?? "CA",
+    postalCode: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS_POSTAL_CODE ?? "",
+    country: process.env.NEXT_PUBLIC_BUSINESS_ADDRESS_COUNTRY ?? "US",
   },
-  
+
   // Service Areas
   serviceAreas: [
     "San Diego County",
-    "Orange County", 
-    "Los Angeles County"
+    "Orange County",
+    "Los Angeles County",
   ],
-  
+
   // Social Media (add when available)
   sameAs: [
     // "https://www.facebook.com/babyhomeplan",

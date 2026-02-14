@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+const lastUpdated = "February 14, 2026";
 
 const topMistakes = [
   {
@@ -185,6 +186,7 @@ export default function FirstTimeBuyerFamilyPage() {
               family adds another layer entirely. This guide helps you navigate both without
               the costly missteps.
             </p>
+            <p className="text-white/70 text-sm mb-6">Last updated: {lastUpdated}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/get-started" className="btn-primary text-lg">
                 Start Your Home Search

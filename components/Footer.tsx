@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { businessInfo } from "@/lib/businessInfo";
 
 const footerLinks = {
   Services: [
     { label: "How We Help", href: "/how-we-help" },
     { label: "Buy a Home", href: "/buy" },
-    { label: "Sell & Upgrade", href: "/sell-upgrade" },
+    { label: "Sell & Upgrade", href: "/sell-and-upgrade" },
     { label: "33-Day Express", href: "/33-day-express" },
   ],
   Areas: [
@@ -103,8 +104,8 @@ export default function Footer() {
           </p>
           <p className="text-xs text-white/40 text-center max-w-xl">
             BabyHomePlan is a licensed real estate brokerage in the State of California.
-            {process.env.NEXT_PUBLIC_DRE_LICENSE && (
-              <> DRE License #{process.env.NEXT_PUBLIC_DRE_LICENSE}.</>
+            {businessInfo.dreLicense && (
+              <> DRE License #{businessInfo.dreLicense}.</>
             )}{" "}
             All information is deemed reliable but not guaranteed.
           </p>

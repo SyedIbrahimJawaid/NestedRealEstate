@@ -6,7 +6,7 @@ import { useState } from "react";
 const navItems = [
   { label: "How We Help", href: "/how-we-help", children: [{ label: "How We Help", href: "/how-we-help" }, { label: "Areas We Serve", href: "/areas" }] },
   { label: "Buy a Home", href: "/buy", children: [{ label: "Buying Process", href: "/buy" }, { label: "Areas We Serve", href: "/areas" }] },
-  { label: "Sell & Upgrade", href: "/sell-upgrade", children: [{ label: "Sell & Upgrade", href: "/sell-upgrade" }] },
+  { label: "Sell & Upgrade", href: "/sell-and-upgrade", children: [{ label: "Sell & Upgrade", href: "/sell-and-upgrade" }] },
   { label: "Get Started", href: "/get-started", children: [{ label: "Get Started", href: "/get-started" }] },
   { label: "33-Day Express", href: "/33-day-express", children: [{ label: "33-Day Express", href: "/33-day-express" }] },
 ];
@@ -23,8 +23,7 @@ export default function Header() {
           <img
             src="/images/logo.png"
             alt="BabyHomePlan.com - Creating Homes for Growing Families"
-            className="h-15 w-auto md:h-19 object-contain"
-            style={{ maxHeight: '80px', width: 'auto' }}
+            className="h-10 md:h-16 w-auto object-contain"
             loading="eager"
             decoding="async"
           />

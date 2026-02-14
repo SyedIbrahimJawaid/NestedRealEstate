@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+const lastUpdated = "February 14, 2026";
 
 const weekOneTwo = [
   {
@@ -172,6 +173,7 @@ export default function MovingBeforeBabyPage() {
               logistics, packing, healthcare transfers, and settling in with less stress and more
               confidence.
             </p>
+            <p className="text-white/70 text-sm mb-6">Last updated: {lastUpdated}</p>
             <Link href="/get-started" className="btn-primary text-lg">
               Get Your Family Home Plan
             </Link>

@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+const lastUpdated = "February 14, 2026";
 
 const roomChecklist = [
   {
@@ -227,6 +228,7 @@ export default function BabyReadyUpgradesPage() {
               little one. A practical, room-by-room guide with prioritized checklists and qualified
               advice.
             </p>
+            <p className="text-white/70 text-sm mb-6">Last updated: {lastUpdated}</p>
             <Link href="/get-started" className="btn-primary text-lg">
               Get Your Family Home Plan
             </Link>

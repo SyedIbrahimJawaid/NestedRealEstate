@@ -5,7 +5,7 @@ import LeadForm from "@/components/LeadForm";
 import { IconKey, IconHouse, IconChecklist, IconShield, IconCalendar, IconMapPin } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Family Buyer Agent in San Diego, Orange County & LA | BabyHomePlan",
+  title: "Family Buyer Agent in San Diego, Orange County & LA",
   description:
     "Family-focused buyer representation across San Diego, Orange County & LA. Strategy, negotiation, and a clear timeline built for growing families.",
   keywords: ["family buyer agent southern california", "buy family home san diego", "buyer agent orange county"],

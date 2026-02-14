@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 };
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://babyhomeplan.com";
+const lastUpdated = "February 14, 2026";
 
 const trimesterTimeline = [
   {
@@ -107,6 +108,7 @@ export default function BuyingWhilePregnantPage() {
               timeline and support, it&apos;s entirely possible to find and close on your family&apos;s
               home before the baby arrives.
             </p>
+            <p className="text-white/70 text-sm mb-6">Last updated: {lastUpdated}</p>
             <Link href="/get-started" className="btn-primary text-lg">
               Start Your Home Search
             </Link>
